@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="os-dependent">
+      <UniqueIdentifier>{3478d740-1e60-4e46-9453-7d7f396a50d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\dll">
+      <UniqueIdentifier>{0b976463-e318-4351-94f2-51d926c65e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\isapi">
+      <UniqueIdentifier>{0a32a214-dd50-4bea-a6f2-8b18c9155dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries">
+      <UniqueIdentifier>{d2acd642-17bf-4667-bca3-ed95afbb79d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\libyuarel">
+      <UniqueIdentifier>{1067088a-79bc-4aa4-84cf-8d32a3b1415b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{364257ae-e8a7-41d2-aaa7-db3649751653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\hiredis">
+      <UniqueIdentifier>{f45f5050-8382-4f54-998e-3dbcf79aaa24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\application">
+      <UniqueIdentifier>{c8fd59dd-49f4-4391-bb34-5678ff51cad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\request">
+      <UniqueIdentifier>{91b6e387-5705-4288-a228-000014f1f47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\request\dispatcher">
+      <UniqueIdentifier>{d2a38574-6b39-4979-ad80-be7ab3b5372b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\session">
+      <UniqueIdentifier>{8e791e5e-bfeb-417f-9183-ec47e2d6ed29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\utils">
+      <UniqueIdentifier>{cd68896e-5555-4cfd-9699-ac5728b7d20d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\ajax">
+      <UniqueIdentifier>{b1cf01b8-bce9-4366-81f7-42806aac379b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\page">
+      <UniqueIdentifier>{a125c1eb-5819-4f50-872d-3ed5f19bfebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang">
+      <UniqueIdentifier>{4267065e-5f6e-49eb-a416-11c6d50fd1d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\variable">
+      <UniqueIdentifier>{64dffb20-a422-4e87-8017-37ceb84b14a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in">
+      <UniqueIdentifier>{0e49e2f7-73ee-433e-b81d-ddb6ad344cd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions">
+      <UniqueIdentifier>{b3a78124-f22a-4175-a6ed-0e730473cf30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\message">
+      <UniqueIdentifier>{fcdbde95-5b78-4a86-9f74-82f656aea8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\rollback">
+      <UniqueIdentifier>{2d97258a-dc55-41c1-bccc-a606db79a6ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\commit">
+      <UniqueIdentifier>{e58cd481-45c0-47d7-95c5-74dcf6f19229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\delete">
+      <UniqueIdentifier>{f9cac389-7804-42fc-ab83-f8ad30c0ff52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\disableColumn">
+      <UniqueIdentifier>{7ffcc534-5ef4-4e9b-822f-31cdea3dbec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\enableColumn">
+      <UniqueIdentifier>{80c9f42e-ebe3-415f-a1d6-8dabc2f1cc90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\createConnection">
+      <UniqueIdentifier>{3aea6c25-4127-4215-8708-548cc162edcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\hideColumn">
+      <UniqueIdentifier>{e6c11009-b7e1-42d2-b9a7-e031154de216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\instr">
+      <UniqueIdentifier>{6c9f22fb-cb84-48ca-9e22-e488c39f8c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\showColumn">
+      <UniqueIdentifier>{7678a424-1250-4ef6-a4ee-325ed83e4928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\strlen">
+      <UniqueIdentifier>{fc26ab79-cc30-46fd-b605-04874a821975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\substr">
+      <UniqueIdentifier>{768308c3-81fb-47eb-8740-dea4fa9fc7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\showPage">
+      <UniqueIdentifier>{66573496-ddc6-46fa-8d40-3ec164ead6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\replace">
+      <UniqueIdentifier>{42bb56a1-a04b-4c58-bbd6-ac9c261a2efb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\prompt">
+      <UniqueIdentifier>{9510faef-ef0d-4dd3-998f-e08e1da38bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\populateDatalist">
+      <UniqueIdentifier>{b93813ca-b2f6-426a-aacf-280662ce3c50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagTree">
+      <UniqueIdentifier>{7b1415cc-f9a8-430e-a4f6-74dc0a86de16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagTree\populateTree">
+      <UniqueIdentifier>{a16e95eb-37a9-4cae-acc5-97b629c33ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagTree\refreshTreeNode">
+      <UniqueIdentifier>{4436d66f-203d-4642-8990-6f3022dc0e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagTree\addTreeNode">
+      <UniqueIdentifier>{1b957e4a-0a6a-4a0f-9975-6703f26adf2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagDatablock">
+      <UniqueIdentifier>{4ffbcb0d-89e5-4b87-bd0f-e91b50831a6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagDatablock\showBlock">
+      <UniqueIdentifier>{3fabf1ae-3321-4da6-8711-a930bb8c5655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagDatablock\refreshBlock">
+      <UniqueIdentifier>{cc611109-bffc-4159-a27e-01cedbe227d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\tagDatablock\hideBlock">
+      <UniqueIdentifier>{c731a0d8-2a8e-4e9e-828c-c64f09387d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\getDatabaseName">
+      <UniqueIdentifier>{641bdc34-fe59-4b51-a504-531730f68cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\getDatabaseType">
+      <UniqueIdentifier>{f6a60fe5-fdb4-4b63-a9c6-2d502737a8f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\runSQLFile">
+      <UniqueIdentifier>{afe67292-332c-4f9e-b0af-9105f3df68b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\createRedisConnection">
+      <UniqueIdentifier>{18d9d469-4ed4-40f8-8b74-6c340eb110df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\functions\closeRedisConnection">
+      <UniqueIdentifier>{9464a469-cd77-468d-b661-e70a94e081ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers">
+      <UniqueIdentifier>{41848279-dfc9-489d-81b1-72dfa33e544d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\page">
+      <UniqueIdentifier>{0682d3cc-4d4f-41bb-8724-aa5ca0abf094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\page\pageAccess">
+      <UniqueIdentifier>{44d0a6c3-4424-44ed-8040-68a24cc7acf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\page\pageLoad">
+      <UniqueIdentifier>{64289bdd-dcfa-4f2a-8dff-4227c18581d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock">
+      <UniqueIdentifier>{2a134c59-da8a-4541-8bea-357f64991cc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\preInsert">
+      <UniqueIdentifier>{c10395e0-ab8a-439e-8abd-c86200262535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\preUpdate">
+      <UniqueIdentifier>{862a701e-9399-45f7-8b46-4bfa474e2951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\preDelete">
+      <UniqueIdentifier>{ab01eb1e-42c5-4ca9-9af3-395632acde1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\postUpdate">
+      <UniqueIdentifier>{8b501269-dfd2-4856-9aaf-2208ec553b67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\postDelete">
+      <UniqueIdentifier>{ba5a6056-0a98-40b9-9928-4deb34bcacc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\postInsert">
+      <UniqueIdentifier>{950ab4de-6953-42dd-a0ce-9ad6c0360a51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\rowSelected">
+      <UniqueIdentifier>{f8210ca9-891b-477c-9ac9-248d552f1ce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\dataBlock\postQuery">
+      <UniqueIdentifier>{bfad909c-aecf-4258-b05d-59e9725d5283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\itemModified">
+      <UniqueIdentifier>{7bbc79f2-3bbb-4ca0-a617-8f8c84401ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\tree">
+      <UniqueIdentifier>{012a34e2-7bec-40c7-b5ea-123084687e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\tree\nodeExpanded">
+      <UniqueIdentifier>{c5ed30f7-0f53-4c2d-a902-0aedc6badddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\tree\nodeSelected">
+      <UniqueIdentifier>{58470bd0-153c-4720-bf40-32ffb16d024d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\session">
+      <UniqueIdentifier>{1f8b9ea8-425b-4192-bc88-f383d281cdeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\session\connectionNotFound">
+      <UniqueIdentifier>{13cec53d-605b-46f4-9ff1-c73a59dba3db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\triggers\session\sessionEnd">
+      <UniqueIdentifier>{5116e0b4-d6f8-4d3c-8c5b-9d2d36616799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\expresions">
+      <UniqueIdentifier>{b59e6870-7646-45a7-a2b8-60a5e37f72e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang\built-in\expresions\like">
+      <UniqueIdentifier>{1d9339b5-7105-49aa-a3e6-897fc81c18a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\response">
+      <UniqueIdentifier>{04eb8db6-aba3-49cb-9106-c4e2a9a889ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\debugee">
+      <UniqueIdentifier>{5c8a4548-4b03-4145-9fb0-b1aa273085aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\debugee\debugeePipeServer">
+      <UniqueIdentifier>{6206b997-3869-4834-9dbe-c70c74188aaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data-Structures">
+      <UniqueIdentifier>{e5531981-9175-4ed2-abec-153045be0f5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Constants">
+      <UniqueIdentifier>{a276807c-9b32-4b49-8f1c-cdc0c9717f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx">
+      <UniqueIdentifier>{f8cf26e9-aa5b-4c59-bbde-6bc9a329dbfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\preParser">
+      <UniqueIdentifier>{3e912aa7-efc0-4046-9f6b-dc795afce828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\preParser\lexer">
+      <UniqueIdentifier>{ad617057-80c8-40ed-adfa-96bc2341534f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\preParser\impl">
+      <UniqueIdentifier>{b66610aa-9dd7-4160-8427-dd7e018be850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\preParser\lemon">
+      <UniqueIdentifier>{81fa2bda-f45c-4bda-b126-3f3310ac560a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser">
+      <UniqueIdentifier>{69721672-56d3-47c9-969a-dff1a5f6af5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\impl">
+      <UniqueIdentifier>{8763d633-78eb-4d08-92e3-e9c12d88d02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\lexer">
+      <UniqueIdentifier>{018f47e6-fe90-4117-87ad-d0d9453f0809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\objects">
+      <UniqueIdentifier>{6a827f07-38e9-4f76-83b1-479d9760d4f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\objects\postObjectGeneric">
+      <UniqueIdentifier>{3b2a48d0-8542-43c5-ad2c-e6db1ce4899c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\objects\postObjectResultSet">
+      <UniqueIdentifier>{0b206bed-58f8-4411-8806-7a3a3741889c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\postParser\lemon">
+      <UniqueIdentifier>{43a60eb5-4f03-416d-bb9d-8bc3c2fe5f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx">
+      <UniqueIdentifier>{cdf91c0e-61fb-42a5-b5e4-eb975308af56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects">
+      <UniqueIdentifier>{8d139207-b451-4a51-bb09-e85704149cbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagDatablock">
+      <UniqueIdentifier>{7c7e9155-935e-4dd3-90e2-a87eaa92d5a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagControlblock">
+      <UniqueIdentifier>{1269e9a7-2691-4a0d-83fe-be701f879630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagDatalist">
+      <UniqueIdentifier>{ee4896ee-9686-4aae-9f5d-9dacad37a185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\preObjectVariable">
+      <UniqueIdentifier>{5c3bd6f1-e449-4db8-9161-398fc37d1a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\preObjectGeneric">
+      <UniqueIdentifier>{f115f931-3986-4add-b267-85b89eb87cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\preObjectFunction">
+      <UniqueIdentifier>{6b07f5c8-8994-4ed7-8285-e22224ee56ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagGeneric">
+      <UniqueIdentifier>{d111f3b4-4325-4406-bc16-f2d52528fa0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagInput">
+      <UniqueIdentifier>{0a75aa49-7af9-40f6-8a3d-709f9d69c2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagImage">
+      <UniqueIdentifier>{e5947afc-41c2-40e0-afd3-a82f583da9ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\objects\tagConnection">
+      <UniqueIdentifier>{e953cd94-3560-46ef-b3f9-97ae941da331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\htmlParser">
+      <UniqueIdentifier>{b5c02b73-b46f-4655-a7f8-f705b83296a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\htmlParser\lexer">
+      <UniqueIdentifier>{e7254496-e3d3-47b0-9bf6-344ab5b7dd64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\frmx\htmlParser\lemon">
+      <UniqueIdentifier>{41b8036b-7b5c-4896-a23c-2713bcdc8686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\sqlx\closure">
+      <UniqueIdentifier>{cf266390-da09-47a5-a20a-ab26b123e6a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\exe">
+      <UniqueIdentifier>{2e154ad9-a534-4280-a301-7bd3bfd8bd07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\exe\SodiumExtension">
+      <UniqueIdentifier>{e4247d58-e910-4245-b071-1288bd564501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\exe\SodiumHttpServer">
+      <UniqueIdentifier>{c033b1c6-d183-48c0-8bbc-cfd220aecdcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\exe\HttpServerToSodiumLangBridge">
+      <UniqueIdentifier>{9c12e170-a061-4050-a719-d9568600e5ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os-dependent\exe\Session">
+      <UniqueIdentifier>{0f905017-abe4-4ed7-94e4-1cfba98bb01f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="yuarel.h">
+      <Filter>libraries\libyuarel</Filter>
+    </ClInclude>
+    <ClInclude Include="dll.h">
+      <Filter>os-dependent\dll</Filter>
+    </ClInclude>
+    <ClInclude Include="isapi.h">
+      <Filter>os-dependent\isapi</Filter>
+    </ClInclude>
+    <ClInclude Include="mkUtils.h">
+      <Filter>core\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="mkapplication.h">
+      <Filter>core\application</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDataBlockDatabaseOperations.h">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClInclude>
+    <ClInclude Include="htsqlFunction.imp.h">
+      <Filter>core\sqlx\postParser\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="lemon.html.h">
+      <Filter>core\frmx\htmlParser\lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="page.h">
+      <Filter>core\page</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDataBlock.h">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClInclude>
+    <ClInclude Include="tagControlBlock.h">
+      <Filter>core\frmx\objects\tagControlblock</Filter>
+    </ClInclude>
+    <ClInclude Include="onConnectionNotFound.h">
+      <Filter>lang\built-in\triggers\session\connectionNotFound</Filter>
+    </ClInclude>
+    <ClInclude Include="ajax.h">
+      <Filter>core\ajax</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDatalist.h">
+      <Filter>core\frmx\objects\tagDatalist</Filter>
+    </ClInclude>
+    <ClInclude Include="userHTSQLFunction.h">
+      <Filter>core\sqlx\postParser\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="postObjectGeneric.h">
+      <Filter>core\sqlx\postParser\objects\postObjectGeneric</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectVariable.h">
+      <Filter>core\frmx\objects\preObjectVariable</Filter>
+    </ClInclude>
+    <ClInclude Include="lemon.pre.h">
+      <Filter>core\sqlx\preParser\lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="postObjectResultSet.h">
+      <Filter>core\sqlx\postParser\objects\postObjectResultSet</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectGeneric.h">
+      <Filter>core\frmx\objects\preObjectGeneric</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectFunction.h">
+      <Filter>core\frmx\objects\preObjectFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="tagGeneric.h">
+      <Filter>core\frmx\objects\tagGeneric</Filter>
+    </ClInclude>
+    <ClInclude Include="settingControlBlockItemValue.h">
+      <Filter>core\frmx\objects\tagControlblock</Filter>
+    </ClInclude>
+    <ClInclude Include="tagInput.h">
+      <Filter>core\frmx\objects\tagInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ajaxAsGet.h">
+      <Filter>core\ajax</Filter>
+    </ClInclude>
+    <ClInclude Include="settingDataBlockItemValue.h">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>core\frmx\objects\tagImage</Filter>
+    </ClInclude>
+    <ClInclude Include="refreshBlock.h">
+      <Filter>lang\built-in\functions\tagDatablock\refreshBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDataBlockCurrentRow.h">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClInclude>
+    <ClInclude Include="message.h">
+      <Filter>lang\built-in\functions\message</Filter>
+    </ClInclude>
+    <ClInclude Include="htsqlVariable.h">
+      <Filter>lang\variable</Filter>
+    </ClInclude>
+    <ClInclude Include="preDelete.h">
+      <Filter>lang\built-in\triggers\dataBlock\preDelete</Filter>
+    </ClInclude>
+    <ClInclude Include="preInsert.h">
+      <Filter>lang\built-in\triggers\dataBlock\preInsert</Filter>
+    </ClInclude>
+    <ClInclude Include="preUpdate.h">
+      <Filter>lang\built-in\triggers\dataBlock\preUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="postDelete.h">
+      <Filter>lang\built-in\triggers\dataBlock\postDelete</Filter>
+    </ClInclude>
+    <ClInclude Include="postInsert.h">
+      <Filter>lang\built-in\triggers\dataBlock\postInsert</Filter>
+    </ClInclude>
+    <ClInclude Include="postUpdate.h">
+      <Filter>lang\built-in\triggers\dataBlock\postUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="rowSelection.h">
+      <Filter>lang\built-in\triggers\dataBlock\rowSelected</Filter>
+    </ClInclude>
+    <ClInclude Include="itemModified.h">
+      <Filter>lang\built-in\triggers\itemModified</Filter>
+    </ClInclude>
+    <ClInclude Include="rollback.h">
+      <Filter>lang\built-in\functions\rollback</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher.h">
+      <Filter>core\request\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcherBig.h">
+      <Filter>core\request\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcherSmall.h">
+      <Filter>core\request\dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="commit.h">
+      <Filter>lang\built-in\functions\commit</Filter>
+    </ClInclude>
+    <ClInclude Include="delete.h">
+      <Filter>lang\built-in\functions\delete</Filter>
+    </ClInclude>
+    <ClInclude Include="enableColumn.h">
+      <Filter>lang\built-in\functions\enableColumn</Filter>
+    </ClInclude>
+    <ClInclude Include="disableColumn.h">
+      <Filter>lang\built-in\functions\disableColumn</Filter>
+    </ClInclude>
+    <ClInclude Include="mkError.h">
+      <Filter>core\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="memmem.h">
+      <Filter>core\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="nodeExpanded.h">
+      <Filter>lang\built-in\triggers\tree\nodeExpanded</Filter>
+    </ClInclude>
+    <ClInclude Include="nodeSelected.h">
+      <Filter>lang\built-in\triggers\tree\nodeSelected</Filter>
+    </ClInclude>
+    <ClInclude Include="lemon.post.h">
+      <Filter>core\sqlx\postParser\lemon</Filter>
+    </ClInclude>
+    <ClInclude Include="pre.parser.imp.h">
+      <Filter>core\sqlx\preParser</Filter>
+    </ClInclude>
+    <ClInclude Include="pre.imp.h">
+      <Filter>core\sqlx\preParser\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="pageLoad.h">
+      <Filter>lang\built-in\triggers\page\pageLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="pageAccess.h">
+      <Filter>lang\built-in\triggers\page\pageAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="sessionEnd.h">
+      <Filter>lang\built-in\triggers\session\sessionEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="post.parser.imp.h">
+      <Filter>core\sqlx\postParser</Filter>
+    </ClInclude>
+    <ClInclude Include="addTreeNode.h">
+      <Filter>lang\built-in\functions\tagTree\addTreeNode</Filter>
+    </ClInclude>
+    <ClInclude Include="createConnection.h">
+      <Filter>lang\built-in\functions\createConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="hideColumn.h">
+      <Filter>lang\built-in\functions\hideColumn</Filter>
+    </ClInclude>
+    <ClInclude Include="hideBlock.h">
+      <Filter>lang\built-in\functions\tagDatablock\hideBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="instr.h">
+      <Filter>lang\built-in\functions\instr</Filter>
+    </ClInclude>
+    <ClInclude Include="showBlock.h">
+      <Filter>lang\built-in\functions\showColumn</Filter>
+    </ClInclude>
+    <ClInclude Include="showColumn.h">
+      <Filter>lang\built-in\functions\tagDatablock\showBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="tagConnection.h">
+      <Filter>core\frmx\objects\tagConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="mkSession.h">
+      <Filter>core\session</Filter>
+    </ClInclude>
+    <ClInclude Include="strlen.h">
+      <Filter>lang\built-in\functions\strlen</Filter>
+    </ClInclude>
+    <ClInclude Include="substr.h">
+      <Filter>lang\built-in\functions\substr</Filter>
+    </ClInclude>
+    <ClInclude Include="showPage.h">
+      <Filter>lang\built-in\functions\showPage</Filter>
+    </ClInclude>
+    <ClInclude Include="replace.h">
+      <Filter>lang\built-in\functions\replace</Filter>
+    </ClInclude>
+    <ClInclude Include="prompt.h">
+      <Filter>lang\built-in\functions\prompt</Filter>
+    </ClInclude>
+    <ClInclude Include="refreshTreeNode.h">
+      <Filter>lang\built-in\functions\tagTree\refreshTreeNode</Filter>
+    </ClInclude>
+    <ClInclude Include="postQuery.h">
+      <Filter>lang\built-in\triggers\dataBlock\postQuery</Filter>
+    </ClInclude>
+    <ClInclude Include="populateDatalist.h">
+      <Filter>lang\built-in\functions\populateDatalist</Filter>
+    </ClInclude>
+    <ClInclude Include="populateTree.h">
+      <Filter>lang\built-in\functions\tagTree\populateTree</Filter>
+    </ClInclude>
+    <ClInclude Include="like.h">
+      <Filter>lang\built-in\expresions\like</Filter>
+    </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>os-dependent\isapi</Filter>
+    </ClInclude>
+    <ClInclude Include="getDatabaseName.h">
+      <Filter>lang\built-in\functions\getDatabaseName</Filter>
+    </ClInclude>
+    <ClInclude Include="getDatabaseType.h">
+      <Filter>lang\built-in\functions\getDatabaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="runSQLFile.h">
+      <Filter>lang\built-in\functions\runSQLFile</Filter>
+    </ClInclude>
+    <ClInclude Include="createRedisConnection.h">
+      <Filter>lang\built-in\functions\createRedisConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="mkHiredis.h">
+      <Filter>core\hiredis</Filter>
+    </ClInclude>
+    <ClInclude Include="closeRedisConnection.h">
+      <Filter>lang\built-in\functions\closeRedisConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="htsql.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="response.h">
+      <Filter>core\response</Filter>
+    </ClInclude>
+    <ClInclude Include="debugee.h">
+      <Filter>core\debugee</Filter>
+    </ClInclude>
+    <ClInclude Include="debugeePipeServer.h">
+      <Filter>core\debugee\debugeePipeServer</Filter>
+    </ClInclude>
+    <ClInclude Include="callStack.h">
+      <Filter>core\debugee</Filter>
+    </ClInclude>
+    <ClInclude Include="breakpoints.imp.h">
+      <Filter>core\debugee</Filter>
+    </ClInclude>
+    <ClInclude Include="page.ds.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectFunctionDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkDataStructures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectVariableDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="preObjectGenericDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkSessionDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagConnectionDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagControlBlockDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDataBlockDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagDatalistDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagGenericDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="tagInputDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="postObjectGenericDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="postObjectResultSetDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="responseDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="serverCommands.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="post.PaeserDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkErrorCodesDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkSqlDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkGlobals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="breakpoint.ds.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="mkFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mkMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mkDebugDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="html.parser.imp.h">
+      <Filter>core\frmx\htmlParser</Filter>
+    </ClInclude>
+    <ClInclude Include="closure.h">
+      <Filter>core\sqlx\closure</Filter>
+    </ClInclude>
+    <ClInclude Include="closureDataStructures.h">
+      <Filter>Header Files\Data-Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="SodiumHttpServer.h">
+      <Filter>os-dependent\exe</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpServerToSodiumLangBridge.h">
+      <Filter>os-dependent\exe</Filter>
+    </ClInclude>
+    <ClInclude Include="SodiumSession.h">
+      <Filter>os-dependent\exe</Filter>
+    </ClInclude>
+    <ClInclude Include="SodiumServer_delayLoaded_DLL_FuncImps.h">
+      <Filter>os-dependent\dll</Filter>
+    </ClInclude>
+    <ClInclude Include="SodiumServer_delayLoaded_DLL_Hooks.h">
+      <Filter>os-dependent\dll</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="yuarel.c">
+      <Filter>libraries\libyuarel</Filter>
+    </ClCompile>
+    <ClCompile Include="dll.c">
+      <Filter>os-dependent\dll</Filter>
+    </ClCompile>
+    <ClCompile Include="isapi.c">
+      <Filter>os-dependent\isapi</Filter>
+    </ClCompile>
+    <ClCompile Include="mkUtils.c">
+      <Filter>core\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="mkapplication.c">
+      <Filter>core\application</Filter>
+    </ClCompile>
+    <ClCompile Include="tagDataBlockDatabaseOperations.c">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClCompile>
+    <ClCompile Include="htsqlFunction.imp.c">
+      <Filter>core\sqlx\postParser\impl</Filter>
+    </ClCompile>
+    <ClCompile Include="lemon.html.c">
+      <Filter>core\frmx\htmlParser\lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="page.c">
+      <Filter>core\page</Filter>
+    </ClCompile>
+    <ClCompile Include="tagDataBlock.c">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClCompile>
+    <ClCompile Include="tagControlBlock.c">
+      <Filter>core\frmx\objects\tagControlblock</Filter>
+    </ClCompile>
+    <ClCompile Include="onConnectionNotFound.c">
+      <Filter>lang\built-in\triggers\session\connectionNotFound</Filter>
+    </ClCompile>
+    <ClCompile Include="ajax.c">
+      <Filter>core\ajax</Filter>
+    </ClCompile>
+    <ClCompile Include="tagDatalist.c">
+      <Filter>core\frmx\objects\tagDatalist</Filter>
+    </ClCompile>
+    <ClCompile Include="userHTSQLFunction.c">
+      <Filter>core\sqlx\postParser\impl</Filter>
+    </ClCompile>
+    <ClCompile Include="postObjectGeneric.c">
+      <Filter>core\sqlx\postParser\objects\postObjectGeneric</Filter>
+    </ClCompile>
+    <ClCompile Include="preObjectVariable.c">
+      <Filter>core\frmx\objects\preObjectVariable</Filter>
+    </ClCompile>
+    <ClCompile Include="lemon.pre.c">
+      <Filter>core\sqlx\preParser\lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="postObjectResultSet.c">
+      <Filter>core\sqlx\postParser\objects\postObjectResultSet</Filter>
+    </ClCompile>
+    <ClCompile Include="preObjectGeneric.c">
+      <Filter>core\frmx\objects\preObjectGeneric</Filter>
+    </ClCompile>
+    <ClCompile Include="preObjectFunction.c">
+      <Filter>core\frmx\objects\preObjectFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="tagGeneric.c">
+      <Filter>core\frmx\objects\tagGeneric</Filter>
+    </ClCompile>
+    <ClCompile Include="settingControlBlockItemValue.c">
+      <Filter>core\frmx\objects\tagControlblock</Filter>
+    </ClCompile>
+    <ClCompile Include="tagInput.c">
+      <Filter>core\frmx\objects\tagInput</Filter>
+    </ClCompile>
+    <ClCompile Include="ajaxAsGet.c">
+      <Filter>core\ajax</Filter>
+    </ClCompile>
+    <ClCompile Include="settingDataBlockItemValue.c">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClCompile>
+    <ClCompile Include="image.c">
+      <Filter>core\frmx\objects\tagImage</Filter>
+    </ClCompile>
+    <ClCompile Include="refreshBlock.c">
+      <Filter>lang\built-in\functions\tagDatablock\refreshBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="tagDataBlockCurrentRow.c">
+      <Filter>core\frmx\objects\tagDatablock</Filter>
+    </ClCompile>
+    <ClCompile Include="message.c">
+      <Filter>lang\built-in\functions\message</Filter>
+    </ClCompile>
+    <ClCompile Include="htsqlVariable.c">
+      <Filter>lang\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="preDelete.c">
+      <Filter>lang\built-in\triggers\dataBlock\preDelete</Filter>
+    </ClCompile>
+    <ClCompile Include="preInsert.c">
+      <Filter>lang\built-in\triggers\dataBlock\preInsert</Filter>
+    </ClCompile>
+    <ClCompile Include="preUpdate.c">
+      <Filter>lang\built-in\triggers\dataBlock\preUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="postDelete.c">
+      <Filter>lang\built-in\triggers\dataBlock\postDelete</Filter>
+    </ClCompile>
+    <ClCompile Include="postInsert.c">
+      <Filter>lang\built-in\triggers\dataBlock\postInsert</Filter>
+    </ClCompile>
+    <ClCompile Include="postUpdate.c">
+      <Filter>lang\built-in\triggers\dataBlock\postUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="rowSelection.c">
+      <Filter>lang\built-in\triggers\dataBlock\rowSelected</Filter>
+    </ClCompile>
+    <ClCompile Include="itemModified.c">
+      <Filter>lang\built-in\triggers\itemModified</Filter>
+    </ClCompile>
+    <ClCompile Include="rollback.c">
+      <Filter>lang\built-in\functions\rollback</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcher.c">
+      <Filter>core\request\dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcherBig.c">
+      <Filter>core\request\dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcherSmall.c">
+      <Filter>core\request\dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="commit.c">
+      <Filter>lang\built-in\functions\commit</Filter>
+    </ClCompile>
+    <ClCompile Include="delete.c">
+      <Filter>lang\built-in\functions\delete</Filter>
+    </ClCompile>
+    <ClCompile Include="enableColumn.c">
+      <Filter>lang\built-in\functions\enableColumn</Filter>
+    </ClCompile>
+    <ClCompile Include="disableColumn.c">
+      <Filter>lang\built-in\functions\disableColumn</Filter>
+    </ClCompile>
+    <ClCompile Include="mkError.c">
+      <Filter>core\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="memmem.c">
+      <Filter>core\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeExpanded.c">
+      <Filter>lang\built-in\triggers\tree\nodeExpanded</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeSelected.c">
+      <Filter>lang\built-in\triggers\tree\nodeSelected</Filter>
+    </ClCompile>
+    <ClCompile Include="pre.parser.imp.c">
+      <Filter>core\sqlx\preParser</Filter>
+    </ClCompile>
+    <ClCompile Include="pre.imp.c">
+      <Filter>core\sqlx\preParser\impl</Filter>
+    </ClCompile>
+    <ClCompile Include="pageLoad.c">
+      <Filter>lang\built-in\triggers\page\pageLoad</Filter>
+    </ClCompile>
+    <ClCompile Include="pageAccess.c">
+      <Filter>lang\built-in\triggers\page\pageAccess</Filter>
+    </ClCompile>
+    <ClCompile Include="sessionEnd.c">
+      <Filter>lang\built-in\triggers\session\sessionEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="post.parser.imp.c">
+      <Filter>core\sqlx\postParser</Filter>
+    </ClCompile>
+    <ClCompile Include="addTreeNode.c">
+      <Filter>lang\built-in\functions\tagTree\addTreeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="createConnection.c">
+      <Filter>lang\built-in\functions\createConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="hideColumn.c">
+      <Filter>lang\built-in\functions\hideColumn</Filter>
+    </ClCompile>
+    <ClCompile Include="hideBlock.c">
+      <Filter>lang\built-in\functions\tagDatablock\hideBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="instr.c">
+      <Filter>lang\built-in\functions\instr</Filter>
+    </ClCompile>
+    <ClCompile Include="showBlock.c">
+      <Filter>lang\built-in\functions\showColumn</Filter>
+    </ClCompile>
+    <ClCompile Include="showColumn.c">
+      <Filter>lang\built-in\functions\tagDatablock\showBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="tagConnection.c">
+      <Filter>core\frmx\objects\tagConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="mkSession.c">
+      <Filter>core\session</Filter>
+    </ClCompile>
+    <ClCompile Include="strlen.c">
+      <Filter>lang\built-in\functions\strlen</Filter>
+    </ClCompile>
+    <ClCompile Include="substr.c">
+      <Filter>lang\built-in\functions\substr</Filter>
+    </ClCompile>
+    <ClCompile Include="showPage.c">
+      <Filter>lang\built-in\functions\showPage</Filter>
+    </ClCompile>
+    <ClCompile Include="replace.c">
+      <Filter>lang\built-in\functions\replace</Filter>
+    </ClCompile>
+    <ClCompile Include="prompt.c">
+      <Filter>lang\built-in\functions\prompt</Filter>
+    </ClCompile>
+    <ClCompile Include="refreshTreeNode.c">
+      <Filter>lang\built-in\functions\tagTree\refreshTreeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="postQuery.c">
+      <Filter>lang\built-in\triggers\dataBlock\postQuery</Filter>
+    </ClCompile>
+    <ClCompile Include="populateDatalist.c">
+      <Filter>lang\built-in\functions\populateDatalist</Filter>
+    </ClCompile>
+    <ClCompile Include="populateTree.c">
+      <Filter>lang\built-in\functions\tagTree\populateTree</Filter>
+    </ClCompile>
+    <ClCompile Include="like.c">
+      <Filter>lang\built-in\expresions\like</Filter>
+    </ClCompile>
+    <ClCompile Include="lexer.post.c">
+      <Filter>core\sqlx\postParser\lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="lexer.pre.c">
+      <Filter>core\sqlx\preParser\lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="lemon.post.c">
+      <Filter>core\sqlx\postParser\lemon</Filter>
+    </ClCompile>
+    <ClCompile Include="lexer.html.c">
+      <Filter>core\frmx\htmlParser\lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="header.c">
+      <Filter>os-dependent\isapi</Filter>
+    </ClCompile>
+    <ClCompile Include="getDatabaseName.c">
+      <Filter>lang\built-in\functions\getDatabaseName</Filter>
+    </ClCompile>
+    <ClCompile Include="getDatabaseType.c">
+      <Filter>lang\built-in\functions\getDatabaseType</Filter>
+    </ClCompile>
+    <ClCompile Include="runSQLFile.c">
+      <Filter>lang\built-in\functions\runSQLFile</Filter>
+    </ClCompile>
+    <ClCompile Include="createRedisConnection.c">
+      <Filter>lang\built-in\functions\createRedisConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="mkHiredis.c">
+      <Filter>core\hiredis</Filter>
+    </ClCompile>
+    <ClCompile Include="closeRedisConnection.c">
+      <Filter>lang\built-in\functions\closeRedisConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="response.c">
+      <Filter>core\response</Filter>
+    </ClCompile>
+    <ClCompile Include="debugee.c">
+      <Filter>core\debugee</Filter>
+    </ClCompile>
+    <ClCompile Include="debugeePipeServer.c">
+      <Filter>core\debugee\debugeePipeServer</Filter>
+    </ClCompile>
+    <ClCompile Include="callStack.c">
+      <Filter>core\debugee</Filter>
+    </ClCompile>
+    <ClCompile Include="breakpoints.imp.c">
+      <Filter>core\debugee</Filter>
+    </ClCompile>
+    <ClCompile Include="mkConstants.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="html.parser.imp.c">
+      <Filter>core\frmx\htmlParser</Filter>
+    </ClCompile>
+    <ClCompile Include="closure.c">
+      <Filter>core\sqlx\closure</Filter>
+    </ClCompile>
+    <ClCompile Include="htsql.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpFileResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpForbiddenResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpJsonResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpPostResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="SendHttpNotFoundResponse.c">
+      <Filter>os-dependent\exe\SodiumHttpServer</Filter>
+    </ClCompile>
+    <ClCompile Include="GetWindowsErrorMessageText.c">
+      <Filter>os-dependent</Filter>
+    </ClCompile>
+    <ClCompile Include="SodiumGetExtensionId.c">
+      <Filter>os-dependent\exe\SodiumExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="SodiumHttpRequestHandler.c">
+      <Filter>os-dependent\exe\SodiumExtension</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleFrmxRequest.c">
+      <Filter>os-dependent\exe\HttpServerToSodiumLangBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="FindSodiumSessionBySessionId.c">
+      <Filter>os-dependent\exe\Session</Filter>
+    </ClCompile>
+    <ClCompile Include="InitEnvirontment.c">
+      <Filter>os-dependent</Filter>
+    </ClCompile>
+    <ClCompile Include="SodiumServer_delayLoaded_DLL_FuncImps.c">
+      <Filter>os-dependent\dll</Filter>
+    </ClCompile>
+    <ClCompile Include="SodiumServer_delayLoaded_DLL_Hooks.c">
+      <Filter>os-dependent\dll</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lemon.html.yy">
+      <Filter>core\frmx\htmlParser\lemon</Filter>
+    </None>
+    <None Include="lemon.pre.yy">
+      <Filter>core\sqlx\preParser\lemon</Filter>
+    </None>
+    <None Include="lemon.post.yy">
+      <Filter>core\sqlx\postParser\lemon</Filter>
+    </None>
+    <None Include="lexer.html.ll">
+      <Filter>core\frmx\htmlParser\lexer</Filter>
+    </None>
+    <None Include="lexer.post.ll">
+      <Filter>core\sqlx\postParser\lexer</Filter>
+    </None>
+    <None Include="lexer.pre.ll">
+      <Filter>core\sqlx\preParser\lexer</Filter>
+    </None>
+  </ItemGroup>
+</Project>

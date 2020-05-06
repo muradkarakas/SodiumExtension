@@ -1,0 +1,26 @@
+var structstruct_data_block =
+[
+    [ "blockStatus", "structstruct_data_block.html#ae23308922cbb45f01651601d54a0f3c7", null ],
+    [ "connectionName", "structstruct_data_block.html#a8af3b7741ba46713ee98d049a03278fe", null ],
+    [ "currentPageNo", "structstruct_data_block.html#a25d7c82bd3cac691c0f1053286479f57", null ],
+    [ "currentRowRowIdTAGInput", "structstruct_data_block.html#a32ef5dda09f22a32b3851e6165c05ffc", null ],
+    [ "currentTAGInput", "structstruct_data_block.html#afb0164bee4ecbe1b1e0fffee73bd0347", null ],
+    [ "dataBlockName", "structstruct_data_block.html#a81e32c1ca58c20e9b276c1e5430032fa", null ],
+    [ "dataSourceName", "structstruct_data_block.html#a23456afda7c0168e1bea05a0d339d43e", null ],
+    [ "deleteAllowed", "structstruct_data_block.html#a9d0e9004d6b76f83c8173e15565db7f5", null ],
+    [ "endTAG", "structstruct_data_block.html#a305ce4418bd0cf985b98cf4882203288", null ],
+    [ "executeQueryModeWhereClause", "structstruct_data_block.html#aa34e5f5e39560274181b7ae7990320f0", null ],
+    [ "insertAllowed", "structstruct_data_block.html#a221e575dcfaecc20e8d9aff9910676e4", null ],
+    [ "joinCondition", "structstruct_data_block.html#a8f2b386fd07a95cb3b2e6b8770960554", null ],
+    [ "joinConditionEvaluated", "structstruct_data_block.html#a62281bc38a3985717cc727a114d29bbe", null ],
+    [ "masterBlockName", "structstruct_data_block.html#a3d1215607b19708d5a430e8146e8cec7", null ],
+    [ "next", "structstruct_data_block.html#a30a03fd4a974735b6237dbdd92af4868", null ],
+    [ "orderByClause", "structstruct_data_block.html#ab3fe5469b58c5ae34347241433347560", null ],
+    [ "recordCount", "structstruct_data_block.html#af2b3801705d4d78cc1f2ede923a177e6", null ],
+    [ "rootTAGGeneric", "structstruct_data_block.html#a1f9a7d5a9741863f082b26d8c82ee870", null ],
+    [ "rootTAGInput", "structstruct_data_block.html#a920db48b64be6642c7af485abb452025", null ],
+    [ "startTAG", "structstruct_data_block.html#aa1fa4838aa94df9d403a1d39d294f70f", null ],
+    [ "tailTAGGeneric", "structstruct_data_block.html#adb768052afcd6cab35cf1d664f3f8f16", null ],
+    [ "updateAllowed", "structstruct_data_block.html#aa8afe9780b7328d844b3d8e5b3d38400", null ],
+    [ "whereClause", "structstruct_data_block.html#adecc55a3f6bf2082ca20bc14cf9f822a", null ]
+];

@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release For Me|Win32">
+      <Configuration>Release For Me</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release For Me|x64">
+      <Configuration>Release For Me</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseForMe|Win32">
+      <Configuration>ReleaseForMe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseForMe|x64">
+      <Configuration>ReleaseForMe</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ECC3D2E2-9725-461B-BB74-36791B5F0F8B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>htsql</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SodiumExtension</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\projects\htsql\htsql\hiredis\adapters;C:\projects\htsql\htsql\oclib\include;C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC\vc9;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters;C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\10\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\MySQL\include;$(SolutionDir)SodiumShared;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters;C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\10\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\MySQL\include;$(SolutionDir)SodiumShared;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\10\include;C:\projects\htsql\DBInt-Oracle\oclib\include;C:\projects\htsql\htsql_shared;C:\projects\htsql\DBInt;C:\projects\htsql\DBInt-Postgresql;C:\projects\htsql\DBInt-Oracle;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\10\include;C:\projects\htsql\DBInt-Oracle\oclib\include;C:\projects\htsql\htsql_shared;C:\projects\htsql\DBInt;C:\projects\htsql\DBInt-Postgresql;C:\projects\htsql\DBInt-Oracle;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>c:\Windows\System32\inetsrv\appcmd.exe stop apppool /apppool.name:htsql
+c:\Windows\System32\inetsrv\appcmd.exe start apppool /apppool.name:htsql
+lemon -b lemon.html.yy
+lemon -b lemon.pre.yy
+lemon -b lemon.post.yy
+win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
+</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>SodiumExtension;_DEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ShowIncludes>false</ShowIncludes>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)SodiumExtension\hiredis;$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;..\SodiumShared\x64\Debug\;..\DBInt\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>SodiumShared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>SodiumShared.dll;DBInt.dll</DelayLoadDLLs>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>lemon -b lemon.html.yy
+lemon -b lemon.pre.yy
+lemon -b lemon.post.yy
+$(SolutionDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+$(SolutionDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+$(SolutionDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
+</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>SodiumExtension;NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)SodiumExtension\hiredis;$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;..\SodiumShared\x64\Debug\;..\DBInt\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SodiumShared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>SodiumShared.dll;DBInt.dll</DelayLoadDLLs>
+    </Link>
+    <PreBuildEvent>
+      <Command>lemon -b lemon.html.yy
+lemon -b lemon.pre.yy
+lemon -b lemon.post.yy
+$(SolutionDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+$(SolutionDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+$(SolutionDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
+</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;HTSQL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htsql_shared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>c:\Windows\System32\inetsrv\appcmd.exe stop apppool /apppool.name:htsql
+c:\Windows\System32\inetsrv\appcmd.exe start apppool /apppool.name:htsql
+lemon -b lemon.html.yy
+lemon -b lemon.pre.yy
+lemon -b lemon.post.yy
+win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\htsql.dll c:\projects</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release For Me|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;HTSQL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>htsql_shared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>c:\Windows\System32\inetsrv\appcmd.exe stop apppool /apppool.name:htsql
+c:\Windows\System32\inetsrv\appcmd.exe start apppool /apppool.name:htsql
+lemon -b lemon.html.yy
+lemon -b lemon.pre.yy
+lemon -b lemon.post.yy
+win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\htsql.dll c:\projects</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="breakpoints.imp.h" />
+    <ClInclude Include="breakpoint.ds.h" />
+    <ClInclude Include="addTreeNode.h" />
+    <ClInclude Include="ajax.h" />
+    <ClInclude Include="ajaxAsGet.h" />
+    <ClInclude Include="callStack.h" />
+    <ClInclude Include="closeRedisConnection.h" />
+    <ClInclude Include="closure.h" />
+    <ClInclude Include="closureDataStructures.h" />
+    <ClInclude Include="commit.h" />
+    <ClInclude Include="createConnection.h" />
+    <ClInclude Include="createRedisConnection.h" />
+    <ClInclude Include="debugee.h" />
+    <ClInclude Include="delete.h" />
+    <ClInclude Include="disableColumn.h" />
+    <ClInclude Include="dispatcher.h" />
+    <ClInclude Include="dispatcherBig.h" />
+    <ClInclude Include="dispatcherSmall.h" />
+    <ClInclude Include="dll.h" />
+    <ClInclude Include="enableColumn.h" />
+    <ClInclude Include="HttpServerToSodiumLangBridge.h" />
+    <ClInclude Include="getDatabaseName.h" />
+    <ClInclude Include="getDatabaseType.h" />
+    <ClInclude Include="header.h" />
+    <ClInclude Include="hideBlock.h" />
+    <ClInclude Include="hideColumn.h" />
+    <ClInclude Include="html.parser.imp.h" />
+    <ClInclude Include="htsql.h" />
+    <ClInclude Include="htsqlFunction.imp.h" />
+    <ClInclude Include="htsqlVariable.h" />
+    <ClInclude Include="image.h" />
+    <ClInclude Include="instr.h" />
+    <ClInclude Include="isapi.h" />
+    <ClInclude Include="itemModified.h" />
+    <ClInclude Include="lemon.html.h" />
+    <ClInclude Include="lemon.post.h" />
+    <ClInclude Include="lemon.pre.h" />
+    <ClInclude Include="like.h" />
+    <ClInclude Include="SodiumServer_delayLoaded_DLL_FuncImps.h" />
+    <ClInclude Include="SodiumServer_delayLoaded_DLL_Hooks.h" />
+    <ClInclude Include="SodiumSession.h" />
+    <ClInclude Include="SodiumHttpServer.h" />
+    <ClInclude Include="memmem.h" />
+    <ClInclude Include="message.h" />
+    <ClInclude Include="mkapplication.h" />
+    <ClInclude Include="mkConstants.h" />
+    <ClInclude Include="mkDataStructures.h" />
+    <ClInclude Include="mkDebugDataStructures.h" />
+    <ClInclude Include="mkError.h" />
+    <ClInclude Include="mkErrorCodesDataStructures.h" />
+    <ClInclude Include="mkFunctions.h" />
+    <ClInclude Include="mkGlobals.h" />
+    <ClInclude Include="mkHiredis.h" />
+    <ClInclude Include="mkMacros.h" />
+    <ClInclude Include="mkSession.h" />
+    <ClInclude Include="mkSessionDataStructures.h" />
+    <ClInclude Include="mkSqlDataStructures.h" />
+    <ClInclude Include="mkUtils.h" />
+    <ClInclude Include="nodeExpanded.h" />
+    <ClInclude Include="nodeSelected.h" />
+    <ClInclude Include="onConnectionNotFound.h" />
+    <ClInclude Include="page.h" />
+    <ClInclude Include="pageAccess.h" />
+    <ClInclude Include="page.ds.h" />
+    <ClInclude Include="pageLoad.h" />
+    <ClInclude Include="debugeePipeServer.h" />
+    <ClInclude Include="populateDatalist.h" />
+    <ClInclude Include="populateTree.h" />
+    <ClInclude Include="post.parser.imp.h" />
+    <ClInclude Include="post.PaeserDataStructures.h" />
+    <ClInclude Include="postDelete.h" />
+    <ClInclude Include="postInsert.h" />
+    <ClInclude Include="postObjectGeneric.h" />
+    <ClInclude Include="postObjectGenericDataStructures.h" />
+    <ClInclude Include="postObjectResultSet.h" />
+    <ClInclude Include="postObjectResultSetDataStructures.h" />
+    <ClInclude Include="postQuery.h" />
+    <ClInclude Include="postUpdate.h" />
+    <ClInclude Include="pre.imp.h" />
+    <ClInclude Include="pre.parser.imp.h" />
+    <ClInclude Include="preDelete.h" />
+    <ClInclude Include="preInsert.h" />
+    <ClInclude Include="preObjectFunction.h" />
+    <ClInclude Include="preObjectFunctionDataStructures.h" />
+    <ClInclude Include="preObjectGeneric.h" />
+    <ClInclude Include="preObjectGenericDataStructures.h" />
+    <ClInclude Include="preObjectVariable.h" />
+    <ClInclude Include="preObjectVariableDataStructures.h" />
+    <ClInclude Include="preUpdate.h" />
+    <ClInclude Include="prompt.h" />
+    <ClInclude Include="refreshBlock.h" />
+    <ClInclude Include="refreshTreeNode.h" />
+    <ClInclude Include="replace.h" />
+    <ClInclude Include="response.h" />
+    <ClInclude Include="responseDataStructures.h" />
+    <ClInclude Include="rollback.h" />
+    <ClInclude Include="rowSelection.h" />
+    <ClInclude Include="runSQLFile.h" />
+    <ClInclude Include="serverCommands.h" />
+    <ClInclude Include="sessionEnd.h" />
+    <ClInclude Include="settingControlBlockItemValue.h" />
+    <ClInclude Include="settingDataBlockItemValue.h" />
+    <ClInclude Include="showBlock.h" />
+    <ClInclude Include="showColumn.h" />
+    <ClInclude Include="showPage.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="strlen.h" />
+    <ClInclude Include="substr.h" />
+    <ClInclude Include="tagConnection.h" />
+    <ClInclude Include="tagConnectionDataStructures.h" />
+    <ClInclude Include="tagControlBlock.h" />
+    <ClInclude Include="tagControlBlockDataStructures.h" />
+    <ClInclude Include="tagDataBlock.h" />
+    <ClInclude Include="tagDataBlockCurrentRow.h" />
+    <ClInclude Include="tagDataBlockDatabaseOperations.h" />
+    <ClInclude Include="tagDataBlockDataStructures.h" />
+    <ClInclude Include="tagDatalist.h" />
+    <ClInclude Include="tagDatalistDataStructures.h" />
+    <ClInclude Include="tagGeneric.h" />
+    <ClInclude Include="tagGenericDataStructures.h" />
+    <ClInclude Include="tagInput.h" />
+    <ClInclude Include="tagInputDataStructures.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="userHTSQLFunction.h" />
+    <ClInclude Include="yuarel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="breakpoints.imp.c" />
+    <ClCompile Include="addTreeNode.c" />
+    <ClCompile Include="ajax.c" />
+    <ClCompile Include="ajaxAsGet.c" />
+    <ClCompile Include="callStack.c" />
+    <ClCompile Include="closeRedisConnection.c" />
+    <ClCompile Include="closure.c" />
+    <ClCompile Include="commit.c" />
+    <ClCompile Include="FindSodiumSessionBySessionId.c" />
+    <ClCompile Include="GetWindowsErrorMessageText.c" />
+    <ClCompile Include="HandleFrmxRequest.c" />
+    <ClCompile Include="htsql.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="InitEnvirontment.c" />
+    <ClCompile Include="SodiumGetExtensionId.c" />
+    <ClCompile Include="SodiumHttpRequestHandler.c" />
+    <ClCompile Include="mkConstants.c" />
+    <ClCompile Include="createConnection.c" />
+    <ClCompile Include="createRedisConnection.c" />
+    <ClCompile Include="debugee.c" />
+    <ClCompile Include="delete.c" />
+    <ClCompile Include="disableColumn.c" />
+    <ClCompile Include="dispatcher.c" />
+    <ClCompile Include="dispatcherBig.c" />
+    <ClCompile Include="dispatcherSmall.c" />
+    <ClCompile Include="dll.c" />
+    <ClCompile Include="enableColumn.c" />
+    <ClCompile Include="getDatabaseName.c" />
+    <ClCompile Include="getDatabaseType.c" />
+    <ClCompile Include="header.c" />
+    <ClCompile Include="hideBlock.c" />
+    <ClCompile Include="hideColumn.c" />
+    <ClCompile Include="html.parser.imp.c" />
+    <ClCompile Include="htsqlFunction.imp.c" />
+    <ClCompile Include="htsqlVariable.c" />
+    <ClCompile Include="image.c" />
+    <ClCompile Include="instr.c" />
+    <ClCompile Include="isapi.c" />
+    <ClCompile Include="itemModified.c" />
+    <ClCompile Include="lemon.html.c" />
+    <ClCompile Include="lemon.post.c" />
+    <ClCompile Include="lemon.pre.c" />
+    <ClCompile Include="lexer.html.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lexer.post.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="lexer.pre.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="like.c" />
+    <ClCompile Include="memmem.c" />
+    <ClCompile Include="message.c" />
+    <ClCompile Include="mkapplication.c" />
+    <ClCompile Include="mkError.c" />
+    <ClCompile Include="mkHiredis.c" />
+    <ClCompile Include="mkSession.c" />
+    <ClCompile Include="mkUtils.c" />
+    <ClCompile Include="nodeExpanded.c" />
+    <ClCompile Include="nodeSelected.c" />
+    <ClCompile Include="onConnectionNotFound.c" />
+    <ClCompile Include="page.c" />
+    <ClCompile Include="pageAccess.c" />
+    <ClCompile Include="pageLoad.c" />
+    <ClCompile Include="debugeePipeServer.c" />
+    <ClCompile Include="populateDatalist.c" />
+    <ClCompile Include="populateTree.c" />
+    <ClCompile Include="post.parser.imp.c" />
+    <ClCompile Include="postDelete.c" />
+    <ClCompile Include="postInsert.c" />
+    <ClCompile Include="postObjectGeneric.c" />
+    <ClCompile Include="postObjectResultSet.c" />
+    <ClCompile Include="postQuery.c" />
+    <ClCompile Include="postUpdate.c" />
+    <ClCompile Include="pre.imp.c" />
+    <ClCompile Include="pre.parser.imp.c" />
+    <ClCompile Include="preDelete.c" />
+    <ClCompile Include="preInsert.c" />
+    <ClCompile Include="preObjectFunction.c" />
+    <ClCompile Include="preObjectGeneric.c" />
+    <ClCompile Include="preObjectVariable.c" />
+    <ClCompile Include="preUpdate.c" />
+    <ClCompile Include="prompt.c" />
+    <ClCompile Include="refreshBlock.c" />
+    <ClCompile Include="refreshTreeNode.c" />
+    <ClCompile Include="replace.c" />
+    <ClCompile Include="response.c" />
+    <ClCompile Include="rollback.c" />
+    <ClCompile Include="rowSelection.c" />
+    <ClCompile Include="runSQLFile.c" />
+    <ClCompile Include="SendHttpFileResponse.c" />
+    <ClCompile Include="SendHttpForbiddenResponse.c" />
+    <ClCompile Include="SendHttpJsonResponse.c" />
+    <ClCompile Include="SendHttpNotFoundResponse.c" />
+    <ClCompile Include="SendHttpPostResponse.c" />
+    <ClCompile Include="SendHttpResponse.c" />
+    <ClCompile Include="sessionEnd.c" />
+    <ClCompile Include="settingControlBlockItemValue.c" />
+    <ClCompile Include="settingDataBlockItemValue.c" />
+    <ClCompile Include="showBlock.c" />
+    <ClCompile Include="showColumn.c" />
+    <ClCompile Include="showPage.c" />
+    <ClCompile Include="SodiumServer_delayLoaded_DLL_FuncImps.c" />
+    <ClCompile Include="SodiumServer_delayLoaded_DLL_Hooks.c" />
+    <ClCompile Include="strlen.c" />
+    <ClCompile Include="substr.c" />
+    <ClCompile Include="tagConnection.c" />
+    <ClCompile Include="tagControlBlock.c" />
+    <ClCompile Include="tagDataBlock.c" />
+    <ClCompile Include="tagDataBlockCurrentRow.c" />
+    <ClCompile Include="tagDataBlockDatabaseOperations.c" />
+    <ClCompile Include="tagDatalist.c" />
+    <ClCompile Include="tagGeneric.c" />
+    <ClCompile Include="tagInput.c" />
+    <ClCompile Include="userHTSQLFunction.c" />
+    <ClCompile Include="yuarel.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lemon.html.yy">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="lemon.post.yy">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="lemon.pre.yy">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="lexer.html.ll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="lexer.post.ll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="lexer.pre.ll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
