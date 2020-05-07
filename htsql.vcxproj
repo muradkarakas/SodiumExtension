@@ -132,7 +132,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters;C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\10\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\MySQL\include;$(SolutionDir)SodiumShared;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters</IncludePath>
+    <OutDir>$(ProjectDir)$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -145,7 +146,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters;C:\oraclexe\app\oracle\product\11.2.0\server\oci\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\10\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\MySQL\include;$(SolutionDir)SodiumShared;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)hiredis\adapters</IncludePath>
+    <OutDir>$(ProjectDir)$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -192,21 +194,21 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)SodiumExtension\hiredis;$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;..\SodiumShared\x64\Debug\;..\DBInt\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\hiredis;..\SodiumShared\x64\;..\DBInt\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>SodiumShared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>SodiumShared.dll;DBInt.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>lemon -b lemon.html.yy
-lemon -b lemon.pre.yy
-lemon -b lemon.post.yy
-$(SolutionDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
-$(SolutionDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
-$(SolutionDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
+      <Command>$(ProjectDir)lemon -b lemon.html.yy
+$(ProjectDir)lemon -b lemon.pre.yy
+$(ProjectDir)lemon -b lemon.post.yy
+$(ProjectDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+$(ProjectDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+$(ProjectDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -276,21 +278,21 @@ $(SolutionDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  le
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)SodiumExtension\hiredis;$(SolutionDir)$(Platform)\$(Configuration)\;C:\oraclexe\app\oracle\product\11.2.0\server\oci\lib\MSVC;C:\Program Files\PostgreSQL\10\lib;..\SodiumShared\x64\Debug\;..\DBInt\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\hiredis;..\SodiumShared\x64\;..\DBInt\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SodiumShared.lib;DBInt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>SodiumShared.dll;DBInt.dll</DelayLoadDLLs>
     </Link>
     <PreBuildEvent>
-      <Command>lemon -b lemon.html.yy
-lemon -b lemon.pre.yy
-lemon -b lemon.post.yy
-$(SolutionDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
-$(SolutionDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
-$(SolutionDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
+      <Command>$(ProjectDir)lemon -b lemon.html.yy
+$(ProjectDir)lemon -b lemon.pre.yy
+$(ProjectDir)lemon -b lemon.post.yy
+$(ProjectDir)win_flex_bison-latest\win_flex -Phtml --outfile="lexer.html.c"  lexer.html.ll
+$(ProjectDir)win_flex_bison-latest\win_flex -Ppre --outfile="lexer.pre.c"  lexer.pre.ll
+$(ProjectDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
 </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'">
