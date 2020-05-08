@@ -2467,7 +2467,7 @@ resultsetcolumnvalue(RESULTSET_COLUMN_VALUE) ::= POST_IDENTIFIER(RESULTSET_NAME)
 
     if (postObjectResultSet) {
 		TAGConnection *rootConnection = getActiveTAGConnection(session, page);
-		HTSQL_COLUMN_TYPE colType = DBInt_GetColumnType(rootConnection->mkDBConnection, postObjectResultSet->ociStatement, valueB);
+        SODIUM_DATABASE_COLUMN_TYPE colType = DBInt_GetColumnType(rootConnection->mkDBConnection, postObjectResultSet->ociStatement, valueB);
 		if (colType == HTSQL_COLUMN_TYPE_TEXT || colType == HTSQL_COLUMN_TYPE_NUMBER) {
 			const char *retval = DBInt_GetColumnValueByColumnName(rootConnection->mkDBConnection, postObjectResultSet->ociStatement, valueB);
 			RESULTSET_COLUMN_VALUE = mkStrdup(session->heapHandle, retval, __FILE__, __LINE__);

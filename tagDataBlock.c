@@ -271,7 +271,7 @@ void printTAGDataBlockDynamicContent_Auto(SodiumSession *session, HTSQLPage *pag
 
 				for (int colIndex = 0; colIndex < colCount; colIndex++) {
 					const char *colName = DBInt_GetColumnNameByIndex(mkConnection, stm, colIndex);
-					HTSQL_COLUMN_TYPE colType = DBInt_GetColumnType(mkConnection, stm, colName);
+					SODIUM_DATABASE_COLUMN_TYPE colType = DBInt_GetColumnType(mkConnection, stm, colName);
 
 					tagGeneric = createTAGGeneric(session, page, pTAGDataBlock, TAG_TD_OPEN, "<td>");
 					tagGeneric->isDynamicContent = false;
@@ -324,7 +324,7 @@ void printTAGDataBlockDynamicContent_Auto(SodiumSession *session, HTSQLPage *pag
 					tagGeneric = createTAGGeneric(session, page, pTAGDataBlock, TAG_TD_OPEN, "<td>");
 					tagGeneric->isDynamicContent = true;
 
-					HTSQL_COLUMN_TYPE colType = DBInt_GetColumnType(mkConnection, stm, colName);
+					SODIUM_DATABASE_COLUMN_TYPE colType = DBInt_GetColumnType(mkConnection, stm, colName);
 					switch (colType) {
 					case HTSQL_COLUMN_TYPE_DATE: {
 						tagGeneric = createTAGGeneric(session, page, pTAGDataBlock, TAG_INPUT_OPEN, "<input");
