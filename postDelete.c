@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "postDelete.h"
 #include "postObjectGeneric.h"

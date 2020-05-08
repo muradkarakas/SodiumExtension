@@ -4,7 +4,7 @@
 */
 #pragma once
 
-#include "htsql.h"
+
 
 /** \brief  This function is called by html parser just before </body> tag sending to the browser.
  *

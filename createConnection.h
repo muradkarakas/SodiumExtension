@@ -4,8 +4,6 @@
 */
 #pragma once
 
-#include "htsql.h"
-
 
 /** \brief  C implementation of the "create_connection" built-in HT/SQL function.
  *

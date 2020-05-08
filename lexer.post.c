@@ -1495,9 +1495,9 @@ static const flex_int16_t yy_chk[2586] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.post.ll"
 #line 2 "lexer.post.ll"
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "lemon.post.h"
 #include "debugee.h"

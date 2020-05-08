@@ -4,7 +4,7 @@
 */
 #pragma once
 
-#include "htsql.h"
+
 
 
 /** \brief  This C function runs "on_logon" HT/SQL trigger function if exists.

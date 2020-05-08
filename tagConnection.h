@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 TAGConnection       *createTAGConnection(SodiumSession *currentMKSession, HTSQLPage *page);
 TAGConnection       *getRootTAGConnection1(SodiumSession *currentMKSession, HTSQLPage *page);

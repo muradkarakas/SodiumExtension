@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "stdafx.h"
+#include "pch.h"
 
 void serveAsGetRequest(SodiumSession *currentMKSession, HTSQLPage *page);
 

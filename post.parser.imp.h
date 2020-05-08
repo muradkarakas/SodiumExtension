@@ -2,7 +2,7 @@
     \brief Functions and data definitions for HT/SQL file parsing and execution.
 */
 
-#include "htsql.h"
+
 
 typedef struct yy_buffer_state *YY_BUFFER_STATE;
 

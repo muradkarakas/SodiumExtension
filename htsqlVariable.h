@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 /** \brief     Caller is responsible for destroying return value.

@@ -1,8 +1,6 @@
 #pragma once
 
 
-#include "htsql.h"
-
 int
 GetCallstackDepth(
 	SodiumSession* session,

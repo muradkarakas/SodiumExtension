@@ -4,7 +4,7 @@
 */
 #pragma once
 
-#include "htsql.h"
+
 
 
 bool runPreDeleteHTSQLTriggerFunction(SodiumSession *currentMKSession, HTSQLPage *page, TAGDataBlock *pTAGDataBlock);

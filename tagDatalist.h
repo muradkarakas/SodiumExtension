@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 TAGDatalist *                         getCurrentTAGDatalist(SodiumSession *currentMKSession, HTSQLPage *page);

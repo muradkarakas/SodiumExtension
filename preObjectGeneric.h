@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 void                destroyPreObjectGeneric(SodiumSession *currentMKSession, PreObjectGeneric *object);
 PreObjectGeneric    *getCurrentPreGenericObject(SodiumSession *currentMKSession, HTSQLPage *page);

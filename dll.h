@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 //void	setDebugLogFileFullPath(HMODULE hinstDLL);

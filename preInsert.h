@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 bool runPreInsertHTSQLTriggerFunction(SodiumSession *currentMKSession, HTSQLPage *page, TAGDataBlock *pTAGDataBlock);

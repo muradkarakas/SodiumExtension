@@ -26,9 +26,9 @@
 /************ Begin %include sections from the grammar ************************/
 #line 2 "lemon.pre.yy"
 
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "mksession.h"
 #include "pre.parser.imp.h"

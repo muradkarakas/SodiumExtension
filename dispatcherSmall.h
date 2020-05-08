@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 void        dispatchSmallRequest(SodiumSession *currentMKSession, HTSQLPage *page);

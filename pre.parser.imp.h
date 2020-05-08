@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 typedef void* yyscan_t;

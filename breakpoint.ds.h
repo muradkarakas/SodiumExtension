@@ -1,7 +1,5 @@
 #pragma once
 
-#include "htsql.h"
-
 #define BREAKPOINT_LINENUMBER_LENGTH	10
 
 typedef enum _BreakpointType {

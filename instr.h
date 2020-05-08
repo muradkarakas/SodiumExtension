@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 /** \brief  __CALLER IS RESPONSIBLE TO RELEASE RETURN VALUE__ \n

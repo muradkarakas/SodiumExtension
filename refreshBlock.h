@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "htsql.h"
+
 
 
 void __sendRefreshBlockHTSQLResponse(SodiumSession *currentMKSession, HTSQLPage *page, char *blockname);

@@ -4,7 +4,7 @@
   
 #pragma once 
       
-#include "htsql.h"  
+  
 #include "SodiumSession.h"  
 
 void		clearClientMessage(SodiumSession *currentMKSession, HTSQLPage *page);

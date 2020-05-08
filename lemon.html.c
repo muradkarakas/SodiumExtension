@@ -26,9 +26,9 @@
 /************ Begin %include sections from the grammar ************************/
 #line 2 "lemon.html.yy"
  
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "html.parser.imp.h"
 #include "tagDataBlock.h"

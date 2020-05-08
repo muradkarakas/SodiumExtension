@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 void                    destoryControlBlockVariables(SodiumSession *currentMKSession, HTSQLPage *page);

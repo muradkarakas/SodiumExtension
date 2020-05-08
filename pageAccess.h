@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 /** \brief Runs the HT/SQL "page_access" function of the current *.frmx file.

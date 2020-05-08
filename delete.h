@@ -4,9 +4,6 @@
 */
 #pragma once
 
-#include "htsql.h"
-
-
 
 void  __delete(SodiumSession*currentMKSession, HTSQLPage *page, TAGDataBlock *pTAGDataBlock);
 

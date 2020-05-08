@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "preUpdate.h"
 #include "htsqlFunction.imp.h"

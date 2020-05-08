@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "preDelete.h"
 #include "preObjectFunction.h"

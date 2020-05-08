@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 #include "hiredis\hiredis.h"
 
 

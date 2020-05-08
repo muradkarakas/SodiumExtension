@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 void

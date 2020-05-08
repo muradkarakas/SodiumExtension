@@ -1179,9 +1179,9 @@ static const flex_int16_t yy_chk[1630] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.html.ll"
 #line 2 "lexer.html.ll"
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "lemon.html.h"
 #include "SodiumSession.h"

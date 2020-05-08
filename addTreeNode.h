@@ -1,8 +1,5 @@
 #pragma once
 
-#include "htsql.h"
-
-
 
 /** \brief __CALLERT MUST RELEASE RETURN VALUE__
  *

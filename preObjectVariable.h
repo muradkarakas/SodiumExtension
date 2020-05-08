@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 PreObjectVariable    *createPreObjectVariable(SodiumSession *currentMKSession, PREOBJECTVARIABLETYPE pPreObjectVariableType, const char *pVariableName, const char *pPreObjectVariableValue);

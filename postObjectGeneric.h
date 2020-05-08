@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 /*	Caller is responsible to release memory which pointed by object. Function do not release object. Just release properties of object	*/
 void				destroyPostObjectGeneric(SodiumSession *currentMKSession, PostObjectGeneric *object);

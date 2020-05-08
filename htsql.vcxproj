@@ -190,6 +190,7 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
       <PreprocessorDefinitions>SodiumExtension;_DEBUG;_WINDOWS;_USRDLL;HTSQL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>false</ShowIncludes>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -390,7 +391,7 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
     <ClInclude Include="hideBlock.h" />
     <ClInclude Include="hideColumn.h" />
     <ClInclude Include="html.parser.imp.h" />
-    <ClInclude Include="htsql.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="htsqlFunction.imp.h" />
     <ClInclude Include="htsqlVariable.h" />
     <ClInclude Include="image.h" />
@@ -468,7 +469,6 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
     <ClInclude Include="showBlock.h" />
     <ClInclude Include="showColumn.h" />
     <ClInclude Include="showPage.h" />
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="strlen.h" />
     <ClInclude Include="substr.h" />
     <ClInclude Include="tagConnection.h" />
@@ -501,9 +501,9 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
     <ClCompile Include="FindSodiumSessionBySessionId.c" />
     <ClCompile Include="GetWindowsErrorMessageText.c" />
     <ClCompile Include="HandleFrmxRequest.c" />
-    <ClCompile Include="htsql.c">
+    <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="InitEnvirontment.c" />
     <ClCompile Include="SodiumGetExtensionId.c" />

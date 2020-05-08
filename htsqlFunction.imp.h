@@ -69,7 +69,7 @@
 #pragma once
 
 
-#include "htsql.h"
+
 
 #include "tagDataBlock.h"
 #include "tagConnection.h"

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "htsql.h"
-
 /*	*/
 void setAllPreviousCallstackFunctionsDebugStepType(SodiumSession *currentMKSession, CallStack *cls, Debug_Step_Type stepType);
 

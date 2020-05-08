@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 
 
 typedef enum _SESSION_END_REASON {

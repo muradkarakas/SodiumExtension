@@ -1,6 +1,6 @@
 #pragma once
 
-#include "htsql.h"
+
 #include "SodiumSession.h"
 
 wchar_t	 cDebugLogFileFullPath[MAX_PATH];

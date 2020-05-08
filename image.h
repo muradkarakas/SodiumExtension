@@ -1,7 +1,7 @@
 #ifndef PUTIMAGE_H_INCLUDED
 #define PUTIMAGE_H_INCLUDED
 
-#include "htsql.h"
+
 
 void    __sendPutImageResponse(SodiumSession *currentMKSession, HTSQLPage *page, const char *boundry);
 void    __sendPutImageSuccessfulMessage(SodiumSession *currentMKSession, const char *fileName, int writenFileSize);

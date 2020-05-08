@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 /** \brief Send "setDataBlockItemValue" response to the browser in order to set a block item new value.
  * This function is called in case of an HT/SQL function set a new value to the block item.

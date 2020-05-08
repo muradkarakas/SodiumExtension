@@ -1,7 +1,5 @@
 #pragma once
 
-#include "htsql.h"
-
 
 
 DWORD WINAPI	debugeeCreatePipeServer(void *param);

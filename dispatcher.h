@@ -1,7 +1,5 @@
 #pragma once
 
-#include "htsql.h"
-
 
 void            dispatchRequest(SodiumSession * session);
 void            setRequestedFileName(SodiumSession *currentMKSession, HTSQLPage *page);

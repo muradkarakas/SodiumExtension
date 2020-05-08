@@ -1,8 +1,8 @@
 %include
 {
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "mksession.h"
 #include "pre.parser.imp.h"

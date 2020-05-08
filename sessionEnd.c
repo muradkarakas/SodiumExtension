@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "sessionEnd.h"
 #include "htsqlFunction.imp.h"

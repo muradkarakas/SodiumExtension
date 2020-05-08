@@ -591,9 +591,6 @@
     <ClInclude Include="closeRedisConnection.h">
       <Filter>lang\built-in\functions\closeRedisConnection</Filter>
     </ClInclude>
-    <ClInclude Include="htsql.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="response.h">
       <Filter>core\response</Filter>
     </ClInclude>
@@ -684,9 +681,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="mkDebugDataStructures.h">
       <Filter>Header Files\Data-Structures</Filter>
     </ClInclude>
@@ -713,6 +707,9 @@
     </ClInclude>
     <ClInclude Include="SodiumServer_delayLoaded_DLL_Hooks.h">
       <Filter>os-dependent\dll</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1001,9 +998,6 @@
     <ClCompile Include="closure.c">
       <Filter>core\sqlx\closure</Filter>
     </ClCompile>
-    <ClCompile Include="htsql.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SendHttpFileResponse.c">
       <Filter>os-dependent\exe\SodiumHttpServer</Filter>
     </ClCompile>
@@ -1045,6 +1039,9 @@
     </ClCompile>
     <ClCompile Include="SodiumServer_delayLoaded_DLL_Hooks.c">
       <Filter>os-dependent\dll</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "getDatabaseType.h"
 #include "tagConnection.h"

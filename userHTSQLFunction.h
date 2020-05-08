@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "htsql.h"
+
 
 
 /**

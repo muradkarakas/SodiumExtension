@@ -1,7 +1,7 @@
 %{
-#include "stdafx.h"
+#include "pch.h"
 
-#include "htsql.h"
+
 
 #include "lemon.html.h"
 #include "SodiumSession.h"

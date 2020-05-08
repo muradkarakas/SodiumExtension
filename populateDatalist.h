@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "htsql.h"
+
 
 void  __sendPopulateDatalistResponse(SodiumSession *currentMKSession, HTSQLPage *page, char *dataListName, bool cascadeOption);
 void  __sendPopulateDatalistWithRecordSetResponse(SodiumSession *currentMKSession, HTSQLPage *page, char *dataListName, char *recordSetName);
