@@ -45,7 +45,7 @@ typedef struct structInput {
 
 	/** This variables are for type of image */
 	wchar_t                *imageFileName;
-	int                     imageFileSize;
+	size_t                  imageFileSize;
 	void                             *src; /** May contain url or image binary content encoded as Base64 */
 
 										   /** DB column name */

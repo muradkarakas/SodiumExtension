@@ -13,7 +13,6 @@ DispatchBigRequest(
     HTSQLPage *page
 ) 
 {
-
     const char *boundry         = getBoundry(session);
     char *nativeproceduretorun  = getFormDataBig(session, boundry, "nativeproceduretorun");
 
@@ -43,7 +42,7 @@ void *getBinaryDataStartPosition(SodiumSession *session, const char *boundry, co
         "Content-Disposition: form-data; name=\"", name, "\"; filename=\"",
         NULL
     );
-    char *pos = strstr(session->context->pRequest->pEntityChunks->FromMemory.pBuffer, searchStr);
+    char *pos = strstr(session->context->RequestBody, searchStr);
     if (pos) {
         char *start = pos + strlen(searchStr) + 4;
         start       = strstr(start, "\r\n");    // "content-type" line
@@ -62,7 +61,7 @@ char *getBinaryDataFileName(SodiumSession *session, const char *boundry, const c
         "Content-Disposition: form-data; name=\"", imageInputName, "\"; filename=\"",
         NULL
     );
-    char *pos = strstr(session->context->pRequest->pEntityChunks->FromMemory.pBuffer, searchStr);
+    char *pos = strstr(session->context->RequestBody, searchStr);
     if (pos) {
         char *start = pos + strlen(searchStr);
         char *end   = strstr(start, "\r\n");
@@ -82,7 +81,7 @@ char *getBinaryDataContentType(SodiumSession *session, const char *boundry, cons
         "Content-Disposition: form-data; name=\"", imageInputName, "\"; filename=\"",
         NULL
     );
-    char *pos = strstr(session->context->pRequest->pEntityChunks->FromMemory.pBuffer, searchStr);
+    char *pos = strstr(session->context->RequestBody, searchStr);
     if (pos) {
         char *cntTypeStr = "Content-Type: ";
         size_t   cntTypeStrLen = strlen(cntTypeStr);
@@ -111,17 +110,76 @@ const char *getBoundry(SodiumSession *session) {
     }
 }
 
-char *getFormDataBig(SodiumSession *session, const char *boundry, const char *formInputName) {
+char *getFormDataBig(SodiumSession *session, const char *boundry, const char *formInputName) 
+{
+    char* requestBody = session->context->RequestBody;
+    ULONG requestBodySize = session->context->RequestBodySize;
+    char* pos = NULL;
     char *value = NULL;
     char *searchStr = mkStrcat(session->heapHandle, __FILE__, __LINE__,
         "Content-Disposition: form-data; name=\"", formInputName, "\"",
         NULL
     );
-    char *pos = mkMemmem(
-        session->context->pRequest->pEntityChunks->FromMemory.pBuffer,
-        session->context->pRequest->pEntityChunks->FromMemory.BufferLength,
-        searchStr, 
-        strlen(searchStr));
+    
+    // First, looking if whole request body read or not previously
+    if (requestBody) {
+        pos = mkMemmem(
+            requestBody,
+            requestBodySize,
+            searchStr, 
+            strlen(searchStr));
+    }
+    
+    if (pos == NULL) {
+        
+        // not found in "header content type string"
+        // searching in "header content body"
+        if (session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentLength].pRawValue) {
+            int size = session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentLength].RawValueLength;
+            
+            // getting request header body size
+            char* contentLengthSize = mkMalloc(session->heapHandle, size + sizeof(char), __FILE__, __LINE__);
+            memcpy_s(contentLengthSize, size, session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentLength].pRawValue, size);
+            int HeaderSize = atoi(contentLengthSize);
+            mkFree(session->heapHandle, contentLengthSize);
+
+            // getting whole request body
+            session->context->RequestBody = mkMalloc(session->heapHandle, HeaderSize, __FILE__, __LINE__);
+            ULONG  result = HttpReceiveRequestEntityBody(
+                session->context->hReqQueue,
+                session->context->pRequest->RequestId,
+                HTTP_RECEIVE_REQUEST_ENTITY_BODY_FLAG_FILL_BUFFER,
+                session->context->RequestBody,
+                HeaderSize,
+                &session->context->RequestBodySize,
+                NULL
+                );
+
+            if (session->context->RequestBodySize > 0) {
+                requestBody = session->context->RequestBody;
+                requestBodySize = session->context->RequestBodySize;
+            }
+            
+        } 
+        else if (session->context->pRequest->pEntityChunks) {
+            
+            // last chance to look in entity chunks received
+            if (session->context->pRequest->pEntityChunks->FromMemory.BufferLength > 0) {
+                requestBody = session->context->pRequest->pEntityChunks->FromMemory.pBuffer;
+                requestBodySize = session->context->pRequest->pEntityChunks->FromMemory.BufferLength;
+            }
+        }
+
+        // searching for 'formInputName' in whole request content body
+        if (requestBody) {
+            pos = mkMemmem( requestBody,
+                            requestBodySize,
+                            searchStr,
+                            strlen(searchStr));
+        }
+    }
+
+    // if 'formInputName' parameter is found in request, we are searching for value
     if (pos) {
         char *start = pos + strlen(searchStr) + 4;
         char *end   = strstr(start, "\r\n");
@@ -132,5 +190,6 @@ char *getFormDataBig(SodiumSession *session, const char *boundry, const char *fo
         value       = tmp;
     }
     mkFree(session->heapHandle, searchStr);
+    
     return value;
 }

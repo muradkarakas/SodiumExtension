@@ -27,7 +27,7 @@ dispatchRequest(
     SetRequestDispatcherType(session, page);
 
     ParseQueryStringParams(session, page);
-
+    
     if (page->currentRequestDispatcherType == REQUEST_DISPATCHER_TYPE_BIG) {
         DispatchBigRequest(session, page);
     } else {
@@ -185,6 +185,15 @@ SetRequestDispatcherType(
 ) 
 {
     page->currentRequestDispatcherType = REQUEST_DISPATCHER_TYPE_SMALL;
+
+    if (session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentType].RawValueLength > 0) {
+        if (session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentType].pRawValue) {
+            if (strstr(session->context->pRequest->Headers.KnownHeaders[HttpHeaderContentType].pRawValue, "multipart/form-data;")) {
+                page->currentRequestDispatcherType = REQUEST_DISPATCHER_TYPE_BIG;
+            }
+        }
+    }
+
     if (session->context->pRequest->EntityChunkCount > 0) {
         const char* requestBody = (char*)session->context->pRequest->pEntityChunks->FromMemory.pBuffer;
         int pos;

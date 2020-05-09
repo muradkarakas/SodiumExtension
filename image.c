@@ -79,7 +79,7 @@ WritePostedBinaryDataToFile(
 {
 	ULONG result = NO_ERROR;
 	ULONG BytesReturned = 0;
-    int  writenFileSize = 0;
+    size_t  writenFileSize = 0;
 	
 	TAGDataBlock *tagDataBlock = findTAGDataBlockByName(session, page, datablockname);
 	TAGInput *tagInput = findTAGInputByName(session, page, tagDataBlock, inputName);
@@ -91,24 +91,25 @@ WritePostedBinaryDataToFile(
 		errno_t err = _wfopen_s(&imgFile, tagInput->imageFileName, L"wb");
 		char* pEntityBuffer = getBinaryDataStartPosition(session, boundry, imageInputName);
 		/** First chunk locating ...*/
-		char* start = session->context->pRequest->pEntityChunks->FromMemory.pBuffer;
+		char* start = session->context->RequestBody;
 		int  headSize = ((int)(pEntityBuffer - start));
-		int dataSize = session->context->pRequest->pEntityChunks->FromMemory.BufferLength - headSize;
+		int dataSize = session->context->RequestBodySize - headSize;
 
 		char *boundryPtr = mkMemmem(pEntityBuffer, dataSize, boundry, strlen(boundry));
 
-
 		/* writing first chunk */
-		fwrite(pEntityBuffer, dataSize, 1, imgFile);
-			   
-		if (imgFile) {
-			/** Allocating temp buffer */
+		writenFileSize = fwrite(pEntityBuffer, dataSize, 1, imgFile);
+		if (writenFileSize > 0) {
+			writenFileSize = dataSize;
+		}
+		/*if (imgFile) {
+			// Allocating temp buffer 
 			DWORD EntityBufferLength = 1024 * 1024;
 			pEntityBuffer = mkMalloc(session->heapHandle, EntityBufferLength, __FILE__, __LINE__);
 
 			if (pEntityBuffer != NULL) {
 
-				/* reading data  */
+				// reading data  
 				while (result == NO_ERROR) {
 
 					// Read Http Server buffer
@@ -123,7 +124,7 @@ WritePostedBinaryDataToFile(
 					);
 
 					if (BytesReturned > 0 && result != ERROR_HANDLE_EOF) {
-						/* writing buffer to file */
+						// writing buffer to file 
 						fwrite(pEntityBuffer, BytesReturned, 1, imgFile);
 						writenFileSize += BytesReturned;
 					}
@@ -131,10 +132,10 @@ WritePostedBinaryDataToFile(
 
 				fflush(imgFile);
 
-				/* releasing buffer */
+				// releasing buffer 
 				mkFree(session->heapHandle, pEntityBuffer);
 			}
-		}
+		}*/
 
 		/* closing file handle*/
         fclose(imgFile);
@@ -193,8 +194,8 @@ void serveAsGetRequestGetImage(SodiumSession *session, HTSQLPage *page) {
 						(tagDataBlock->dataSchemaName) ? tagDataBlock->dataSchemaName : "",
 						(tagDataBlock->dataSchemaName) ? "." : "",
 						tagDataBlock->dataSourceName,
-						" where "
-						"rowid = '", rowid, "'",
+						" where ",
+							tagDataBlock->keyColumnName, " = '", rowid, "' ",
 						NULL
 					);
 					break;
@@ -207,8 +208,8 @@ void serveAsGetRequestGetImage(SodiumSession *session, HTSQLPage *page) {
 						(tagDataBlock->dataSchemaName) ? tagDataBlock->dataSchemaName : "",
 						(tagDataBlock->dataSchemaName) ? "." : "",
 						tagDataBlock->dataSourceName,
-						" where "
-						"oid = ", rowid, " ",
+						" where ",
+							tagDataBlock->keyColumnName, " = '", rowid, "' ",
 						NULL
 					);
 					break;

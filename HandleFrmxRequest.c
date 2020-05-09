@@ -28,6 +28,12 @@ HandleFrmxRequest(
 		mkFree(mkApplicationHeapHandle, session);
 	}
 	
+	if (context->RequestBody) {
+		mkFree(session->heapHandle, context->RequestBody);
+		context->RequestBody = NULL;
+		context->RequestBodySize = 0;
+	}
+
 	// Request handling done 
 	ReleaseMutex(currentRequestMutextHandle);
 }
@@ -39,6 +45,9 @@ CreateOrGetSession(
 )
 {
 	SodiumSession* session = NULL;
+
+	context->RequestBody = NULL;
+	context->RequestBodySize = 0;
 
 	HTTP_KNOWN_HEADER cookieHeader = context->pRequest->Headers.KnownHeaders[HttpHeaderCookie];
 	if (cookieHeader.RawValueLength == 0) {
