@@ -1,8 +1,8 @@
 #pragma once
 
 
-#define ETEXT(ERRCODE)  getErrorText(session, ERRCODE)
-#define ATEXT(ERRCODE)  getActionText(session, ERRCODE)
+#define ETEXT(ERRCODE)  GetErrorText(session, ERRCODE)
+#define ATEXT(ERRCODE)  GetActionText(session, ERRCODE)
 
 #define CLOG(ERRCODE, INFO)		{ __sendErrorResponse(session, page, ETEXT(ERRCODE), INFO); mkCoreDebug(__FILE__, __LINE__, ETEXT(ERRCODE), INFO, NULL);  }
 
@@ -68,6 +68,9 @@ typedef enum _Error_Codes {
 	ERR_CORE_NOT_IMPLEMENTED,
 	ERR_CORE_RESPONSE_HEADER_NOT_PRINTED_YET,
 	ERR_CORE_INVALID_VALUE,
-	ERR_CORE_MEMORY_MANAGEMENT_FAILURE
+	ERR_CORE_MEMORY_MANAGEMENT_FAILURE,
+
+	/* ERRORS RELATED TO SECURITY */
+	ERR_SECURITY_ACCESS_REFUSED
 
 } ERROR_CODES;

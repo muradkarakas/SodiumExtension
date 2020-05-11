@@ -2,32 +2,49 @@
 
 #include "mkError.h"
 
-void __sendErrorResponse(SodiumSession *currentMKSession, HTSQLPage *page, const char *pErrorText, const char *pAdditionalInfo) {
-
-	char *lErrTxt = mkStrdup(currentMKSession->heapHandle, pErrorText, __FILE__, __LINE__);
-	char *lAddInfo = mkStrdup(currentMKSession->heapHandle, pAdditionalInfo, __FILE__, __LINE__);
+void __sendErrorResponse(
+	SodiumSession *session, 
+	HTSQLPage *page, 
+	const char *pErrorText, 
+	const char *pAdditionalInfo
+)
+{
+	char *lErrTxt = mkStrdup(session->heapHandle, pErrorText, __FILE__, __LINE__);
+	char* lAddInfo = NULL;
+	if (pAdditionalInfo && pAdditionalInfo[0] != '\0') {
+		lAddInfo = mkStrdup(session->heapHandle, pAdditionalInfo, __FILE__, __LINE__);
+	}
+	else {
+		lAddInfo = mkStrdup(session->heapHandle, "Not provided.", __FILE__, __LINE__);
+	}
 
 	mkStrReplaceEnter(lErrTxt);
 	mkStrReplaceEnter(lAddInfo);
 
 	// Check client side javascript library has been sent to the client browser or not 
-	if (page && page->currentRequestMethodType == REQUEST_TYPE_GET && currentMKSession->whatIsPrinted < SESSION_PRINT_CLIENT_LIBRARY) {
+	if (page && page->currentRequestMethodType == REQUEST_TYPE_GET && session->whatIsPrinted < SESSION_PRINT_CLIENT_LIBRARY) {
 		// Not sent. This means we have a poor client 
-		__sendErrorResponsePoor(currentMKSession, page, lErrTxt, lAddInfo);
+		__sendErrorResponsePoor(session, page, lErrTxt, lAddInfo);
 	}
 	else {
 		// Rich client active
-		__sendErrorResponseRich(currentMKSession, page, lErrTxt, lAddInfo);
+		__sendErrorResponseRich(session, page, lErrTxt, lAddInfo);
 	}
-	mkFree(currentMKSession->heapHandle, lErrTxt);
-	mkFree(currentMKSession->heapHandle, lAddInfo);
+	mkFree(session->heapHandle, lErrTxt);
+	mkFree(session->heapHandle, lAddInfo);
 }
 
-void __sendErrorResponseRich(SodiumSession *currentMKSession, HTSQLPage *page, const char *pErrorText, const char *pAdditionalInfo) {
-	char *lReason = mkEscapeJavaScriptQuoteCharacter(currentMKSession, pErrorText);
-	char *lPosSol = mkEscapeJavaScriptQuoteCharacter(currentMKSession, pAdditionalInfo);
+void __sendErrorResponseRich(
+	SodiumSession * session, 
+	HTSQLPage *page, 
+	const char *pErrorText, 
+	const char *pAdditionalInfo
+)
+{
+	char *lReason = mkEscapeJavaScriptQuoteCharacter(session, pErrorText);
+	char *lPosSol = mkEscapeJavaScriptQuoteCharacter(session, pAdditionalInfo);
 
-	char *lastResponse = mkStrcat(currentMKSession->heapHandle,
+	char *lastResponse = mkStrcat(session->heapHandle,
 		__FILE__, __LINE__,
 		"action = { "
 		"\"type\"             : \"error\", "
@@ -42,47 +59,54 @@ void __sendErrorResponseRich(SodiumSession *currentMKSession, HTSQLPage *page, c
 		* If systax error occurs between < and > characters while get request, error message will be generated between these characters and will not be executed as
 		* script in client side. For that reason, we are closing tag. These behavior should be solved using different solution.
 		*/
-		mkPrint(currentMKSession, "><script type=\"text/javascript\">", NULL);
+		mkPrint(session, "><script type=\"text/javascript\">", NULL);
 	}
 
-	mkPrint(currentMKSession, lastResponse, NULL);
+	mkPrint(session, lastResponse, NULL);
 
 	if (page && page->currentRequestMethodType == REQUEST_TYPE_GET) {
-		mkPrint(currentMKSession, "</script>", NULL);
+		mkPrint(session, "</script>", NULL);
 	}
-	mkFree(currentMKSession->heapHandle, lReason);
-	mkFree(currentMKSession->heapHandle, lPosSol);
-	mkFree(currentMKSession->heapHandle, lastResponse);
+	mkFree(session->heapHandle, lReason);
+	mkFree(session->heapHandle, lPosSol);
+	mkFree(session->heapHandle, lastResponse);
 }
 
-void __sendErrorResponsePoor(SodiumSession *currentMKSession, HTSQLPage *page, const char *pErrorText, const char *pAdditionalInfo) {
+void __sendErrorResponsePoor(SodiumSession *session, HTSQLPage *page, const char *pErrorText, const char *pAdditionalInfo) {
 
-	char *lReason = mkEscapeJavaScriptQuoteCharacter(currentMKSession, pErrorText);
-	char *lPosSol = mkEscapeJavaScriptQuoteCharacter(currentMKSession, pAdditionalInfo);
+	char *lReason = mkEscapeJavaScriptQuoteCharacter(session, pErrorText);
+	char *lPosSol = mkEscapeJavaScriptQuoteCharacter(session, pAdditionalInfo);
 
-	char *lastResponse = mkStrcat(currentMKSession->heapHandle,
+	char *lastResponse = mkStrcat(session->heapHandle,
 		__FILE__, __LINE__,
 		"var message = 'Error occured: ", lReason, ". Additional info : ", lPosSol, "'; ",
 		"alert(message);",
 		NULL);
-	mkPrint(currentMKSession, "<script type=\"text/javascript\">", NULL);
-	mkPrint(currentMKSession, lastResponse, NULL);
-	mkPrint(currentMKSession, "</script>", NULL);
+	mkPrint(session, "<script type=\"text/javascript\">", NULL);
+	mkPrint(session, lastResponse, NULL);
+	mkPrint(session, "</script>", NULL);
 
-	mkFree(currentMKSession->heapHandle, lReason);
-	mkFree(currentMKSession->heapHandle, lPosSol);
-	mkFree(currentMKSession->heapHandle, lastResponse);
+	mkFree(session->heapHandle, lReason);
+	mkFree(session->heapHandle, lPosSol);
+	mkFree(session->heapHandle, lastResponse);
 }
 
-void __initializeClientJavaScriptReponse(SodiumSession *currentMKSession) {
-	mkPrint(currentMKSession, "<script type=\"text/javascript\"> initResponse(); </script>", NULL);
+void __initializeClientJavaScriptReponse(SodiumSession *session) {
+	mkPrint(session, "<script type=\"text/javascript\"> initResponse(); </script>", NULL);
 }
 
-const char *getErrorText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
-
+const char *
+GetErrorText(
+	SodiumSession *session, 
+	ERROR_CODES errCode
+)
+{
 	switch (errCode) {
 		case ERR_NAME_ALREADY_IN_USE: {
 			return "Name is already in use";
+		}
+		case ERR_SECURITY_ACCESS_REFUSED: {
+			return "Access to that page refused";
 		}
 		case ERR_PROPERTY_CANNOT_BE_EMPTY : {
 			return "Property cannot be empty";
@@ -148,7 +172,7 @@ const char *getErrorText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
 			return "Parameter count in function call is invalid"; 
 		}
 		case ERR_INVALID_FUNCTION_CALL : { 
-			return "Function cannot be call in this context"; 
+			return "Function cannot be called in this context"; 
 		}
 		case ERR_DB_UNKNOWN_ERROR : { 
 			return "DB ERROR:"; 
@@ -157,7 +181,7 @@ const char *getErrorText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
 			return "DB ERROR: No valid database connection"; 
 		}
 		case ERR_DB_CONNECTION_CANNOT_BE_OPENED : { 
-			return "DB ERROR: Database connection cannot be opened"; 
+			return "DB ERROR: Database connection attempt failed"; 
 		}
 		case ERR_CORE_INVALID_REQUEST_TYPE_1 : { 
 			return "CORE_ERROR: AJAX request must be either HTSQL or NATIVE, not both"; 
@@ -166,10 +190,10 @@ const char *getErrorText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
 			return "CORE_ERROR: AJAX request must be either HTSQL or NATIVE, but none of these specified"; 
 		}
 		case ERR_CORE_INVALID_HTTP_REQUEST : { 
-			return "CORE_ERROR: Invalid HTTP requesst"; 
+			return "CORE_ERROR: Invalid HTTP request"; 
 		}
 		case ERR_CORE_INVALID_HTTP_REQUEST_PARAM : { 
-			return "CORE_ERROR: Invalid HTTP requesst"; 
+			return "CORE_ERROR: Invalid HTTP request"; 
 		}
 		case ERR_CORE_IMAGE_CANNOT_BE_WRITEN_TO_DB : { 
 			return "CORE_ERROR: Image file cannot be written to the database"; 
@@ -238,10 +262,14 @@ const char *getErrorText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
 			return "No error description provided.";
 		}
 	}
-
     return "";
 }
 
-const char *getActionText(SodiumSession *currentMKSession, ERROR_CODES errCode) {
+const char *
+GetActionText(
+	SodiumSession *session, 
+	ERROR_CODES errCode
+)
+{
     return "";
 }

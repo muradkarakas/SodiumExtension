@@ -4,8 +4,9 @@
 
 
 void    __sendPutImageResponse(SodiumSession *currentMKSession, HTSQLPage *page, const char *boundry);
-void    __sendPutImageSuccessfulMessage(SodiumSession *currentMKSession, const char *fileName, int writenFileSize);
-int
+void    __sendPutImageSuccessfulMessage(SodiumSession *currentMKSession, const char *fileName, size_t writenFileSize);
+
+size_t
 WritePostedBinaryDataToFile(
     SodiumSession* session,
     HTSQLPage* page,

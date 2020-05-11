@@ -37,7 +37,7 @@ void __sendPutImageResponse(SodiumSession *session, HTSQLPage *page, const char 
 			char *imageContentType = getBinaryDataContentType(session, boundry, "filename");
 
 			/** Write blob stream to file */
-			int writenFileSize = WritePostedBinaryDataToFile(session, page, boundry, "filename", datablockname, inputName);
+			size_t writenFileSize = WritePostedBinaryDataToFile(session, page, boundry, "filename", datablockname, inputName);
 			if (writenFileSize > 0) {
 				char *numBuffer = mkMalloc(session->heapHandle, 50, __FILE__, __LINE__);
 				mkItoa(writenFileSize, numBuffer);
@@ -67,7 +67,7 @@ void __sendPutImageResponse(SodiumSession *session, HTSQLPage *page, const char 
 
 
 
-int 
+size_t 
 WritePostedBinaryDataToFile(
 	SodiumSession *session, 
 	HTSQLPage *page, 
@@ -147,7 +147,7 @@ WritePostedBinaryDataToFile(
 }
 
 
-void __sendPutImageSuccessfulMessage(SodiumSession *session, const char *fileName, int writenFileSize) {
+void __sendPutImageSuccessfulMessage(SodiumSession *session, const char *fileName, size_t writenFileSize) {
     char *sizeBuf = mkMalloc(session->heapHandle, 50, __FILE__, __LINE__);
     mkItoa(writenFileSize, sizeBuf);
 	char *lFileName = mkEscapeJavaScriptQuoteCharacter(session, fileName);
@@ -201,6 +201,20 @@ void serveAsGetRequestGetImage(SodiumSession *session, HTSQLPage *page) {
 					break;
 				}
 				case SODIUM_POSTGRESQL_SUPPORT: {
+					sql = mkStrcat(session->heapHandle, __FILE__, __LINE__,
+						" select ",
+						tagInput->columnName,
+						" from ",
+						(tagDataBlock->dataSchemaName) ? tagDataBlock->dataSchemaName : "",
+						(tagDataBlock->dataSchemaName) ? "." : "",
+						tagDataBlock->dataSourceName,
+						" where ",
+							tagDataBlock->keyColumnName, " = '", rowid, "' ",
+						NULL
+					);
+					break;
+				}
+				case SODIUM_MYSQL_SUPPORT: {
 					sql = mkStrcat(session->heapHandle, __FILE__, __LINE__,
 						" select ",
 						tagInput->columnName,

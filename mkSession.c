@@ -311,7 +311,7 @@ void destroySessionGETPage(SodiumSession *session, HTSQLPage *page) {
             mkDebug(session, SESSION_LOG_DETAIL_HTSQL_VARIABLE, "\n", "Global resultset destroyed: ", objectGeneric->objectName, NULL);
         }*/
 
-        destroyPreObjectGeneric(session, objectGeneric);
+        DestroyPreObjectGeneric(session, objectGeneric);
         objectGeneric = objectTemp;
     }
     page->lastPreObjectGeneric    = NULL;
@@ -392,7 +392,7 @@ SodiumSession *destroySession(SodiumSession *session) {
     PreObjectGeneric* tempSessionObjectGeneric = session->rootSessionObjectGeneric;
     while (tempSessionObjectGeneric != NULL) {
         PreObjectGeneric* objectTemp = tempSessionObjectGeneric->next;
-        destroyPreObjectGeneric(session, tempSessionObjectGeneric);
+        DestroyPreObjectGeneric(session, tempSessionObjectGeneric);
         tempSessionObjectGeneric = objectTemp;
     }
     session->rootSessionObjectGeneric = NULL;

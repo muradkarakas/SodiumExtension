@@ -101,21 +101,36 @@ PreObjectGeneric   *getCurrentPreGenericObject(SodiumSession *currentMKSession, 
 
 
 
-void  destroyPreObjectGeneric(SodiumSession *currentMKSession, PreObjectGeneric *object) {
-
+void
+DestroyPreObjectGeneric(
+    SodiumSession *session, 
+    PreObjectGeneric *object
+) 
+{
     if (object->objectName != NULL) {
-        mkFree(currentMKSession->heapHandle, object->objectName);
+        mkFree(session->heapHandle, object->objectName);
         object->objectName = NULL;
     }
-    if(object->value.preObjectVariable != NULL) {
-        destroyPreObjectVariable(currentMKSession, object->value.preObjectVariable);
-        object->value.preObjectVariable = NULL;
+
+    switch (object->objectGenericType) {
+        case POST_OBJECT_GENERIC_TYPE_FUNCTION_ARGS:
+        case POST_OBJECT_GENERIC_TYPE_VARIABLE: {
+            if(object->value.preObjectVariable != NULL) {
+                destroyPreObjectVariable(session, object->value.preObjectVariable);
+                object->value.preObjectVariable = NULL;
+            }            
+            break;
+        }
+        case POST_OBJECT_GENERIC_TYPE_FUNCTION: {
+            if (object->value.preObjectFunction) {
+                destroyPreObjectFunction(session, object->value.preObjectFunction);
+                object->value.preObjectFunction = NULL;
+            }
+            break;
+        }
     }
-    if(object->value.preObjectFunction) {
-        destroyPreObjectFunction(currentMKSession, object->value.preObjectFunction);
-        object->value.preObjectFunction = NULL;
-    }
-    mkFree(currentMKSession->heapHandle, object);
+
+    mkFree(session->heapHandle, object);
 }
 
 

@@ -134,8 +134,14 @@ __SendHttpResponse(
 	// Add an entity chunk.
 	//
 	dataChunk.DataChunkType = HttpDataChunkFromMemory;
-	dataChunk.FromMemory.pBuffer = szBuffer;
-	dataChunk.FromMemory.BufferLength = size;
+	if (size > 0) {
+		dataChunk.FromMemory.pBuffer = szBuffer;
+		dataChunk.FromMemory.BufferLength = size;
+	}
+	else {
+		dataChunk.FromMemory.pBuffer = "";
+		dataChunk.FromMemory.BufferLength = 0;
+	}
 
 	context->response.EntityChunkCount = 1;
 	context->response.pEntityChunks = &dataChunk;
@@ -155,18 +161,24 @@ __SendHttpResponse(
 		NULL,
 		0,
 		NULL,
-		NULL
-	);
+		NULL);
 
 	return result;
 }
 
 /*
 This is the lowest level function
--	sends the content of the responseBuffer to the client if it is not empty.
+-	sends the content of the responseBuffer to the client if it is not NULL.
 */
-void	_responseFlush(SodiumSession *session, HTSQLPage *page, void *buffer, size_t size) {
-	if (buffer == NULL || size <= 0) {
+void	
+_responseFlush(
+	SodiumSession *session, 
+	HTSQLPage *page, 
+	void *buffer, 
+	size_t size
+)
+{
+	if (buffer == NULL) {
 		return;
 	}
 	if (session->whatIsPrinted == SESSION_PRINT_NOTHING) {

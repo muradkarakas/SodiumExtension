@@ -63,6 +63,7 @@ dispatchSmallRequest(
 				printGetRequestTiming(session, page, start);
 			}
 			else {
+                CLOG(ERR_SECURITY_ACCESS_REFUSED, "");
 				mkDebug(session, SESSION_LOG_DETAIL_ISAPI, "\n\nPage access refused\n\n", NULL);
 			}
 
