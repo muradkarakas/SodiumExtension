@@ -240,7 +240,7 @@ void serveAsGetRequestGetImage(SodiumSession *session, HTSQLPage *page) {
 				if (tagConnection->mkDBConnection->errText == NULL) {
 
 					if (!DBInt_IsEof(tagConnection->mkDBConnection, stm)) {
-						DWORD numOfBytes;
+						DWORD numOfBytes = 0;
 
 						void *lobContent = DBInt_GetLob(tagConnection->mkDBConnection, stm, tagInput->columnName, &numOfBytes, false); // (page->currentRequestMethodType == REQUEST_TYPE_GET)
 						if (tagConnection->mkDBConnection->errText) {
