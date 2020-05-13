@@ -201,7 +201,7 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll
       <DelayLoadDLLs>SodiumShared.dll;DBInt.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\Sodium\Sodium-Setup</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>$(ProjectDir)lemon -b lemon.html.yy
@@ -293,7 +293,7 @@ $(ProjectDir)win_flex_bison-latest\win_flex -Ppost --outfile="lexer.post.c"  lex
 </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumExtension.dll C:\Sodium\Sodium-Setup</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseForMe|x64'">

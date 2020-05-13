@@ -6,22 +6,22 @@
 #include "mkapplication.h"
 #include "debugee.h"
 
-
+/*
 __declspec(dllexport) DWORD WINAPI   HttpExtensionProc(_In_ EXTENSION_CONTROL_BLOCK *clpECB)  {
 
-    /** Create or get the http session instance*/
+    // Create or get the http session instance
     SodiumSession *currentMKSession         = getHTTPSessionInstance(clpECB);
 
-    /** Destroy Idle sessions */
+    //* Destroy Idle sessions 
     destroyIdleSessions();
 
-    /** Before go, waiting for the termination of the previous http request of the same session  */
+    // Before go, waiting for the termination of the previous http request of the same session  
     HANDLE currentRequestMutextHandle   = mkWaitTillPreviousRequestOfTheCurrentSessionEnds(currentMKSession);
 
-    /** Assign control block structure variable to that's of the current request */
+    // Assign control block structure variable to that's of the current request 
     currentMKSession->lpECB = clpECB;
 
-    /** Determine the request type and dispatch it to the correct handler */
+    // Determine the request type and dispatch it to the correct handler 
     if (currentMKSession->sessionReadyState != SESSION_READY_STATE_KILLED) {
         dispatchRequest(currentMKSession);
 	}
@@ -30,7 +30,7 @@ __declspec(dllexport) DWORD WINAPI   HttpExtensionProc(_In_ EXTENSION_CONTROL_BL
         destroySession(currentMKSession);
         mkFree(mkApplicationHeapHandle, currentMKSession);
     } 
-    /** Request handling done */
+    // Request handling done 
     ReleaseMutex(currentRequestMutextHandle);
 
     return HSE_STATUS_SUCCESS;
@@ -50,7 +50,7 @@ __declspec(dllexport) BOOL  WINAPI   TerminateExtension(DWORD dwFlags) {
 	mkDebug(NULL, SESSION_LOG_DETAIL_ISAPI, "\nTerminateExtension run successfully", NULL);
 	return TRUE;
 }
-
+*/<
 
 
 HANDLE mkWaitTillPreviousRequestOfTheCurrentSessionEnds(SodiumSession *currentMKSession) {
