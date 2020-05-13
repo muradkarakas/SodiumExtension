@@ -50,7 +50,7 @@ __declspec(dllexport) BOOL  WINAPI   TerminateExtension(DWORD dwFlags) {
 	mkDebug(NULL, SESSION_LOG_DETAIL_ISAPI, "\nTerminateExtension run successfully", NULL);
 	return TRUE;
 }
-*/<
+*/
 
 
 HANDLE mkWaitTillPreviousRequestOfTheCurrentSessionEnds(SodiumSession *currentMKSession) {
