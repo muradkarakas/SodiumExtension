@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-	void DBInt_Oracle_OCIEnvCreateNotImplemented();
+	void SodiumShared_mkMalloc();
 
 #ifdef __cplusplus
 }

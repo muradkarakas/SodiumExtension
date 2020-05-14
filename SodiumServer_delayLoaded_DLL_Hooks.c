@@ -6,20 +6,15 @@ FARPROC WINAPI delayedDllFailHook(unsigned dliNotify, PDelayLoadInfo pdli) {
 	switch (dliNotify) {
 		case dliFailLoadLib: {
 			//SetConsoleTextAttribute(hConsole, 15);
-			wprintf_s(L"\n\n DBInt_Oracle.dll says: DLL not found : %hs", pdli->szDll);
-			//mkCoreDebug(__FILE__, __LINE__, "", pdli->szDll, NULL);
-			HMODULE hModule = NULL;
-			hModule = GetModuleHandle(0);
-			return (FARPROC)hModule;
+			wprintf_s(L"\n\nSodiumExtension.dll says: DLL not found : %hs", pdli->szDll);
+			exit(101);
 			break;
 		}
 		case dliFailGetProc: {			
 			if (pdli->dlp.fImportByName) {
 				//SetConsoleTextAttribute(hConsole, 15);
-				wprintf_s(L"\n\n \nDBInt_Oracle.dll says: Function not found : %hs", pdli->dlp.szProcName);
-				if ((strcmp(pdli->dlp.szProcName, "OCIEnvCreate") == 0)) {
-					return (FARPROC)DBInt_Oracle_OCIEnvCreateNotImplemented;
-				}
+				wprintf_s(L"\n\n \nSodiumExtension.dll says: Function not found : %hs", pdli->dlp.szProcName);
+				exit(102);
 			}
 			else {
 				// not needed for oracle
