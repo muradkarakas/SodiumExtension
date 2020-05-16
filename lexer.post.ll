@@ -1,8 +1,6 @@
 %{
 #include "pch.h"
 
-
-
 #include "lemon.post.h"
 #include "debugee.h"
 %}
@@ -125,6 +123,9 @@ NUMBER          [0-9]+("."[0-9]*)*
 														}
 {SPACE}"create_postgresql_connection"{SPACE}"("{SPACE}	{
 															return POST_CREATE_POSTGRESQL_CONNECTION_PREFIX;
+														}
+{SPACE}"create_sqlserver_connection"{SPACE}"("{SPACE}	{
+															return POST_CREATE_SQLSERVER_CONNECTION_PREFIX;
 														}
 {SPACE}"create_redis_connection"{SPACE}"("{SPACE}		{
 															return POST_CREATE_REDIS_CONNECTION_PREFIX;

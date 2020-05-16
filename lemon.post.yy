@@ -2,8 +2,6 @@
 {
 #include "pch.h"
 
-
-	
 #include "tagDataBlock.h"
 #include "post.parser.imp.h"
 #include "mkutils.h"
@@ -109,6 +107,8 @@
 %type createoracleconnection    {char *}
 %type createmysqlconnection     {char *}
 %type createredisconnection		{redisContext *}
+%type createpostgresqlconnection{char *}
+%type createsqlserverconnection {char *}
 %type rediscommandPing			{char *}
 %type rediscommandSet			{char *}
 %type rediscommandGet			{char *}
@@ -120,7 +120,6 @@
 %type rediscommandAppend		{char *}
 %type rediscommandStrlen		{char *}
 %type rediscommands				{char *}
-%type createpostgresqlconnection{char *}
 %type stringchars               {char *}
 %type stringchar                {char *}
 %type dmlcommand				{char *}
@@ -1543,6 +1542,33 @@ createredisconnection(RET) ::= POST_CREATE_REDIS_CONNECTION_PREFIX expression(SE
 		mkFree(session->heapHandle, PORT_NUMBER);
 }
 
+/**
+* CREATE POSTGRESQL CONNECTION PROCEDURE VARIANTS
+*/
+createsqlserverconnection(RET) ::= POST_CREATE_SQLSERVER_CONNECTION_PREFIX expression(CONNECTION_NAME) POST_COMMA expression(HOST_NAME) POST_COMMA expression(INSTANCE_NAME) POST_COMMA expression(USER_NAME) POST_COMMA expression(PASSWORD) POST_CLOSE_PARANTHESIS.
+{
+	const char *retVal = CreateConnection(
+                                    session,
+									GetCurrentPage(session),
+									CONNECTION_NAME,
+									"sqlserver",
+                                    HOST_NAME, 
+                                    INSTANCE_NAME,
+									USER_NAME,
+									PASSWORD);
+    
+	if (retVal) {
+		RET = mkStrdup(session->heapHandle, retVal, __FILE__, __LINE__);
+	}
+	else {
+		RET = mkStrdup(session->heapHandle, "", __FILE__, __LINE__);
+	}
+
+	mkFree(session->heapHandle, CONNECTION_NAME);
+	mkFree(session->heapHandle, INSTANCE_NAME);
+	mkFree(session->heapHandle, USER_NAME);
+	mkFree(session->heapHandle, PASSWORD);
+}
 
 /**
 * CREATE POSTGRESQL CONNECTION PROCEDURE VARIANTS
@@ -2228,6 +2254,7 @@ expression  ::= postnull.
 expression  ::= createoracleconnection.
 expression  ::= createpostgresqlconnection.
 expression  ::= createmysqlconnection.
+expression  ::= createsqlserverconnection.
 expression  ::= rediscommands.
 expression  ::= macroline.
 

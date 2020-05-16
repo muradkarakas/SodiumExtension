@@ -25,6 +25,8 @@ CreateConnection(
 		dbt = SODIUM_POSTGRESQL_SUPPORT;
 	} else if (strcmp(dbType, "mysql") == 0) {
 		dbt = SODIUM_MYSQL_SUPPORT;
+	} else if (strcmp(dbType, "sqlserver") == 0) {
+		dbt = SODIUM_SQLSERVER_SUPPORT;
 	}
 	else {
 		return ETEXT(ERR_DB_DBTYPE_NOT_SUPPORTED);
