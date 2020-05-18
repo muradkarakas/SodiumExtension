@@ -1476,6 +1476,7 @@ createoracleconnection(RET) ::= POST_CREATE_ORACLE_CONNECTION_PREFIX expression(
 									"oracle",
                                     HOST_NAME,
 									INSTANCE_NAME, 
+                                    "",
 									USER_NAME, 
 									PASSWORD);
 
@@ -1502,7 +1503,8 @@ createmysqlconnection(RET) ::= POST_CREATE_MYSQL_CONNECTION_PREFIX expression(CO
 									CONNECTION_NAME, 
 									"mysql",
                                     HOST_NAME,
-									INSTANCE_NAME, 
+									INSTANCE_NAME,
+                                    "",
 									USER_NAME, 
 									PASSWORD);
     if (retVal) {
@@ -1545,7 +1547,7 @@ createredisconnection(RET) ::= POST_CREATE_REDIS_CONNECTION_PREFIX expression(SE
 /**
 * CREATE POSTGRESQL CONNECTION PROCEDURE VARIANTS
 */
-createsqlserverconnection(RET) ::= POST_CREATE_SQLSERVER_CONNECTION_PREFIX expression(CONNECTION_NAME) POST_COMMA expression(HOST_NAME) POST_COMMA expression(INSTANCE_NAME) POST_COMMA expression(USER_NAME) POST_COMMA expression(PASSWORD) POST_CLOSE_PARANTHESIS.
+createsqlserverconnection(RET) ::= POST_CREATE_SQLSERVER_CONNECTION_PREFIX expression(CONNECTION_NAME) POST_COMMA expression(HOST_NAME) POST_COMMA expression(INSTANCE_NAME) POST_COMMA expression(DATABASE_NAME) POST_COMMA expression(USER_NAME) POST_COMMA expression(PASSWORD) POST_CLOSE_PARANTHESIS.
 {
 	const char *retVal = CreateConnection(
                                     session,
@@ -1554,6 +1556,7 @@ createsqlserverconnection(RET) ::= POST_CREATE_SQLSERVER_CONNECTION_PREFIX expre
 									"sqlserver",
                                     HOST_NAME, 
                                     INSTANCE_NAME,
+                                    DATABASE_NAME,
 									USER_NAME,
 									PASSWORD);
     
@@ -1582,6 +1585,7 @@ createpostgresqlconnection(RET) ::= POST_CREATE_POSTGRESQL_CONNECTION_PREFIX exp
 									"postgresql",
                                     HOST_NAME, 
                                     INSTANCE_NAME,
+                                    "",
 									USER_NAME,
 									PASSWORD);
 

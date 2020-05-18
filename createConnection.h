@@ -26,6 +26,7 @@ CreateConnection(
     const char * dbType, 
     const char * hostName, 
     const char * pInstanceName, 
+    const char* pDatabaseName,
     const char * pUserName, 
     const char * pPassword);
 

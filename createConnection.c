@@ -11,6 +11,7 @@ CreateConnection(
 	const char *dbType, 
 	const char *hostName,
 	const char *pInstanceName, 
+	const char *pDatabaseName, 
 	const char *pUserName, 
 	const char *pPassword
 )
@@ -36,7 +37,7 @@ CreateConnection(
 
 	if (tagConnection == NULL) {
 
-		DBInt_Connection *mkDBConnection = DBInt_CreateDBConnection(session->heapHandle, dbt, hostName, pInstanceName, pUserName, pPassword);	
+		DBInt_Connection *mkDBConnection = DBInt_CreateDBConnection(session->heapHandle, dbt, hostName, pInstanceName, pDatabaseName, pUserName, pPassword);
 		if (mkDBConnection && mkDBConnection->errText == NULL) {
 			// conection to database is done
 			tagConnection = createTAGConnection(session, page);
@@ -66,7 +67,7 @@ CreateConnection(
 		setTAGConnectionPropertyUserName(session, tagConnection, pUserName);
 		setTAGConnectionPropertyUserPassword(session, tagConnection, pPassword);
 
-		DBInt_Connection *mkDBConnection = DBInt_CreateDBConnection(session->heapHandle, dbt, hostName, pInstanceName, pUserName, pPassword);
+		DBInt_Connection *mkDBConnection = DBInt_CreateDBConnection(session->heapHandle, dbt, hostName, pInstanceName, pDatabaseName, pUserName, pPassword);
 		if (mkDBConnection && mkDBConnection->errText) {
 			mkDebug(session, SESSION_LOG_DETAIL_DB_EVENTS, "\n", ETEXT(ERR_DB_CONNECTION_CANNOT_BE_OPENED), (mkDBConnection->errText) ? mkDBConnection->errText : "", NULL);
 			retVal = (mkDBConnection->errText) ? mkDBConnection->errText : "";
