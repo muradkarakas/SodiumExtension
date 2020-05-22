@@ -4309,11 +4309,13 @@ static void yy_reduce(
 	}
 
 	mkFree(session->heapHandle, yymsp[-11].minor.yy265);
-	mkFree(session->heapHandle, yymsp[-7].minor.yy265);
+	mkFree(session->heapHandle, yymsp[-9].minor.yy265);
+    mkFree(session->heapHandle, yymsp[-7].minor.yy265);
+    mkFree(session->heapHandle, yymsp[-5].minor.yy265);
 	mkFree(session->heapHandle, yymsp[-3].minor.yy265);
 	mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4317 "lemon.post.c"
+#line 4319 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-10].minor);
   yy_destructor(yypParser,49,&yymsp[-8].minor);
   yy_destructor(yypParser,49,&yymsp[-6].minor);
@@ -4324,7 +4326,7 @@ static void yy_reduce(
         break;
       case 78: /* createpostgresqlconnection ::= POST_CREATE_POSTGRESQL_CONNECTION_PREFIX expression POST_COMMA expression POST_COMMA expression POST_COMMA expression POST_COMMA expression POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,73,&yymsp[-10].minor);
-#line 1580 "lemon.post.yy"
+#line 1582 "lemon.post.yy"
 {
 	const char *retVal = CreateConnection(
                                     session,
@@ -4349,7 +4351,7 @@ static void yy_reduce(
 	mkFree(session->heapHandle, yymsp[-3].minor.yy265);
 	mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4353 "lemon.post.c"
+#line 4355 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-8].minor);
   yy_destructor(yypParser,49,&yymsp[-6].minor);
   yy_destructor(yypParser,49,&yymsp[-4].minor);
@@ -4359,20 +4361,20 @@ static void yy_reduce(
         break;
       case 79: /* tojson ::= POST_TO_JSON_PREFIX variablename POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,74,&yymsp[-2].minor);
-#line 1609 "lemon.post.yy"
+#line 1611 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     char *jsondata  = __sendAddTreeNodeResponse(session, page, yymsp[-1].minor.yy265);
     yymsp[-2].minor.yy265             = jsondata;
     mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4370 "lemon.post.c"
+#line 4372 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 80: /* runsqlfile ::= POST_RUN_SQL_FILE_PREFIX expressions POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,75,&yymsp[-2].minor);
-#line 1620 "lemon.post.yy"
+#line 1622 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	char *err = __runSQLFile(session, page, yymsp[-1].minor.yy265);
@@ -4381,39 +4383,39 @@ static void yy_reduce(
 		mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 	}
 }
-#line 4385 "lemon.post.c"
+#line 4387 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 81: /* getdatabasename ::= POST_GET_DATABASE_NAME_PREFIX stringconstant POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,76,&yymsp[-2].minor);
-#line 1633 "lemon.post.yy"
+#line 1635 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	char *dbInfo = __getDatabaseName(session, page, yymsp[-1].minor.yy265);
 	yymsp[-2].minor.yy265 = dbInfo;
 	mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4398 "lemon.post.c"
+#line 4400 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 82: /* getdatabasetype ::= POST_GET_DATABASE_TYPE_PREFIX stringconstant POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,77,&yymsp[-2].minor);
-#line 1644 "lemon.post.yy"
+#line 1646 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	char *dbInfo = __getDatabaseType(session, page, yymsp[-1].minor.yy265);
 	yymsp[-2].minor.yy265 = dbInfo;
 	mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4411 "lemon.post.c"
+#line 4413 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 83: /* instr ::= POST_INSTR_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,78,&yymsp[-4].minor);
-#line 1655 "lemon.post.yy"
+#line 1657 "lemon.post.yy"
 {
     char *source    = yymsp[-3].minor.yy265;
     char *searchStr = yymsp[-1].minor.yy265;
@@ -4428,14 +4430,14 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-3].minor.yy265);
     mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4432 "lemon.post.c"
+#line 4434 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 84: /* replace ::= POST_REPLACE_PREFIX expressions POST_COMMA expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,79,&yymsp[-6].minor);
-#line 1673 "lemon.post.yy"
+#line 1675 "lemon.post.yy"
 {
     char *source    = yymsp[-5].minor.yy265;
     char *fromStr   = yymsp[-3].minor.yy265;
@@ -4452,7 +4454,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-3].minor.yy265);
     mkFree(session->heapHandle, yymsp[-1].minor.yy265);
 }
-#line 4456 "lemon.post.c"
+#line 4458 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-4].minor);
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
@@ -4460,7 +4462,7 @@ static void yy_reduce(
         break;
       case 85: /* previousrecord ::= POST_PREVIOUS_RECORD_PREFIX variablename POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,80,&yymsp[-3].minor);
-#line 1693 "lemon.post.yy"
+#line 1695 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 
@@ -4469,27 +4471,27 @@ static void yy_reduce(
 	DBInt_Prev(session->rootTAGConnection->mkDBConnection, postObjectResultSet->ociStatement);
 	mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4473 "lemon.post.c"
+#line 4475 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 86: /* lastrecord ::= POST_LAST_RECORD_PREFIX variablename POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,81,&yymsp[-3].minor);
-#line 1706 "lemon.post.yy"
+#line 1708 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	CLOG(ERR_CORE_NOT_IMPLEMENTED, "");
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4486 "lemon.post.c"
+#line 4488 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 87: /* firstrecord ::= POST_FIRST_RECORD_PREFIX variablename POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,82,&yymsp[-3].minor);
-#line 1716 "lemon.post.yy"
+#line 1718 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 
@@ -4501,14 +4503,14 @@ static void yy_reduce(
     postObjectResultSet->eof = eof;*/
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4505 "lemon.post.c"
+#line 4507 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 88: /* nextrecord ::= POST_NEXT_RECORD_PREFIX variablename POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,83,&yymsp[-3].minor);
-#line 1732 "lemon.post.yy"
+#line 1734 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     PostObjectResultSet *postObjectResultSet = findPostObjectGenericPostResultSetVariable(session, page, yymsp[-2].minor.yy265);
@@ -4520,27 +4522,27 @@ static void yy_reduce(
     postObjectResultSet->eof = eof;*/
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4524 "lemon.post.c"
+#line 4526 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 89: /* hideblock ::= POST_HIDE_BLOCK_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,84,&yymsp[-3].minor);
-#line 1748 "lemon.post.yy"
+#line 1750 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __sendHideBlockResponse(session, page, yymsp[-2].minor.yy265, false);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4537 "lemon.post.c"
+#line 4539 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 90: /* hideblock ::= POST_HIDE_BLOCK_PREFIX expression POST_COMMA expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,84,&yymsp[-5].minor);
-#line 1754 "lemon.post.yy"
+#line 1756 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     bool cascade = (strcmp("true", yymsp[-2].minor.yy265) == 0);
@@ -4548,7 +4550,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-4].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4552 "lemon.post.c"
+#line 4554 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4556,21 +4558,21 @@ static void yy_reduce(
         break;
       case 91: /* showblock ::= POST_SHOW_BLOCK_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,85,&yymsp[-3].minor);
-#line 1766 "lemon.post.yy"
+#line 1768 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	TAGDataBlock *pTAGDataBlock = findTAGDataBlockByName(session, page, yymsp[-2].minor.yy265);
     __sendShowBlockResponse(session, page, pTAGDataBlock, false);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4567 "lemon.post.c"
+#line 4569 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 92: /* showblock ::= POST_SHOW_BLOCK_PREFIX expression POST_COMMA expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,85,&yymsp[-5].minor);
-#line 1773 "lemon.post.yy"
+#line 1775 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     bool cascade = (strcmp("true", yymsp[-2].minor.yy265) == 0);
@@ -4579,7 +4581,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-4].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4583 "lemon.post.c"
+#line 4585 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4587,7 +4589,7 @@ static void yy_reduce(
         break;
       case 93: /* showpage ::= POST_SHOW_PAGE_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,86,&yymsp[-3].minor);
-#line 1786 "lemon.post.yy"
+#line 1788 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __sendShowPageResponse(session, page, yymsp[-2].minor.yy265);
@@ -4595,14 +4597,14 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4599 "lemon.post.c"
+#line 4601 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 94: /* message ::= POST_MESSAGE_PREFIX expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,87,&yymsp[-3].minor);
-#line 1799 "lemon.post.yy"
+#line 1801 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	__sendMessageResponse(session, page, yymsp[-2].minor.yy265);
@@ -4610,14 +4612,14 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4614 "lemon.post.c"
+#line 4616 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 95: /* message ::= POST_MESSAGE_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,87,&yymsp[-5].minor);
-#line 1811 "lemon.post.yy"
+#line 1813 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	__sendMessage3Response(session, page, yymsp[-4].minor.yy265, yymsp[-2].minor.yy265, "info");
@@ -4629,7 +4631,7 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4633 "lemon.post.c"
+#line 4635 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4637,7 +4639,7 @@ static void yy_reduce(
         break;
       case 96: /* message ::= POST_MESSAGE_PREFIX expressions POST_COMMA expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,87,&yymsp[-7].minor);
-#line 1827 "lemon.post.yy"
+#line 1829 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	__sendMessage3Response(session, page, yymsp[-6].minor.yy265, yymsp[-4].minor.yy265, yymsp[-2].minor.yy265);
@@ -4652,7 +4654,7 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4656 "lemon.post.c"
+#line 4658 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-5].minor);
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
@@ -4661,7 +4663,7 @@ static void yy_reduce(
         break;
       case 97: /* refreshtreenode ::= POST_REFRESH_TREE_NODE_PREFIX stringconstant POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,88,&yymsp[-5].minor);
-#line 1844 "lemon.post.yy"
+#line 1846 "lemon.post.yy"
 {
     char *treename = yymsp[-4].minor.yy265;
     char *nodeid   = yymsp[-2].minor.yy265;
@@ -4670,7 +4672,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, treename);
     mkFree(session->heapHandle, nodeid);
 }
-#line 4674 "lemon.post.c"
+#line 4676 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4678,7 +4680,7 @@ static void yy_reduce(
         break;
       case 98: /* refreshblock ::= POST_REFRESH_BLOCK_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,89,&yymsp[-3].minor);
-#line 1858 "lemon.post.yy"
+#line 1860 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	TAGDataBlock *dataBlockInstance = findTAGDataBlockByName(session, page, yymsp[-2].minor.yy265);
@@ -4690,14 +4692,14 @@ static void yy_reduce(
     }
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4694 "lemon.post.c"
+#line 4696 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 99: /* refreshblock ::= POST_REFRESH_BLOCK_PREFIX expression POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,89,&yymsp[-5].minor);
-#line 1870 "lemon.post.yy"
+#line 1872 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     TAGDataBlock *dataBlock = findTAGDataBlockByName(session, page, yymsp[-4].minor.yy265);
@@ -4717,7 +4719,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-4].minor.yy265);
     mkFree(session->heapHandle, whereClause);
 }
-#line 4721 "lemon.post.c"
+#line 4723 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4725,7 +4727,7 @@ static void yy_reduce(
         break;
       case 100: /* setdatablockproperty ::= POST_SET_DATABLOCK_PROPERTY_PREFIX expression POST_COMMA expressions POST_COMMA expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,90,&yymsp[-9].minor);
-#line 1895 "lemon.post.yy"
+#line 1897 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	TAGDataBlock *dataBlockInstance = findTAGDataBlockByName(session, page, yymsp[-8].minor.yy265);
@@ -4745,7 +4747,7 @@ static void yy_reduce(
 	mkFree(session->heapHandle, yymsp[-4].minor.yy265);
 	mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4749 "lemon.post.c"
+#line 4751 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-7].minor);
   yy_destructor(yypParser,49,&yymsp[-5].minor);
   yy_destructor(yypParser,49,&yymsp[-3].minor);
@@ -4755,7 +4757,7 @@ static void yy_reduce(
         break;
       case 101: /* showcolumn ::= POST_SHOW_COLUMN_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,91,&yymsp[-3].minor);
-#line 1920 "lemon.post.yy"
+#line 1922 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __showColumn(session, page, yymsp[-2].minor.yy265);
@@ -4763,14 +4765,14 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4767 "lemon.post.c"
+#line 4769 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 102: /* hidecolumn ::= POST_HIDE_COLUMN_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,92,&yymsp[-3].minor);
-#line 1931 "lemon.post.yy"
+#line 1933 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __hideColumn(session, page, yymsp[-2].minor.yy265);
@@ -4778,14 +4780,14 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4782 "lemon.post.c"
+#line 4784 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 103: /* disablecolumn ::= POST_DISABLE_COLUMN_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,93,&yymsp[-3].minor);
-#line 1943 "lemon.post.yy"
+#line 1945 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __disableColumn(session, page, yymsp[-2].minor.yy265);
@@ -4793,33 +4795,33 @@ static void yy_reduce(
         mkFree(session->heapHandle, yymsp[-2].minor.yy265);
     }
 }
-#line 4797 "lemon.post.c"
+#line 4799 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 104: /* enablecolumn ::= POST_ENABLE_COLUMN_PREFIX expression POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,94,&yymsp[-3].minor);
-#line 1954 "lemon.post.yy"
+#line 1956 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __enableColumn(session, page, yymsp[-2].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4810 "lemon.post.c"
+#line 4812 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 105: /* prompt ::= POST_PROMPT_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,95,&yymsp[-5].minor);
-#line 1964 "lemon.post.yy"
+#line 1966 "lemon.post.yy"
 {
     __prompt(session, yymsp[-4].minor.yy265, yymsp[-2].minor.yy265);
     mkFree(session->heapHandle, yymsp[-4].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4823 "lemon.post.c"
+#line 4825 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4827,24 +4829,24 @@ static void yy_reduce(
         break;
       case 106: /* pupulatedatalist ::= POST_POPULATE_DATALIST_PREFIX stringconstant POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,96,&yymsp[-3].minor);
-#line 1974 "lemon.post.yy"
+#line 1976 "lemon.post.yy"
 {
      __sendPopulateDatalistResponse(session, GetCurrentPage(session), yymsp[-2].minor.yy265, false);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4836 "lemon.post.c"
+#line 4838 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 107: /* pupulatedatalist ::= POST_POPULATE_DATALIST_PREFIX stringconstant POST_COMMA condition_options POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,96,&yymsp[-5].minor);
-#line 1979 "lemon.post.yy"
+#line 1981 "lemon.post.yy"
 {
 	__sendPopulateDatalistResponse(session, GetCurrentPage(session), yymsp[-4].minor.yy265, yymsp[-2].minor.yy345);
 	mkFree(session->heapHandle, yymsp[-4].minor.yy265);
 }
-#line 4848 "lemon.post.c"
+#line 4850 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4852,12 +4854,12 @@ static void yy_reduce(
         break;
       case 108: /* pupulatedatalist ::= POST_POPULATE_DATALIST_PREFIX stringconstant POST_COMMA variablename POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,96,&yymsp[-5].minor);
-#line 1984 "lemon.post.yy"
+#line 1986 "lemon.post.yy"
 {
 	__sendPopulateDatalistWithRecordSetResponse(session, GetCurrentPage(session), yymsp[-4].minor.yy265, yymsp[-2].minor.yy265);
 	mkFree(session->heapHandle, yymsp[-4].minor.yy265);
 }
-#line 4861 "lemon.post.c"
+#line 4863 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-3].minor);
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
@@ -4865,76 +4867,76 @@ static void yy_reduce(
         break;
       case 109: /* pupulatetree ::= POST_POPULATE_TREE_PREFIX stringconstant POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,97,&yymsp[-3].minor);
-#line 1995 "lemon.post.yy"
+#line 1997 "lemon.post.yy"
 {
      __sendPopulateTreeResponse(session, GetCurrentPage(session), yymsp[-2].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4874 "lemon.post.c"
+#line 4876 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 110: /* rollback ::= POST_ROLLBACK_PREFIX POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,98,&yymsp[-2].minor);
-#line 2008 "lemon.post.yy"
+#line 2010 "lemon.post.yy"
 {
     __rollback(session, GetCurrentPage(session), NULL);
 }
-#line 4885 "lemon.post.c"
+#line 4887 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 111: /* rollback ::= POST_ROLLBACK_PREFIX expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,98,&yymsp[-3].minor);
-#line 2012 "lemon.post.yy"
+#line 2014 "lemon.post.yy"
 {
     __rollback(session, GetCurrentPage(session), yymsp[-2].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4897 "lemon.post.c"
+#line 4899 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 112: /* commit ::= POST_COMMIT_PREFIX POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,99,&yymsp[-2].minor);
-#line 2021 "lemon.post.yy"
+#line 2023 "lemon.post.yy"
 {
     __commit(session, GetCurrentPage(session), NULL);
 }
-#line 4908 "lemon.post.c"
+#line 4910 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 113: /* commit ::= POST_COMMIT_PREFIX expressions POST_CLOSE_PARANTHESIS POST_SEMI_COLON */
 {  yy_destructor(yypParser,99,&yymsp[-3].minor);
-#line 2025 "lemon.post.yy"
+#line 2027 "lemon.post.yy"
 {
     __commit(session, GetCurrentPage(session), yymsp[-2].minor.yy265);
     mkFree(session->heapHandle, yymsp[-2].minor.yy265);
 }
-#line 4920 "lemon.post.c"
+#line 4922 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[-1].minor);
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
       case 114: /* delete ::= POST_DELETE */
 {  yy_destructor(yypParser,46,&yymsp[0].minor);
-#line 2034 "lemon.post.yy"
+#line 2036 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __delete(session,
              page,
              getPostCurrentTAGDataBlock(session, page));
 }
-#line 4934 "lemon.post.c"
+#line 4936 "lemon.post.c"
 }
         break;
       case 115: /* selectstatement ::= dmlcommand */
-#line 2043 "lemon.post.yy"
+#line 2045 "lemon.post.yy"
 {
     char *value = mkStrcat(session->heapHandle, __FILE__, __LINE__,
 							"select ",
@@ -4944,11 +4946,11 @@ static void yy_reduce(
     yylhsminor.yy265 = value;
 	mkFree(session->heapHandle, yymsp[0].minor.yy265);
 }
-#line 4948 "lemon.post.c"
+#line 4950 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 116: /* expressions ::= expressions POST_AMPERSAND expression */
-#line 2060 "lemon.post.yy"
+#line 2062 "lemon.post.yy"
 {
     char *temp = NULL;
     char *p1 = yymsp[-2].minor.yy265;
@@ -4973,12 +4975,12 @@ static void yy_reduce(
         mkFree(session->heapHandle, p2);
     }
 }
-#line 4977 "lemon.post.c"
+#line 4979 "lemon.post.c"
   yy_destructor(yypParser,12,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 117: /* expressions ::= expressions POST_PLUS expressions */
-#line 2085 "lemon.post.yy"
+#line 2087 "lemon.post.yy"
 {
     char *p1 = yymsp[-2].minor.yy265;
     char *p2 = yymsp[0].minor.yy265;
@@ -5010,12 +5012,12 @@ static void yy_reduce(
         mkFree(session->heapHandle, p2);
     }
 }
-#line 5014 "lemon.post.c"
+#line 5016 "lemon.post.c"
   yy_destructor(yypParser,13,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 118: /* expressions ::= expressions POST_MODULAR_DIVISION expressions */
-#line 2117 "lemon.post.yy"
+#line 2119 "lemon.post.yy"
 {
     char *p1 = yymsp[-2].minor.yy265;
     char *p2 = yymsp[0].minor.yy265;
@@ -5046,12 +5048,12 @@ static void yy_reduce(
         mkFree(session->heapHandle, p2);
     }
 }
-#line 5050 "lemon.post.c"
+#line 5052 "lemon.post.c"
   yy_destructor(yypParser,17,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 119: /* expressions ::= expressions POST_MULTIPLY expressions */
-#line 2148 "lemon.post.yy"
+#line 2150 "lemon.post.yy"
 {
     char *p1 = yymsp[-2].minor.yy265;
     char *p2 = yymsp[0].minor.yy265;
@@ -5080,12 +5082,12 @@ static void yy_reduce(
     mkFree(session->heapHandle, p1);
     mkFree(session->heapHandle, p2);
 }
-#line 5084 "lemon.post.c"
+#line 5086 "lemon.post.c"
   yy_destructor(yypParser,15,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 120: /* expressions ::= expressions POST_DIVISION expressions */
-#line 2177 "lemon.post.yy"
+#line 2179 "lemon.post.yy"
 {
     char *p1 = yymsp[-2].minor.yy265;
     char *p2 = yymsp[0].minor.yy265;
@@ -5113,12 +5115,12 @@ static void yy_reduce(
     mkFree(session->heapHandle, p1);
     mkFree(session->heapHandle, p2);
 }
-#line 5117 "lemon.post.c"
+#line 5119 "lemon.post.c"
   yy_destructor(yypParser,16,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 121: /* expressions ::= expressions POST_SUBTRACT expressions */
-#line 2205 "lemon.post.yy"
+#line 2207 "lemon.post.yy"
 {
     char *p1 = yymsp[-2].minor.yy265;
     char *p2 = yymsp[0].minor.yy265;
@@ -5146,22 +5148,22 @@ static void yy_reduce(
     mkFree(session->heapHandle, p1);
     mkFree(session->heapHandle, p2);
 }
-#line 5150 "lemon.post.c"
+#line 5152 "lemon.post.c"
   yy_destructor(yypParser,14,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 122: /* expressions ::= POST_OPEN_PARANTHESIS expressions POST_CLOSE_PARANTHESIS */
 {  yy_destructor(yypParser,37,&yymsp[-2].minor);
-#line 2233 "lemon.post.yy"
+#line 2235 "lemon.post.yy"
 {
     yymsp[-2].minor.yy265 = yymsp[-1].minor.yy265;
 }
-#line 5160 "lemon.post.c"
+#line 5162 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
       case 123: /* expression ::= userfunctioncall */
-#line 2266 "lemon.post.yy"
+#line 2268 "lemon.post.yy"
 {
     char *retval = yymsp[0].minor.yy265;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5175,20 +5177,20 @@ static void yy_reduce(
 
     yylhsminor.yy265 = retval;
 }
-#line 5179 "lemon.post.c"
+#line 5181 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 126: /* postnull ::= POST_NULL */
 {  yy_destructor(yypParser,102,&yymsp[0].minor);
-#line 2296 "lemon.post.yy"
+#line 2298 "lemon.post.yy"
 {
     yymsp[0].minor.yy265 = NULL;
 }
-#line 5188 "lemon.post.c"
+#line 5190 "lemon.post.c"
 }
         break;
       case 127: /* variablename ::= POST_IDENTIFIER */
-#line 2305 "lemon.post.yy"
+#line 2307 "lemon.post.yy"
 {
 	char *a = yymsp[0].minor.yy0.tokenStr;
 	int b = yymsp[0].minor.yy0.tokenStrLength;
@@ -5198,11 +5200,11 @@ static void yy_reduce(
     value[yymsp[0].minor.yy0.tokenStrLength] = '\0';
     yylhsminor.yy265 = value;
 }
-#line 5202 "lemon.post.c"
+#line 5204 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 128: /* variablevalue ::= POST_IDENTIFIER */
-#line 2317 "lemon.post.yy"
+#line 2319 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 
@@ -5219,22 +5221,22 @@ static void yy_reduce(
     mkFree(session->heapHandle, retval);
     mkFree(session->heapHandle, value);
 }
-#line 5223 "lemon.post.c"
+#line 5225 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 129: /* dmlcommand ::= POST_DML_START dmlchars POST_DML_END */
 {  yy_destructor(yypParser,103,&yymsp[-2].minor);
-#line 2353 "lemon.post.yy"
+#line 2355 "lemon.post.yy"
 {
 	char *a = yymsp[-1].minor.yy265;
 	yymsp[-2].minor.yy265 = a;
 }
-#line 5233 "lemon.post.c"
+#line 5235 "lemon.post.c"
   yy_destructor(yypParser,104,&yymsp[0].minor);
 }
         break;
       case 130: /* dmlchars ::= dmlchars dmlchar */
-#line 2358 "lemon.post.yy"
+#line 2360 "lemon.post.yy"
 {
 	char *a = yymsp[-1].minor.yy265;
 	char *b = yymsp[0].minor.yy265;
@@ -5250,11 +5252,11 @@ static void yy_reduce(
 	mkFree(session->heapHandle, a);
 	mkFree(session->heapHandle, b);
 }
-#line 5254 "lemon.post.c"
+#line 5256 "lemon.post.c"
   yymsp[-1].minor.yy265 = yylhsminor.yy265;
         break;
       case 131: /* dmlchar ::= POST_DML_CHAR */
-#line 2375 "lemon.post.yy"
+#line 2377 "lemon.post.yy"
 {
 	TokenPost token = yymsp[0].minor.yy0;
 
@@ -5265,33 +5267,33 @@ static void yy_reduce(
 
 	yylhsminor.yy265 = sp;
 }
-#line 5269 "lemon.post.c"
+#line 5271 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 132: /* stringconstant ::= POST_STRING_CONSTANT_START POST_STRING_CONSTANT_END */
 {  yy_destructor(yypParser,106,&yymsp[-1].minor);
-#line 2387 "lemon.post.yy"
+#line 2389 "lemon.post.yy"
 {
 	// empty string
 	yymsp[-1].minor.yy265 = mkStrdup(session->heapHandle, "", __FILE__, __LINE__);
 }
-#line 5279 "lemon.post.c"
+#line 5281 "lemon.post.c"
   yy_destructor(yypParser,107,&yymsp[0].minor);
 }
         break;
       case 133: /* stringconstant ::= POST_STRING_CONSTANT_START stringchars POST_STRING_CONSTANT_END */
 {  yy_destructor(yypParser,106,&yymsp[-2].minor);
-#line 2393 "lemon.post.yy"
+#line 2395 "lemon.post.yy"
 {
     char *a = yymsp[-1].minor.yy265;
     yymsp[-2].minor.yy265     = a;
 }
-#line 5290 "lemon.post.c"
+#line 5292 "lemon.post.c"
   yy_destructor(yypParser,107,&yymsp[0].minor);
 }
         break;
       case 134: /* stringchars ::= stringchars stringchar */
-#line 2398 "lemon.post.yy"
+#line 2400 "lemon.post.yy"
 {
     char *a = yymsp[-1].minor.yy265;
     char *b = yymsp[0].minor.yy265;
@@ -5306,21 +5308,21 @@ static void yy_reduce(
     mkFree(session->heapHandle, a);
     mkFree(session->heapHandle, b);
 }
-#line 5310 "lemon.post.c"
+#line 5312 "lemon.post.c"
   yymsp[-1].minor.yy265 = yylhsminor.yy265;
         break;
       case 135: /* stringchar ::= POST_STRING_CONSTANT_APOSTROPHE */
 {  yy_destructor(yypParser,108,&yymsp[0].minor);
-#line 2415 "lemon.post.yy"
+#line 2417 "lemon.post.yy"
 {
     char *sp = mkStrdup(session->heapHandle, "'", __FILE__, __LINE__);
     yymsp[0].minor.yy265 = sp;
 }
-#line 5320 "lemon.post.c"
+#line 5322 "lemon.post.c"
 }
         break;
       case 136: /* stringchar ::= POST_STRING_CONSTANT_CHAR */
-#line 2420 "lemon.post.yy"
+#line 2422 "lemon.post.yy"
 {
     TokenPost token = yymsp[0].minor.yy0;
 
@@ -5331,11 +5333,11 @@ static void yy_reduce(
 
     yylhsminor.yy265 =  sp;
 }
-#line 5335 "lemon.post.c"
+#line 5337 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 137: /* numberconstant ::= POST_NUMBER_CONSTANT */
-#line 2433 "lemon.post.yy"
+#line 2435 "lemon.post.yy"
 {
     char *value = mkMalloc(session->heapHandle, yymsp[0].minor.yy0.tokenStrLength+1, __FILE__, __LINE__);
     strncpy_s(value, yymsp[0].minor.yy0.tokenStrLength + 1, yymsp[0].minor.yy0.tokenStr, yymsp[0].minor.yy0.tokenStrLength);
@@ -5348,12 +5350,12 @@ static void yy_reduce(
     yylhsminor.yy265 = retval;
     mkFree(session->heapHandle, value);
 }
-#line 5352 "lemon.post.c"
+#line 5354 "lemon.post.c"
   yymsp[0].minor.yy265 = yylhsminor.yy265;
         break;
       case 138: /* numberconstant ::= POST_SUBTRACT POST_NUMBER_CONSTANT */
 {  yy_destructor(yypParser,14,&yymsp[-1].minor);
-#line 2446 "lemon.post.yy"
+#line 2448 "lemon.post.yy"
 {
     char *value = mkMalloc(session->heapHandle, yymsp[0].minor.yy0.tokenStrLength+1, __FILE__, __LINE__);
     strncpy_s(value, yymsp[0].minor.yy0.tokenStrLength + 1, yymsp[0].minor.yy0.tokenStr, yymsp[0].minor.yy0.tokenStrLength);
@@ -5367,22 +5369,22 @@ static void yy_reduce(
     yymsp[-1].minor.yy265 = retval;
     mkFree(session->heapHandle, value);
 }
-#line 5371 "lemon.post.c"
+#line 5373 "lemon.post.c"
 }
         break;
       case 139: /* sessionid ::= POST_COLON POST_SESSION_ID */
 {  yy_destructor(yypParser,33,&yymsp[-1].minor);
-#line 2462 "lemon.post.yy"
+#line 2464 "lemon.post.yy"
 {
     yymsp[-1].minor.yy265 = mkStrdup(session->heapHandle, session->id, __FILE__, __LINE__);
 }
-#line 5380 "lemon.post.c"
+#line 5382 "lemon.post.c"
   yy_destructor(yypParser,111,&yymsp[0].minor);
 }
         break;
       case 140: /* rowid ::= POST_COLON POST_ROW_ID */
 {  yy_destructor(yypParser,33,&yymsp[-1].minor);
-#line 2467 "lemon.post.yy"
+#line 2469 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 
@@ -5399,11 +5401,11 @@ static void yy_reduce(
         yymsp[-1].minor.yy265 = mkMalloc(session->heapHandle, 10, __FILE__, __LINE__);
     }
 }
-#line 5403 "lemon.post.c"
+#line 5405 "lemon.post.c"
 }
         break;
       case 141: /* resultsetcolumnvalue ::= POST_IDENTIFIER POST_PERIOD POST_IDENTIFIER */
-#line 2485 "lemon.post.yy"
+#line 2487 "lemon.post.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     yylhsminor.yy265 = NULL;
@@ -5439,12 +5441,12 @@ static void yy_reduce(
     mkFree(session->heapHandle, valueA);
     mkFree(session->heapHandle, valueB);
 }
-#line 5443 "lemon.post.c"
+#line 5445 "lemon.post.c"
   yy_destructor(yypParser,113,&yymsp[-1].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 142: /* rediscommandStrlen ::= POST_IDENTIFIER POST_REDIS_STRLEN_PREFIX expressions POST_CLOSE_PARANTHESIS */
-#line 2533 "lemon.post.yy"
+#line 2535 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5469,13 +5471,13 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5473 "lemon.post.c"
+#line 5475 "lemon.post.c"
   yy_destructor(yypParser,114,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-3].minor.yy265 = yylhsminor.yy265;
         break;
       case 143: /* rediscommandAppend ::= POST_IDENTIFIER POST_REDIS_APPEND_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
-#line 2560 "lemon.post.yy"
+#line 2562 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5502,14 +5504,14 @@ static void yy_reduce(
 	mkFree(session->heapHandle, keyName);
 	mkFree(session->heapHandle, keyValue);
 }
-#line 5506 "lemon.post.c"
+#line 5508 "lemon.post.c"
   yy_destructor(yypParser,115,&yymsp[-4].minor);
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-5].minor.yy265 = yylhsminor.yy265;
         break;
       case 144: /* rediscommandIncr ::= POST_IDENTIFIER POST_REDIS_INCR_PREFIX expressions POST_CLOSE_PARANTHESIS */
-#line 2588 "lemon.post.yy"
+#line 2590 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5534,13 +5536,13 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5538 "lemon.post.c"
+#line 5540 "lemon.post.c"
   yy_destructor(yypParser,116,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-3].minor.yy265 = yylhsminor.yy265;
         break;
       case 145: /* rediscommandIncrBy ::= POST_IDENTIFIER POST_REDIS_INCRBY_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
-#line 2614 "lemon.post.yy"
+#line 2616 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5566,14 +5568,14 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5570 "lemon.post.c"
+#line 5572 "lemon.post.c"
   yy_destructor(yypParser,117,&yymsp[-4].minor);
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-5].minor.yy265 = yylhsminor.yy265;
         break;
       case 146: /* rediscommandDecr ::= POST_IDENTIFIER POST_REDIS_DECR_PREFIX expressions POST_CLOSE_PARANTHESIS */
-#line 2641 "lemon.post.yy"
+#line 2643 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5598,13 +5600,13 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5602 "lemon.post.c"
+#line 5604 "lemon.post.c"
   yy_destructor(yypParser,118,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-3].minor.yy265 = yylhsminor.yy265;
         break;
       case 147: /* rediscommandDecrBy ::= POST_IDENTIFIER POST_REDIS_DECRBY_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
-#line 2667 "lemon.post.yy"
+#line 2669 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5630,14 +5632,14 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5634 "lemon.post.c"
+#line 5636 "lemon.post.c"
   yy_destructor(yypParser,119,&yymsp[-4].minor);
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-5].minor.yy265 = yylhsminor.yy265;
         break;
       case 148: /* rediscommandGet ::= POST_IDENTIFIER POST_REDIS_GET_PREFIX expressions POST_CLOSE_PARANTHESIS */
-#line 2694 "lemon.post.yy"
+#line 2696 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5662,13 +5664,13 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5666 "lemon.post.c"
+#line 5668 "lemon.post.c"
   yy_destructor(yypParser,120,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-3].minor.yy265 = yylhsminor.yy265;
         break;
       case 149: /* rediscommandDel ::= POST_IDENTIFIER POST_REDIS_DEL_PREFIX expressions POST_CLOSE_PARANTHESIS */
-#line 2721 "lemon.post.yy"
+#line 2723 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5693,13 +5695,13 @@ static void yy_reduce(
 	mkFree(session->heapHandle, redVarName);
 	mkFree(session->heapHandle, keyName);
 }
-#line 5697 "lemon.post.c"
+#line 5699 "lemon.post.c"
   yy_destructor(yypParser,121,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-3].minor.yy265 = yylhsminor.yy265;
         break;
       case 150: /* rediscommandSet ::= POST_IDENTIFIER POST_REDIS_SET_PREFIX expressions POST_COMMA expressions POST_CLOSE_PARANTHESIS */
-#line 2747 "lemon.post.yy"
+#line 2749 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5727,14 +5729,14 @@ static void yy_reduce(
 	mkFree(session->heapHandle, keyName);
 	mkFree(session->heapHandle, keyValue);
 }
-#line 5731 "lemon.post.c"
+#line 5733 "lemon.post.c"
   yy_destructor(yypParser,122,&yymsp[-4].minor);
   yy_destructor(yypParser,49,&yymsp[-2].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-5].minor.yy265 = yylhsminor.yy265;
         break;
       case 151: /* rediscommandPing ::= POST_IDENTIFIER POST_REDIS_PING_PREFIX POST_CLOSE_PARANTHESIS */
-#line 2778 "lemon.post.yy"
+#line 2780 "lemon.post.yy"
 {
 	yylhsminor.yy265 = NULL;
 	HTSQLPage *page = GetCurrentPage(session);
@@ -5756,26 +5758,26 @@ static void yy_reduce(
 	
 	mkFree(session->heapHandle, valueA);
 }
-#line 5760 "lemon.post.c"
+#line 5762 "lemon.post.c"
   yy_destructor(yypParser,123,&yymsp[-1].minor);
   yy_destructor(yypParser,38,&yymsp[0].minor);
   yymsp[-2].minor.yy265 = yylhsminor.yy265;
         break;
       case 152: /* blockName ::= POST_COLON POST_IDENTIFIER */
 {  yy_destructor(yypParser,33,&yymsp[-1].minor);
-#line 2802 "lemon.post.yy"
+#line 2804 "lemon.post.yy"
 {
     char *blockName = mkMalloc(session->heapHandle, yymsp[0].minor.yy0.tokenStrLength+1, __FILE__, __LINE__);
     strncpy_s(blockName, yymsp[0].minor.yy0.tokenStrLength + 1, yymsp[0].minor.yy0.tokenStr, yymsp[0].minor.yy0.tokenStrLength);
     blockName[yymsp[0].minor.yy0.tokenStrLength] = '\0';
     yymsp[-1].minor.yy265 = blockName;
 }
-#line 5774 "lemon.post.c"
+#line 5776 "lemon.post.c"
 }
         break;
       case 153: /* blockItemValue ::= POST_COLON POST_BLOCK_REFERENCE POST_IDENTIFIER */
 {  yy_destructor(yypParser,33,&yymsp[-2].minor);
-#line 2811 "lemon.post.yy"
+#line 2813 "lemon.post.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 
@@ -5794,12 +5796,12 @@ static void yy_reduce(
     mkFree(session->heapHandle, itemName);
     mkFree(session->heapHandle, blockName);
 }
-#line 5798 "lemon.post.c"
+#line 5800 "lemon.post.c"
 }
         break;
       case 154: /* blockItemName ::= POST_COLON POST_BLOCK_REFERENCE POST_IDENTIFIER */
 {  yy_destructor(yypParser,33,&yymsp[-2].minor);
-#line 2833 "lemon.post.yy"
+#line 2835 "lemon.post.yy"
 {
     char *blockName = mkMalloc(session->heapHandle, yymsp[-1].minor.yy0.tokenStrLength+1, __FILE__, __LINE__);
     strncpy_s(blockName, yymsp[-1].minor.yy0.tokenStrLength+1, yymsp[-1].minor.yy0.tokenStr, yymsp[-1].minor.yy0.tokenStrLength);
@@ -5822,7 +5824,7 @@ static void yy_reduce(
     mkFree(session->heapHandle, blockName);
     mkFree(session->heapHandle, itemName);
 }
-#line 5826 "lemon.post.c"
+#line 5828 "lemon.post.c"
 }
         break;
       case 157: /* procbody ::= POST_BEGIN commands POST_END POST_END_OF_FILE */
@@ -5830,7 +5832,7 @@ static void yy_reduce(
 #line 174 "lemon.post.yy"
 {
 }
-#line 5834 "lemon.post.c"
+#line 5836 "lemon.post.c"
   yy_destructor(yypParser,19,&yymsp[-1].minor);
   yy_destructor(yypParser,20,&yymsp[0].minor);
 }
@@ -5840,7 +5842,7 @@ static void yy_reduce(
 #line 178 "lemon.post.yy"
 {
 }
-#line 5844 "lemon.post.c"
+#line 5846 "lemon.post.c"
   yy_destructor(yypParser,19,&yymsp[-1].minor);
   yy_destructor(yypParser,20,&yymsp[0].minor);
 }
@@ -5849,14 +5851,14 @@ static void yy_reduce(
 #line 187 "lemon.post.yy"
 {
 }
-#line 5853 "lemon.post.c"
+#line 5855 "lemon.post.c"
   yy_destructor(yypParser,20,&yymsp[0].minor);
         break;
       case 168: /* command ::= localvariable POST_SEMI_COLON */
 #line 194 "lemon.post.yy"
 {
 }
-#line 5860 "lemon.post.c"
+#line 5862 "lemon.post.c"
   yy_destructor(yypParser,21,&yymsp[0].minor);
         break;
       case 177: /* command ::= POST_EXECUTER */
@@ -5864,7 +5866,7 @@ static void yy_reduce(
 #line 209 "lemon.post.yy"
 {
 }
-#line 5868 "lemon.post.c"
+#line 5870 "lemon.post.c"
 }
         break;
       case 182: /* comment ::= POST_COMMENT_START POST_COMMENT_END */
@@ -5872,7 +5874,7 @@ static void yy_reduce(
 #line 216 "lemon.post.yy"
 {
 }
-#line 5876 "lemon.post.c"
+#line 5878 "lemon.post.c"
   yy_destructor(yypParser,24,&yymsp[0].minor);
 }
         break;
@@ -5881,7 +5883,7 @@ static void yy_reduce(
 #line 392 "lemon.post.yy"
 {
 }
-#line 5885 "lemon.post.c"
+#line 5887 "lemon.post.c"
   yy_destructor(yypParser,38,&yymsp[0].minor);
 }
         break;
@@ -5890,7 +5892,7 @@ static void yy_reduce(
 #line 746 "lemon.post.yy"
 {
 }
-#line 5894 "lemon.post.c"
+#line 5896 "lemon.post.c"
 }
         break;
       case 196: /* charvardecs ::= charvardecs POST_COMMA charvardec */
@@ -5901,7 +5903,7 @@ static void yy_reduce(
 #line 748 "lemon.post.yy"
 {
 }
-#line 5905 "lemon.post.c"
+#line 5907 "lemon.post.c"
   yy_destructor(yypParser,49,&yymsp[-1].minor);
         break;
       case 198: /* localvariable ::= POST_VARIABLE_TYPE_REDIS redisvardecs */
@@ -5909,7 +5911,7 @@ static void yy_reduce(
 #line 780 "lemon.post.yy"
 {
 }
-#line 5913 "lemon.post.c"
+#line 5915 "lemon.post.c"
 }
         break;
       case 201: /* localvariable ::= POST_VARIABLE_TYPE_BOOL boolvardecs */
@@ -5917,7 +5919,7 @@ static void yy_reduce(
 #line 815 "lemon.post.yy"
 {
 }
-#line 5921 "lemon.post.c"
+#line 5923 "lemon.post.c"
 }
         break;
       case 204: /* localvariable ::= POST_VARIABLE_TYPE_NUMBER intvardecs */
@@ -5925,7 +5927,7 @@ static void yy_reduce(
 #line 850 "lemon.post.yy"
 {
 }
-#line 5929 "lemon.post.c"
+#line 5931 "lemon.post.c"
 }
         break;
       case 207: /* localvariable ::= POST_VARIABLE_TYPE_DATE datevardecs */
@@ -5933,7 +5935,7 @@ static void yy_reduce(
 #line 878 "lemon.post.yy"
 {
 }
-#line 5937 "lemon.post.c"
+#line 5939 "lemon.post.c"
 }
         break;
       case 210: /* returnstatement ::= POST_RETURN_PREFIX returnvalue POST_SEMI_COLON */
@@ -5941,7 +5943,7 @@ static void yy_reduce(
 #line 925 "lemon.post.yy"
 {
 }
-#line 5945 "lemon.post.c"
+#line 5947 "lemon.post.c"
   yy_destructor(yypParser,21,&yymsp[0].minor);
 }
         break;
@@ -5950,7 +5952,7 @@ static void yy_reduce(
 #line 1151 "lemon.post.yy"
 {
 }
-#line 5954 "lemon.post.c"
+#line 5956 "lemon.post.c"
   yy_destructor(yypParser,61,&yymsp[-1].minor);
   yy_destructor(yypParser,62,&yymsp[0].minor);
 }
@@ -6132,7 +6134,7 @@ static void yy_syntax_error(
     errMsg = tempMsg;
     __sendErrorResponse(session, GetCurrentPage(session), errMsg, "");
 #endif
-#line 6136 "lemon.post.c"
+#line 6138 "lemon.post.c"
 /************ End %syntax_error code ******************************************/
   postParseARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }

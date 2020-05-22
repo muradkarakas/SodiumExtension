@@ -273,6 +273,16 @@ char* getSequenceSQLCommand(SodiumSession *session, TAGConnection *connection, c
 			sprintf_s(sql, size, "select %llu as seqval", tickCount);
 			break;
 		}
+		case SODIUM_SQLSERVER_SUPPORT: {
+			strcpy_s(sql, size, "SELECT NEXT VALUE FOR ");
+			if (sequenceSchemaName) {
+				strcat_s(sql, size, sequenceSchemaName);
+				strcat_s(sql, size, ".");
+			}
+			strcat_s(sql, size, sequenceName);
+			strcat_s(sql, size, " as seqval");
+			break;
+		}
 	}
 	
     return sql;
@@ -297,6 +307,7 @@ char* getSequenceValue(SodiumSession *session, HTSQLPage *page, TAGConnection *o
 	{
 		case SODIUM_MYSQL_SUPPORT:
 		case SODIUM_POSTGRESQL_SUPPORT:
+		case SODIUM_SQLSERVER_SUPPORT:
 		case SODIUM_ORACLE_SUPPORT: {
 			char* sql = getSequenceSQLCommand(session, ociConnection, sequenceSchemaName, sequenceName);
 			DBInt_Statement* stm = DBInt_CreateStatement(ociConnection->mkDBConnection);
@@ -432,6 +443,17 @@ char* getInsertSQLCommandForRow(SodiumSession *session, TAGDataBlock *pTAGDataBl
 							paramCount++;
 							break;
 						}
+						case SODIUM_SQLSERVER_SUPPORT: {
+							mkItoa(paramCount, paramCountStr);
+							if (input->inputType == INPUT_TAG_TYPE_IMAGE) {
+								strcat_s(sql, size, "?");
+							}
+							else {
+								strcat_s(sql, size, "?");
+							}							
+							paramCount++;
+							break;
+						}
 					}					
                 
 				} else {
@@ -493,6 +515,11 @@ char* getUpdateSQLCommandForRow(SodiumSession *session, TAGDataBlock *pTAGDataBl
 						mkItoa(paramCount, paramCountStr);
 						strcat_s(sql, size, "$");
 						strcat_s(sql, size, paramCountStr);
+						paramCount++;
+						break;
+					}
+					case SODIUM_SQLSERVER_SUPPORT: {
+						strcat_s(sql, size, " ? ");
 						paramCount++;
 						break;
 					}
@@ -561,7 +588,7 @@ void updateDataBlockCurrentRow(SodiumSession *session, HTSQLPage *page, TAGDataB
         char *sql = getUpdateSQLCommandForRow(session, pTAGDataBlock);
         
 		DBInt_Prepare(tagConnection->mkDBConnection, stm, sql);
-		bindSQLVariables(session, page, pTAGDataBlock, stm, SQL_COMMAND_TYPE_UPDATE);
+		BindSQLVariables(session, page, pTAGDataBlock, stm, SQL_COMMAND_TYPE_UPDATE);
 		DBInt_ExecuteUpdateStatement(tagConnection->mkDBConnection, stm, sql);
 
         if (tagConnection->mkDBConnection->errText) {
@@ -643,7 +670,7 @@ char *insertDataBlockCurrentRow(SodiumSession *session, HTSQLPage *page, TAGData
 	
 	char* keyColumnValue = GetDatablockKeyColumnValue(session, page, pTAGDataBlock);
 
-	bindSQLVariables(session, page, pTAGDataBlock, stm, SQL_COMMAND_TYPE_INSERT); 
+	BindSQLVariables(session, page, pTAGDataBlock, stm, SQL_COMMAND_TYPE_INSERT);
 	
 	//DBInt_RegisterString(tagConnection->mkDBConnection, stm, ":new_row_id", 25);
 	

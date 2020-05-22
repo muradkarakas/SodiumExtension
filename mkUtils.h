@@ -188,7 +188,14 @@ char from_hex(char ch);
 
 
 
-void bindSQLVariables(SodiumSession *currentMKSession, HTSQLPage *page, TAGDataBlock *pTAGDataBlock, DBInt_Statement *stm, SQL_COMMAND_TYPE commandType);
+void
+BindSQLVariables(
+    SodiumSession* session,
+    HTSQLPage* page,
+    TAGDataBlock* pTAGDataBlock,
+    DBInt_Statement* stm,
+    SQL_COMMAND_TYPE commandType
+);
 
 /** \brief  Returns a pointer to the beginning of the pos'th utf8 codepoint in the buffer at "source"
  *

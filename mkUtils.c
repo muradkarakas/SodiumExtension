@@ -111,8 +111,15 @@ char* getDataBlockNameOfExpression(SodiumSession *session, const char* exp) {
     return blockname;
 }
 
-void bindSQLVariables(SodiumSession *session, HTSQLPage *page, TAGDataBlock *pTAGDataBlock, DBInt_Statement *stm, SQL_COMMAND_TYPE commandType) {
-	
+void 
+BindSQLVariables(
+	SodiumSession * session, 
+	HTSQLPage * page, 
+	TAGDataBlock * pTAGDataBlock, 
+	DBInt_Statement * stm, 
+	SQL_COMMAND_TYPE commandType
+)
+{	
 	size_t paramNumber = 1;
 	char paramNumberStr[4];
 
@@ -149,6 +156,12 @@ void bindSQLVariables(SodiumSession *session, HTSQLPage *page, TAGDataBlock *pTA
 					paramNumber++;
 					break;
 				}
+				case SODIUM_SQLSERVER_SUPPORT: {
+					mkItoa(paramNumber, paramNumberStr);
+					tmpBindVarName = mkStrcat(session->heapHandle, __FILE__, __LINE__, "?", NULL);					
+					paramNumber++;
+					break;
+				}
 			}
 
             switch(input->inputType) {
@@ -158,11 +171,24 @@ void bindSQLVariables(SodiumSession *session, HTSQLPage *page, TAGDataBlock *pTA
                 case INPUT_TAG_TYPE_TEXT: {                        
                     switch(input->dataType) {
                         case INPUT_TAG_DATA_TYPE_DATE:
-                        case INPUT_TAG_DATA_TYPE_NUMBER:
-                        case INPUT_TAG_DATA_TYPE_CHAR: {								
+                        case INPUT_TAG_DATA_TYPE_CHAR: {
+							//	ODBC C library requires parameter index to bind parameter value.
+							//	That is, ODBC does not use named parameter variable for SELECT, INSERT and UPDATE statement, 
+							//	so we send the index of parameter
 							DBInt_BindString(	conn,
 												stm, 
-												tmpBindVarName, 
+												(conn->dbType != SODIUM_SQLSERVER_SUPPORT) ? tmpBindVarName : paramNumberStr,
+												input->value, 
+												(input->value) ? strlen(input->value):0);
+                            break;
+                        }
+						case INPUT_TAG_DATA_TYPE_NUMBER: {
+							//	ODBC C library requires parameter index to bind parameter value.
+							//	That is, ODBC does not use named parameter variable for SELECT, INSERT and UPDATE statement, 
+							//	so we send the index of parameter
+							DBInt_BindNumber(	conn,
+												stm, 
+												(conn->dbType != SODIUM_SQLSERVER_SUPPORT) ? tmpBindVarName : paramNumberStr,
 												input->value, 
 												(input->value) ? strlen(input->value):0);
                             break;

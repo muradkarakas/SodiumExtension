@@ -1568,7 +1568,9 @@ createsqlserverconnection(RET) ::= POST_CREATE_SQLSERVER_CONNECTION_PREFIX expre
 	}
 
 	mkFree(session->heapHandle, CONNECTION_NAME);
-	mkFree(session->heapHandle, INSTANCE_NAME);
+	mkFree(session->heapHandle, HOST_NAME);
+    mkFree(session->heapHandle, INSTANCE_NAME);
+    mkFree(session->heapHandle, DATABASE_NAME);
 	mkFree(session->heapHandle, USER_NAME);
 	mkFree(session->heapHandle, PASSWORD);
 }
