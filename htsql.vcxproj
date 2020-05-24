@@ -361,6 +361,7 @@ win_flex -Ppost --outfile="lexer.post.c"  lexer.post.ll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Licence.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

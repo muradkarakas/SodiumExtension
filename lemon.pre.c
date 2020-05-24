@@ -26,6 +26,20 @@
 /************ Begin %include sections from the grammar ************************/
 #line 2 "lemon.pre.yy"
 
+  /**
+  * This file is part of Sodium Language project
+  *
+  * Copyright © 2020 Murad Karakaş <muradkarakas@gmail.com>
+  *
+  * This program is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU General Public License v3.0
+  * as published by the Free Software Foundation; either
+  * version 3 of the License, or (at your option) any later version.
+  *
+  *	https://choosealicense.com/licenses/gpl-3.0/
+  */
+
+
 #include "pch.h"
 
 
@@ -37,7 +51,7 @@
 #include "preObjectFunction.h"
 #include "pre.imp.h"
 #include "SodiumSession.h"
-#line 41 "lemon.pre.c"
+#line 55 "lemon.pre.c"
 /**************** End of %include directives **********************************/
 /* These constants specify the various numeric values for terminal symbols
 ** in a format understandable to "makeheaders".  This section is blank unless
@@ -519,11 +533,11 @@ static void yy_destructor(
     case 16: /* PRE_CLOSE_PARAN */
     case 17: /* PRE_COMMA */
 {
-#line 27 "lemon.pre.yy"
+#line 41 "lemon.pre.yy"
 
     preTokenDestructor(session, (yypminor->yy0));
 
-#line 527 "lemon.pre.c"
+#line 541 "lemon.pre.c"
 }
       break;
 /********* End destructor definitions *****************************************/
@@ -866,7 +880,7 @@ static void yy_reduce(
         YYMINORTYPE yylhsminor;
       case 0: /* globals ::= PRE_VARIABLE_TYPE_VARCHAR identifier PRE_SEMICOLON */
 {  yy_destructor(yypParser,4,&yymsp[-2].minor);
-#line 66 "lemon.pre.yy"
+#line 80 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     PreObjectGeneric *isExists = findPreGenericObjectByName(session, page, yymsp[-1].minor.yy13.tokenStr);
@@ -879,13 +893,13 @@ static void yy_reduce(
     }
     preTokenDestructor(session, yymsp[-1].minor.yy13);
 }
-#line 883 "lemon.pre.c"
+#line 897 "lemon.pre.c"
   yy_destructor(yypParser,5,&yymsp[0].minor);
 }
         break;
       case 1: /* globals ::= PRE_VARIABLE_TYPE_BOOL identifier PRE_SEMICOLON */
 {  yy_destructor(yypParser,6,&yymsp[-2].minor);
-#line 79 "lemon.pre.yy"
+#line 93 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     PreObjectGeneric *isExists = findPreGenericObjectByName(session, page, yymsp[-1].minor.yy13.tokenStr);
@@ -898,13 +912,13 @@ static void yy_reduce(
     }
     preTokenDestructor(session, yymsp[-1].minor.yy13);
 }
-#line 902 "lemon.pre.c"
+#line 916 "lemon.pre.c"
   yy_destructor(yypParser,5,&yymsp[0].minor);
 }
         break;
       case 2: /* globals ::= PRE_VARIABLE_TYPE_NUMBER identifier PRE_SEMICOLON */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 92 "lemon.pre.yy"
+#line 106 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     PreObjectGeneric *isExists = findPreGenericObjectByName(session, page, yymsp[-1].minor.yy13.tokenStr);
@@ -917,13 +931,13 @@ static void yy_reduce(
     }
     preTokenDestructor(session, yymsp[-1].minor.yy13);
 }
-#line 921 "lemon.pre.c"
+#line 935 "lemon.pre.c"
   yy_destructor(yypParser,5,&yymsp[0].minor);
 }
         break;
       case 3: /* globals ::= PRE_VARIABLE_TYPE_DATE identifier PRE_SEMICOLON */
 {  yy_destructor(yypParser,8,&yymsp[-2].minor);
-#line 105 "lemon.pre.yy"
+#line 119 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     PreObjectGeneric *isExists = findPreGenericObjectByName(session, page, yymsp[-1].minor.yy13.tokenStr);
@@ -936,13 +950,13 @@ static void yy_reduce(
     }
     preTokenDestructor(session, yymsp[-1].minor.yy13);
 }
-#line 940 "lemon.pre.c"
+#line 954 "lemon.pre.c"
   yy_destructor(yypParser,5,&yymsp[0].minor);
 }
         break;
       case 4: /* globals ::= PRE_VARIABLE_TYPE_REDIS identifier PRE_SEMICOLON */
 {  yy_destructor(yypParser,9,&yymsp[-2].minor);
-#line 118 "lemon.pre.yy"
+#line 132 "lemon.pre.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	PreObjectGeneric *isExists = findPreGenericObjectByName(session, page, yymsp[-1].minor.yy13.tokenStr);
@@ -956,70 +970,70 @@ static void yy_reduce(
 	}
 	preTokenDestructor(session, yymsp[-1].minor.yy13);
 }
-#line 960 "lemon.pre.c"
+#line 974 "lemon.pre.c"
   yy_destructor(yypParser,5,&yymsp[0].minor);
 }
         break;
       case 5: /* globals ::= PRE_VARIABLE_TYPE_VARCHAR funcdechead */
 {  yy_destructor(yypParser,4,&yymsp[-1].minor);
-#line 135 "lemon.pre.yy"
+#line 149 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __setFunctionReturnVariable(session, page, PRE_VARIABLE_TYPE_VARCHAR);
 }
-#line 971 "lemon.pre.c"
+#line 985 "lemon.pre.c"
 }
         break;
       case 6: /* globals ::= PRE_VARIABLE_TYPE_NUMBER funcdechead */
 {  yy_destructor(yypParser,7,&yymsp[-1].minor);
-#line 140 "lemon.pre.yy"
+#line 154 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __setFunctionReturnVariable(session, page, PRE_VARIABLE_TYPE_NUMBER);
 }
-#line 981 "lemon.pre.c"
+#line 995 "lemon.pre.c"
 }
         break;
       case 7: /* globals ::= PRE_VARIABLE_TYPE_DATE funcdechead */
 {  yy_destructor(yypParser,8,&yymsp[-1].minor);
-#line 145 "lemon.pre.yy"
+#line 159 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __setFunctionReturnVariable(session, page, PRE_VARIABLE_TYPE_DATE);
 }
-#line 991 "lemon.pre.c"
+#line 1005 "lemon.pre.c"
 }
         break;
       case 8: /* globals ::= PRE_VARIABLE_TYPE_VOID funcdechead */
 {  yy_destructor(yypParser,10,&yymsp[-1].minor);
-#line 150 "lemon.pre.yy"
+#line 164 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __setFunctionReturnVariable(session, page, PRE_VARIABLE_TYPE_VOID);
 }
-#line 1001 "lemon.pre.c"
+#line 1015 "lemon.pre.c"
 }
         break;
       case 9: /* globals ::= PRE_VARIABLE_TYPE_BOOL funcdechead */
 {  yy_destructor(yypParser,6,&yymsp[-1].minor);
-#line 155 "lemon.pre.yy"
+#line 169 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __setFunctionReturnVariable(session, page, PRE_VARIABLE_TYPE_BOOL);
 }
-#line 1011 "lemon.pre.c"
+#line 1025 "lemon.pre.c"
 }
         break;
       case 10: /* funcdechead ::= funcdecid parameterlist htsqlfunctionbody */
-#line 161 "lemon.pre.yy"
+#line 175 "lemon.pre.yy"
 {
 	decreaseDebugIndentionCount(session); // increasing is in "funcdecid" rule reduction
 	mkDebug(session, SESSION_LOG_DETAIL_HTSQL_VARIABLE, "\n", "done.", NULL);
 }
-#line 1020 "lemon.pre.c"
+#line 1034 "lemon.pre.c"
         break;
       case 11: /* funcdecid ::= identifier */
-#line 166 "lemon.pre.yy"
+#line 180 "lemon.pre.yy"
 {
     char *functionName = yymsp[0].minor.yy13.tokenStr;	
     HTSQLPage *page = GetCurrentPage(session);
@@ -1042,10 +1056,10 @@ static void yy_reduce(
     }
     preTokenDestructor(session, yymsp[0].minor.yy13);
 }
-#line 1046 "lemon.pre.c"
+#line 1060 "lemon.pre.c"
         break;
       case 12: /* htsqlfunctionbody ::= PRE_FUNCTION_BEGIN function_body_lines PRE_FUNCTION_END */
-#line 192 "lemon.pre.yy"
+#line 206 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	PreObjectGeneric *currentGenericObject = getCurrentPreGenericObject(session, page);
@@ -1063,10 +1077,10 @@ static void yy_reduce(
     mkFree(session->heapHandle, yymsp[-1].minor.yy49);
     preTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 1067 "lemon.pre.c"
+#line 1081 "lemon.pre.c"
         break;
       case 13: /* htsqlfunctionbody ::= PRE_FUNCTION_BEGIN PRE_FUNCTION_END */
-#line 210 "lemon.pre.yy"
+#line 224 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	PreObjectGeneric *currentGenericObject = getCurrentPreGenericObject(session, page);
@@ -1080,10 +1094,10 @@ static void yy_reduce(
     preTokenDestructor(session, yymsp[-1].minor.yy0);
     preTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 1084 "lemon.pre.c"
+#line 1098 "lemon.pre.c"
         break;
       case 14: /* function_body_lines ::= function_body_lines function_body_line */
-#line 226 "lemon.pre.yy"
+#line 240 "lemon.pre.yy"
 {
     char *p1  = yymsp[-1].minor.yy49;
     char *p2  = yymsp[0].minor.yy49;
@@ -1092,101 +1106,101 @@ static void yy_reduce(
     mkFree(session->heapHandle, p1);
     mkFree(session->heapHandle, p2);
 }
-#line 1096 "lemon.pre.c"
+#line 1110 "lemon.pre.c"
   yymsp[-1].minor.yy49 = yylhsminor.yy49;
         break;
       case 15: /* function_body_line ::= PRE_FUNCTION_BODY_LINE */
-#line 237 "lemon.pre.yy"
+#line 251 "lemon.pre.yy"
 {
     yylhsminor.yy49 = yymsp[0].minor.yy0.tokenStr;
 }
-#line 1104 "lemon.pre.c"
+#line 1118 "lemon.pre.c"
   yymsp[0].minor.yy49 = yylhsminor.yy49;
         break;
       case 16: /* parameter ::= PRE_VARIABLE_TYPE_VARCHAR identifier */
 {  yy_destructor(yypParser,4,&yymsp[-1].minor);
-#line 255 "lemon.pre.yy"
+#line 269 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __addFunctionParameterVariable(session, page, PRE_VARIABLE_TYPE_VARCHAR, yymsp[0].minor.yy13.tokenStr);    
     mkDebug(session, SESSION_LOG_DETAIL_HTSQL_VARIABLE, "\n", "Function parameter created: ", yymsp[0].minor.yy13.tokenStr, NULL);
 	preTokenDestructor(session, yymsp[0].minor.yy13);
 }
-#line 1116 "lemon.pre.c"
+#line 1130 "lemon.pre.c"
 }
         break;
       case 17: /* parameter ::= PRE_VARIABLE_TYPE_NUMBER identifier */
 {  yy_destructor(yypParser,7,&yymsp[-1].minor);
-#line 262 "lemon.pre.yy"
+#line 276 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __addFunctionParameterVariable(session, page, PRE_VARIABLE_TYPE_NUMBER, yymsp[0].minor.yy13.tokenStr);
     mkDebug(session, SESSION_LOG_DETAIL_HTSQL_VARIABLE, "\n", "Function parameter created: ", yymsp[0].minor.yy13.tokenStr, NULL);
 	preTokenDestructor(session, yymsp[0].minor.yy13);
 }
-#line 1128 "lemon.pre.c"
+#line 1142 "lemon.pre.c"
 }
         break;
       case 18: /* parameter ::= PRE_VARIABLE_TYPE_DATE identifier */
 {  yy_destructor(yypParser,8,&yymsp[-1].minor);
-#line 269 "lemon.pre.yy"
+#line 283 "lemon.pre.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     __addFunctionParameterVariable(session, page, PRE_VARIABLE_TYPE_DATE, yymsp[0].minor.yy13.tokenStr);
     mkDebug(session, SESSION_LOG_DETAIL_HTSQL_VARIABLE, "\n", "Function parameter created: ", yymsp[0].minor.yy13.tokenStr, NULL);
 	preTokenDestructor(session, yymsp[0].minor.yy13);
 }
-#line 1140 "lemon.pre.c"
+#line 1154 "lemon.pre.c"
 }
         break;
       case 19: /* identifier ::= PRE_IDENTIFIER */
-#line 283 "lemon.pre.yy"
+#line 297 "lemon.pre.yy"
 {
 	TokenPre a = yymsp[0].minor.yy0;
 	yylhsminor.yy13 = a;
 }
-#line 1149 "lemon.pre.c"
+#line 1163 "lemon.pre.c"
   yymsp[0].minor.yy13 = yylhsminor.yy13;
         break;
       case 25: /* expression ::= PRE_END_OF_FILE */
 {  yy_destructor(yypParser,1,&yymsp[0].minor);
-#line 60 "lemon.pre.yy"
+#line 74 "lemon.pre.yy"
 {
 }
-#line 1157 "lemon.pre.c"
+#line 1171 "lemon.pre.c"
 }
         break;
       case 26: /* comment ::= PRE_COMMENT_START PRE_COMMENT_END */
 {  yy_destructor(yypParser,2,&yymsp[-1].minor);
-#line 62 "lemon.pre.yy"
+#line 76 "lemon.pre.yy"
 {
 }
-#line 1165 "lemon.pre.c"
+#line 1179 "lemon.pre.c"
   yy_destructor(yypParser,3,&yymsp[0].minor);
 }
         break;
       case 32: /* openparenthesis ::= PRE_OPEN_PARAN */
 {  yy_destructor(yypParser,15,&yymsp[0].minor);
-#line 291 "lemon.pre.yy"
+#line 305 "lemon.pre.yy"
 {
 }
-#line 1174 "lemon.pre.c"
+#line 1188 "lemon.pre.c"
 }
         break;
       case 33: /* closeparenthesis ::= PRE_CLOSE_PARAN */
 {  yy_destructor(yypParser,16,&yymsp[0].minor);
-#line 292 "lemon.pre.yy"
+#line 306 "lemon.pre.yy"
 {
 }
-#line 1182 "lemon.pre.c"
+#line 1196 "lemon.pre.c"
 }
         break;
       case 34: /* comma ::= PRE_COMMA */
 {  yy_destructor(yypParser,17,&yymsp[0].minor);
-#line 294 "lemon.pre.yy"
+#line 308 "lemon.pre.yy"
 {
 }
-#line 1190 "lemon.pre.c"
+#line 1204 "lemon.pre.c"
 }
         break;
       default:
@@ -1256,7 +1270,7 @@ static void yy_syntax_error(
   preParseARG_FETCH;
 #define TOKEN yyminor
 /************ Begin %syntax_error code ****************************************/
-#line 32 "lemon.pre.yy"
+#line 46 "lemon.pre.yy"
 
 #ifndef NDEBUG
     char *tempMsg;
@@ -1275,7 +1289,7 @@ static void yy_syntax_error(
     errMsg = tempMsg;
     stopPreParserWithMessage(session, GetCurrentPage(session), errMsg, "");
 #endif
-#line 1279 "lemon.pre.c"
+#line 1293 "lemon.pre.c"
 /************ End %syntax_error code ******************************************/
   preParseARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }

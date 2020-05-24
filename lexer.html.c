@@ -1179,17 +1179,31 @@ static const flex_int16_t yy_chk[1630] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.html.ll"
 #line 2 "lexer.html.ll"
+/**
+  * This file is part of Sodium Language project
+  *
+  * Copyright © 2020 Murad Karakaþ <muradkarakas@gmail.com>
+  *
+  * This program is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU General Public License v3.0
+  * as published by the Free Software Foundation; either
+  * version 3 of the License, or (at your option) any later version.
+  *
+  *	https://choosealicense.com/licenses/gpl-3.0/
+  */
+
+
 #include "pch.h"
 
 
 
 #include "lemon.html.h"
 #include "SodiumSession.h"
-#line 1188 "lexer.html.c"
+#line 1202 "lexer.html.c"
 #define YY_NO_UNISTD_H 1
 #define YY_NO_INPUT 1
 
-#line 1192 "lexer.html.c"
+#line 1206 "lexer.html.c"
 
 #define INITIAL 0
 #define SC_TAGPROPERTY 1
@@ -1462,10 +1476,10 @@ YY_DECL
 		}
 
 	{
-#line 55 "lexer.html.ll"
+#line 69 "lexer.html.ll"
 
 
-#line 58 "lexer.html.ll"
+#line 72 "lexer.html.ll"
  /* ############################################################################################
     ############################################################################################
 
@@ -1474,7 +1488,7 @@ YY_DECL
     ############################################################################################
  */
 
-#line 1477 "lexer.html.c"
+#line 1491 "lexer.html.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1529,14 +1543,14 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 66 "lexer.html.ll"
+#line 80 "lexer.html.ll"
 { 
 			// DO NOTHING FOR BOM
 		}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 69 "lexer.html.ll"
+#line 83 "lexer.html.ll"
 { 
 			// DO NOTHING FOR BOM  
 		}
@@ -1550,21 +1564,21 @@ YY_RULE_SETUP
  */
 case 3:
 YY_RULE_SETUP
-#line 81 "lexer.html.ll"
+#line 95 "lexer.html.ll"
 {
                                                                                                         return TAG_DOCTYPE_HTSQL_DTD;
                                                                                                      }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 84 "lexer.html.ll"
+#line 98 "lexer.html.ll"
 {
 																										return TAG_DOCTYPE_HTML;
 																									 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 87 "lexer.html.ll"
+#line 101 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTML_TAGPROPERTY);
                                                         return TAG_HTML_OPEN;
@@ -1572,14 +1586,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 91 "lexer.html.ll"
+#line 105 "lexer.html.ll"
 {
                                                         return TAG_HTML_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 94 "lexer.html.ll"
+#line 108 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTML_TAGPROPERTY);
                                                         return TAG_BODY_OPEN;
@@ -1587,28 +1601,28 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 98 "lexer.html.ll"
+#line 112 "lexer.html.ll"
 {
                                                         return TAG_BODY_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 101 "lexer.html.ll"
+#line 115 "lexer.html.ll"
 {                                                        
                                                         return TAG_HEAD_OPEN;
                                                     }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 104 "lexer.html.ll"
+#line 118 "lexer.html.ll"
 {
                                                         return TAG_HEAD_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 107 "lexer.html.ll"
+#line 121 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTML_TAGPROPERTY);
                                                         return TAG_TITLE_OPEN;
@@ -1616,14 +1630,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 111 "lexer.html.ll"
+#line 125 "lexer.html.ll"
 {
 														return TAG_TITLE_BLOCK_CLOSE;
 													}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 114 "lexer.html.ll"
+#line 128 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTML_TAGPROPERTY);
                                                         return TAG_LINK_OPEN;
@@ -1631,14 +1645,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 118 "lexer.html.ll"
+#line 132 "lexer.html.ll"
 {
                                                         return TAG_LINK_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 121 "lexer.html.ll"
+#line 135 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTML_TAGPROPERTY);
                                                         return TAG_META_OPEN;
@@ -1646,14 +1660,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 125 "lexer.html.ll"
+#line 139 "lexer.html.ll"
 {
                                                         return TAG_META_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 128 "lexer.html.ll"
+#line 142 "lexer.html.ll"
 {
                                                         BEGIN(SC_TAGSCRIPTPROPERTY);
                                                         return TAG_SCRIPT_OPEN;
@@ -1661,14 +1675,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 132 "lexer.html.ll"
+#line 146 "lexer.html.ll"
 {
 														return TAG_SCRIPT_BLOCK_CLOSE;
 													}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 135 "lexer.html.ll"
+#line 149 "lexer.html.ll"
 {
                                                         BEGIN(SC_TAGSCRIPTPROPERTY);
                                                         return TAG_STYLE_OPEN;
@@ -1676,7 +1690,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 139 "lexer.html.ll"
+#line 153 "lexer.html.ll"
 {
 														return TAG_STYLE_BLOCK_CLOSE;
 													}
@@ -1684,7 +1698,7 @@ YY_RULE_SETUP
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 142 "lexer.html.ll"
+#line 156 "lexer.html.ll"
 {
 														SodiumSession *currentMKSession = yyextra;
 														currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -1692,7 +1706,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 146 "lexer.html.ll"
+#line 160 "lexer.html.ll"
 {
                                                         return SPACE;
                                                     }
@@ -1715,14 +1729,14 @@ case YY_STATE_EOF(SC_HTSQL_TAGPROPERTY):
 case YY_STATE_EOF(SC_TREE_PROPERTIES):
 case YY_STATE_EOF(SC_TAG_CONTROLBLOCK_CONTENT):
 case YY_STATE_EOF(SC_CONTROLBLOCK_PROPERTIES):
-#line 149 "lexer.html.ll"
+#line 163 "lexer.html.ll"
 {
 														return HTML_END_OF_FILE;
 													}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 152 "lexer.html.ll"
+#line 166 "lexer.html.ll"
 {
                                                         return HTMLTEXT;
                                                     }
@@ -1730,28 +1744,28 @@ YY_RULE_SETUP
 
 case 24:
 YY_RULE_SETUP
-#line 158 "lexer.html.ll"
+#line 172 "lexer.html.ll"
 {
                                 return PROPERTYID_SCRIPT_SRC;
                             }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 161 "lexer.html.ll"
+#line 175 "lexer.html.ll"
 {
                                 return PROPERTYID_SCRIPT_TYPE;
                             }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 164 "lexer.html.ll"
+#line 178 "lexer.html.ll"
 {
 													return PROPERTYID;
 												}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 167 "lexer.html.ll"
+#line 181 "lexer.html.ll"
 {
 								return ASSIGMENT;
 							}
@@ -1759,21 +1773,21 @@ YY_RULE_SETUP
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 170 "lexer.html.ll"
+#line 184 "lexer.html.ll"
 {
                                 return PROPERTYDATA;
                             }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 173 "lexer.html.ll"
+#line 187 "lexer.html.ll"
 {
                                 return SPACE;
                             }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 176 "lexer.html.ll"
+#line 190 "lexer.html.ll"
 {
                                 BEGIN(INITIAL);
                                 return TAG_CLOSE;
@@ -1787,14 +1801,14 @@ YY_RULE_SETUP
 
 case 31:
 YY_RULE_SETUP
-#line 188 "lexer.html.ll"
+#line 202 "lexer.html.ll"
 {
 														return PROPERTYID;
 													}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 191 "lexer.html.ll"
+#line 205 "lexer.html.ll"
 {
                                                         return ASSIGMENT;
                                                     }
@@ -1802,7 +1816,7 @@ YY_RULE_SETUP
 case 33:
 /* rule 33 can match eol */
 YY_RULE_SETUP
-#line 194 "lexer.html.ll"
+#line 208 "lexer.html.ll"
 {
                                                         return PROPERTYDATA;
 
@@ -1811,7 +1825,7 @@ YY_RULE_SETUP
 case 34:
 /* rule 34 can match eol */
 YY_RULE_SETUP
-#line 198 "lexer.html.ll"
+#line 212 "lexer.html.ll"
 {
 														SodiumSession *currentMKSession = yyextra;
 														currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -1819,14 +1833,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 202 "lexer.html.ll"
+#line 216 "lexer.html.ll"
 {
                                                         return SPACE;
                                                     }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 205 "lexer.html.ll"
+#line 219 "lexer.html.ll"
 {
 														BEGIN(INITIAL); 
 														return TAG_SHORT_CLOSE;
@@ -1834,7 +1848,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 209 "lexer.html.ll"
+#line 223 "lexer.html.ll"
 {
 														BEGIN(INITIAL);
 														return TAG_CLOSE;
@@ -1848,14 +1862,14 @@ YY_RULE_SETUP
 
 case 38:
 YY_RULE_SETUP
-#line 221 "lexer.html.ll"
+#line 235 "lexer.html.ll"
 {
                             return PROP_TREE_NAME;
                         }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 224 "lexer.html.ll"
+#line 238 "lexer.html.ll"
 {
                             return ASSIGMENT;
                         }
@@ -1863,14 +1877,14 @@ YY_RULE_SETUP
 case 40:
 /* rule 40 can match eol */
 YY_RULE_SETUP
-#line 227 "lexer.html.ll"
+#line 241 "lexer.html.ll"
 {
 							return PROPERTYDATA;
 						}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 230 "lexer.html.ll"
+#line 244 "lexer.html.ll"
 {
 							BEGIN(SC_TAG_CONTROLBLOCK_CONTENT);
                             return TAG_CLOSE;
@@ -1878,7 +1892,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 234 "lexer.html.ll"
+#line 248 "lexer.html.ll"
 {
                             return SPACE;
                         }
@@ -1890,7 +1904,7 @@ YY_RULE_SETUP
  */
 case 43:
 YY_RULE_SETUP
-#line 243 "lexer.html.ll"
+#line 257 "lexer.html.ll"
 {
                             BEGIN(SC_DATALIST_PROPERTIES);
                             return TAG_DATALIST_OPEN;
@@ -1898,7 +1912,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 247 "lexer.html.ll"
+#line 261 "lexer.html.ll"
 {
                                                         BEGIN(INITIAL);
                                                         return TAG_DATALIST_BLOCK_CLOSE;
@@ -1907,21 +1921,21 @@ YY_RULE_SETUP
 
 case 45:
 YY_RULE_SETUP
-#line 252 "lexer.html.ll"
+#line 266 "lexer.html.ll"
 {
                             return PROP_DATALIST_DATALIST_NAME;
                         }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 255 "lexer.html.ll"
+#line 269 "lexer.html.ll"
 {
                             return PROP_DATALIST_CONNECTION_NAME;
                         }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 258 "lexer.html.ll"
+#line 272 "lexer.html.ll"
 {
                             return ASSIGMENT;
                         }
@@ -1929,14 +1943,14 @@ YY_RULE_SETUP
 case 48:
 /* rule 48 can match eol */
 YY_RULE_SETUP
-#line 261 "lexer.html.ll"
+#line 275 "lexer.html.ll"
 {
 							return PROPERTYDATA;
 						}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 264 "lexer.html.ll"
+#line 278 "lexer.html.ll"
 {
 							BEGIN(INITIAL);
                             return TAG_CLOSE;
@@ -1944,7 +1958,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 268 "lexer.html.ll"
+#line 282 "lexer.html.ll"
 {
                             return SPACE;
                         }
@@ -1956,7 +1970,7 @@ YY_RULE_SETUP
  */
 case 51:
 YY_RULE_SETUP
-#line 277 "lexer.html.ll"
+#line 291 "lexer.html.ll"
 {
                             BEGIN(SC_CONNECTION_PROPERTIES);
                             return TAG_CONNECTION_OPEN;
@@ -1964,7 +1978,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 281 "lexer.html.ll"
+#line 295 "lexer.html.ll"
 {
                                                             BEGIN(INITIAL);
                                                             return TAG_CONNECTION_BLOCK_CLOSE;
@@ -1973,35 +1987,35 @@ YY_RULE_SETUP
 
 case 53:
 YY_RULE_SETUP
-#line 286 "lexer.html.ll"
+#line 300 "lexer.html.ll"
 {
                             return PROP_CONNECTION_CONNECTION_NAME;
                         }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 289 "lexer.html.ll"
+#line 303 "lexer.html.ll"
 {
                             return PROP_CONNECTION_USER_NAME;
                         }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 292 "lexer.html.ll"
+#line 306 "lexer.html.ll"
 {
                             return PROP_CONNECTION_USER_PASSWORD;
                         }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 295 "lexer.html.ll"
+#line 309 "lexer.html.ll"
 {
                             return PROP_CONNECTION_INSTANCE_NAME;
                         }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 298 "lexer.html.ll"
+#line 312 "lexer.html.ll"
 {
                             return ASSIGMENT;
                         }
@@ -2009,14 +2023,14 @@ YY_RULE_SETUP
 case 58:
 /* rule 58 can match eol */
 YY_RULE_SETUP
-#line 301 "lexer.html.ll"
+#line 315 "lexer.html.ll"
 {
 							return PROPERTYDATA;
 						}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 304 "lexer.html.ll"
+#line 318 "lexer.html.ll"
 {
 							BEGIN(INITIAL);
                             return TAG_CLOSE;
@@ -2024,7 +2038,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 308 "lexer.html.ll"
+#line 322 "lexer.html.ll"
 {
                             return SPACE;
                         }
@@ -2036,7 +2050,7 @@ YY_RULE_SETUP
  */
 case 61:
 YY_RULE_SETUP
-#line 317 "lexer.html.ll"
+#line 331 "lexer.html.ll"
 {
                                 BEGIN(SC_CONTROLBLOCK_PROPERTIES);
                                 return TAG_CONTROLBLOCK_OPEN;
@@ -2045,21 +2059,21 @@ YY_RULE_SETUP
 
 case 62:
 YY_RULE_SETUP
-#line 322 "lexer.html.ll"
+#line 336 "lexer.html.ll"
 {
                             return PROP_CONTROLBLOCK_BLOCK_NAME;
                         }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 325 "lexer.html.ll"
+#line 339 "lexer.html.ll"
 {
 														return PROPERTYID;
 													}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 328 "lexer.html.ll"
+#line 342 "lexer.html.ll"
 {
                             return ASSIGMENT;
                         }
@@ -2067,14 +2081,14 @@ YY_RULE_SETUP
 case 65:
 /* rule 65 can match eol */
 YY_RULE_SETUP
-#line 331 "lexer.html.ll"
+#line 345 "lexer.html.ll"
 {
                             return PROPERTYDATA;
                         }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 334 "lexer.html.ll"
+#line 348 "lexer.html.ll"
 {
 							BEGIN(SC_TAG_CONTROLBLOCK_CONTENT);
                             return TAG_CLOSE;
@@ -2083,7 +2097,7 @@ YY_RULE_SETUP
 case 67:
 /* rule 67 can match eol */
 YY_RULE_SETUP
-#line 338 "lexer.html.ll"
+#line 352 "lexer.html.ll"
 {
 							SodiumSession *currentMKSession = yyextra;
 							currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -2092,7 +2106,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 343 "lexer.html.ll"
+#line 357 "lexer.html.ll"
 {
                             return SPACE;
                         }
@@ -2101,7 +2115,7 @@ YY_RULE_SETUP
 
 case 69:
 YY_RULE_SETUP
-#line 349 "lexer.html.ll"
+#line 363 "lexer.html.ll"
 {
                                                         BEGIN(SC_TREE_PROPERTIES);
                                                         return TAG_TREE_OPEN;
@@ -2109,14 +2123,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 353 "lexer.html.ll"
+#line 367 "lexer.html.ll"
 {
                                                         return TAG_TREE_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 356 "lexer.html.ll"
+#line 370 "lexer.html.ll"
 {
                                                             BEGIN(INITIAL);
                                                             return TAG_CONTROLBLOCK_CLOSE;
@@ -2125,7 +2139,7 @@ YY_RULE_SETUP
 case 72:
 /* rule 72 can match eol */
 YY_RULE_SETUP
-#line 360 "lexer.html.ll"
+#line 374 "lexer.html.ll"
 {
 														SodiumSession *currentMKSession = yyextra;
 														currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -2134,14 +2148,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 365 "lexer.html.ll"
+#line 379 "lexer.html.ll"
 {
                                                         return SPACE;
                                                     }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 368 "lexer.html.ll"
+#line 382 "lexer.html.ll"
 {
                                                         return HTMLTEXT;
                                                     }
@@ -2153,7 +2167,7 @@ YY_RULE_SETUP
  */
 case 75:
 YY_RULE_SETUP
-#line 377 "lexer.html.ll"
+#line 391 "lexer.html.ll"
 {
                             BEGIN(SC_DATABLOCK_PROPERTIES);
                             return TAG_DATABLOCK_OPEN;
@@ -2162,112 +2176,112 @@ YY_RULE_SETUP
 
 case 76:
 YY_RULE_SETUP
-#line 384 "lexer.html.ll"
+#line 398 "lexer.html.ll"
 {
                             return PROP_BLOCK_CONNECTION_NAME;
                         }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 387 "lexer.html.ll"
+#line 401 "lexer.html.ll"
 {
 							return PROP_BLOCK_AUTO_GENERATED_COLUMNS;
 						}
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 390 "lexer.html.ll"
+#line 404 "lexer.html.ll"
 {
                             return PROP_BLOCK_JOIN_CONDITION;
                         }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 393 "lexer.html.ll"
+#line 407 "lexer.html.ll"
 {
                             return PROP_BLOCK_RECORD_COUNT;
                         }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 396 "lexer.html.ll"
+#line 410 "lexer.html.ll"
 {
                             return PROP_BLOCK_DATA_SOURCE_NAME;
                         }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 399 "lexer.html.ll"
+#line 413 "lexer.html.ll"
 {
 							return PROP_BLOCK_DATA_SCHEMA_NAME;
 						}
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 402 "lexer.html.ll"
+#line 416 "lexer.html.ll"
 {
                             return PROP_BLOCK_BLOCK_NAME;
                         }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 405 "lexer.html.ll"
+#line 419 "lexer.html.ll"
 {
                             return PROP_BLOCK_KEY_COLUMN_NAME;
                         }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 408 "lexer.html.ll"
+#line 422 "lexer.html.ll"
 {
                                     return PROP_BLOCK_MASTER_BLOCK_NAME;
                                 }
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 411 "lexer.html.ll"
+#line 425 "lexer.html.ll"
 {
                             return PROP_BLOCK_INSERT_ALLOWED;
                         }
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 414 "lexer.html.ll"
+#line 428 "lexer.html.ll"
 {
                             return PROP_BLOCK_DELETE_ALLOWED;
                         }
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 417 "lexer.html.ll"
+#line 431 "lexer.html.ll"
 {
                             return PROP_BLOCK_UPDATE_ALLOWED;
                         }
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 420 "lexer.html.ll"
+#line 434 "lexer.html.ll"
 {
                             return PROP_BLOCK_WHERE_CLAUSE;
                         }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 423 "lexer.html.ll"
+#line 437 "lexer.html.ll"
 {
                             return PROP_BLOCK_OREDERBY_CLAUSE;
                         }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 426 "lexer.html.ll"
+#line 440 "lexer.html.ll"
 {
 												return PROPERTYID;
 											}
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 429 "lexer.html.ll"
+#line 443 "lexer.html.ll"
 {
                             return ASSIGMENT;
                         }
@@ -2275,14 +2289,14 @@ YY_RULE_SETUP
 case 92:
 /* rule 92 can match eol */
 YY_RULE_SETUP
-#line 432 "lexer.html.ll"
+#line 446 "lexer.html.ll"
 {
                             return PROPERTYDATA;
                         }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 435 "lexer.html.ll"
+#line 449 "lexer.html.ll"
 {
 							BEGIN(SC_TAG_DATABLOCK_CONTENT);
                             return TAG_CLOSE;
@@ -2291,7 +2305,7 @@ YY_RULE_SETUP
 case 94:
 /* rule 94 can match eol */
 YY_RULE_SETUP
-#line 439 "lexer.html.ll"
+#line 453 "lexer.html.ll"
 {
 							SodiumSession *currentMKSession = yyextra;
 							currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -2300,7 +2314,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 444 "lexer.html.ll"
+#line 458 "lexer.html.ll"
 {
                             return SPACE;
                         }
@@ -2313,7 +2327,7 @@ YY_RULE_SETUP
 
 case 96:
 YY_RULE_SETUP
-#line 460 "lexer.html.ll"
+#line 474 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TABLE_OPEN;
@@ -2321,7 +2335,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 464 "lexer.html.ll"
+#line 478 "lexer.html.ll"
 {
 														//BEGIN(INITIAL);
 														return TAG_TABLE_BLOCK_CLOSE;
@@ -2329,7 +2343,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 468 "lexer.html.ll"
+#line 482 "lexer.html.ll"
 {
                                                             BEGIN(INITIAL);
                                                             return TAG_DATABLOCK_BLOCK_CLOSE;
@@ -2337,7 +2351,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
-#line 472 "lexer.html.ll"
+#line 486 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_THEAD_OPEN;
@@ -2345,14 +2359,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 476 "lexer.html.ll"
+#line 490 "lexer.html.ll"
 {
 														return TAG_THEAD_BLOCK_CLOSE;
 													}
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
-#line 479 "lexer.html.ll"
+#line 493 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TFOOT_OPEN;
@@ -2360,14 +2374,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
-#line 483 "lexer.html.ll"
+#line 497 "lexer.html.ll"
 {
 														return TAG_TFOOT_BLOCK_CLOSE;
 													}
 	YY_BREAK
 case 103:
 YY_RULE_SETUP
-#line 486 "lexer.html.ll"
+#line 500 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TBODY_OPEN;
@@ -2375,14 +2389,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 104:
 YY_RULE_SETUP
-#line 490 "lexer.html.ll"
+#line 504 "lexer.html.ll"
 {
 														return TAG_TBODY_BLOCK_CLOSE;
 													}
 	YY_BREAK
 case 105:
 YY_RULE_SETUP
-#line 493 "lexer.html.ll"
+#line 507 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TR_OPEN;
@@ -2390,14 +2404,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 106:
 YY_RULE_SETUP
-#line 497 "lexer.html.ll"
+#line 511 "lexer.html.ll"
 {
                                                         return TAG_TR_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 107:
 YY_RULE_SETUP
-#line 500 "lexer.html.ll"
+#line 514 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TD_OPEN;
@@ -2405,14 +2419,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 108:
 YY_RULE_SETUP
-#line 504 "lexer.html.ll"
+#line 518 "lexer.html.ll"
 {
                                                         return TAG_TD_BLOCK_CLOSE;
                                                     }
 	YY_BREAK
 case 109:
 YY_RULE_SETUP
-#line 507 "lexer.html.ll"
+#line 521 "lexer.html.ll"
 {
                                                         BEGIN(SC_HTSQL_TAGPROPERTY);
                                                         return TAG_TH_OPEN;
@@ -2420,7 +2434,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 110:
 YY_RULE_SETUP
-#line 511 "lexer.html.ll"
+#line 525 "lexer.html.ll"
 {
                                                         return TAG_TH_BLOCK_CLOSE;
                                                     }
@@ -2431,7 +2445,7 @@ YY_RULE_SETUP
  */
 case 111:
 YY_RULE_SETUP
-#line 518 "lexer.html.ll"
+#line 532 "lexer.html.ll"
 {
                             BEGIN(SC_INPUT_PROPERTIES);
                             return TAG_INPUT_OPEN;
@@ -2439,7 +2453,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 112:
 YY_RULE_SETUP
-#line 522 "lexer.html.ll"
+#line 536 "lexer.html.ll"
 {
                             BEGIN(SC_INPUT_PROPERTIES);
                             return TAG_TEXTAREA_OPEN;
@@ -2447,7 +2461,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 113:
 YY_RULE_SETUP
-#line 526 "lexer.html.ll"
+#line 540 "lexer.html.ll"
 {
                             BEGIN(SC_INPUT_PROPERTIES);
                             return TAG_SELECT_OPEN;
@@ -2455,21 +2469,21 @@ YY_RULE_SETUP
 	YY_BREAK
 case 114:
 YY_RULE_SETUP
-#line 530 "lexer.html.ll"
+#line 544 "lexer.html.ll"
 {
 																return TAG_INPUT_BLOCK_CLOSE;
 															}
 	YY_BREAK
 case 115:
 YY_RULE_SETUP
-#line 533 "lexer.html.ll"
+#line 547 "lexer.html.ll"
 {
 																return TAG_TEXTAREA_BLOCK_CLOSE;
 															}
 	YY_BREAK
 case 116:
 YY_RULE_SETUP
-#line 536 "lexer.html.ll"
+#line 550 "lexer.html.ll"
 {
 																return TAG_SELECT_BLOCK_CLOSE;
 															}
@@ -2477,7 +2491,7 @@ YY_RULE_SETUP
 case 117:
 /* rule 117 can match eol */
 YY_RULE_SETUP
-#line 539 "lexer.html.ll"
+#line 553 "lexer.html.ll"
 {
 														SodiumSession *currentMKSession = yyextra;
 														currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -2485,14 +2499,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 118:
 YY_RULE_SETUP
-#line 543 "lexer.html.ll"
+#line 557 "lexer.html.ll"
 {
                                                         return SPACE;
                                                     }
 	YY_BREAK
 case 119:
 YY_RULE_SETUP
-#line 546 "lexer.html.ll"
+#line 560 "lexer.html.ll"
 {
                                                         return HTMLTEXT;
                                                     }
@@ -2505,14 +2519,14 @@ YY_RULE_SETUP
 
 case 120:
 YY_RULE_SETUP
-#line 557 "lexer.html.ll"
+#line 571 "lexer.html.ll"
 {
 														return PROPERTYID;
 													}
 	YY_BREAK
 case 121:
 YY_RULE_SETUP
-#line 560 "lexer.html.ll"
+#line 574 "lexer.html.ll"
 {
                                                         return ASSIGMENT;
                                                     }
@@ -2520,21 +2534,21 @@ YY_RULE_SETUP
 case 122:
 /* rule 122 can match eol */
 YY_RULE_SETUP
-#line 563 "lexer.html.ll"
+#line 577 "lexer.html.ll"
 {
                                                         return PROPERTYDATA;
                                                     }
 	YY_BREAK
 case 123:
 YY_RULE_SETUP
-#line 566 "lexer.html.ll"
+#line 580 "lexer.html.ll"
 {
                                                         return SPACE;
                                                     }
 	YY_BREAK
 case 124:
 YY_RULE_SETUP
-#line 569 "lexer.html.ll"
+#line 583 "lexer.html.ll"
 {
                                                       BEGIN(SC_TAG_DATABLOCK_CONTENT);
                                                       return TAG_CLOSE;
@@ -2544,140 +2558,140 @@ YY_RULE_SETUP
 
 case 125:
 YY_RULE_SETUP
-#line 577 "lexer.html.ll"
+#line 591 "lexer.html.ll"
 {
                                 return PROP_INPUT_NAME;
                             }
 	YY_BREAK
 case 126:
 YY_RULE_SETUP
-#line 580 "lexer.html.ll"
+#line 594 "lexer.html.ll"
 {
                                 return PROP_INPUT_MASTER_ITEM_NAME;
                             }
 	YY_BREAK
 case 127:
 YY_RULE_SETUP
-#line 583 "lexer.html.ll"
+#line 597 "lexer.html.ll"
 {
                                 return PROP_INPUT_COLUMN_NAME;
                             }
 	YY_BREAK
 case 128:
 YY_RULE_SETUP
-#line 586 "lexer.html.ll"
+#line 600 "lexer.html.ll"
 {
                                 return PROP_INPUT_SEQUENCE_NAME;
                             }
 	YY_BREAK
 case 129:
 YY_RULE_SETUP
-#line 589 "lexer.html.ll"
+#line 603 "lexer.html.ll"
 {
                                 return PROP_INPUT_SEQUENCE_SCHEMA_NAME;
                             }
 	YY_BREAK
 case 130:
 YY_RULE_SETUP
-#line 592 "lexer.html.ll"
+#line 606 "lexer.html.ll"
 {
                                 return PROP_INPUT_TYPE;
                             }
 	YY_BREAK
 case 131:
 YY_RULE_SETUP
-#line 595 "lexer.html.ll"
+#line 609 "lexer.html.ll"
 {
                                 return PROP_INPUT_VALUE;
                             }
 	YY_BREAK
 case 132:
 YY_RULE_SETUP
-#line 598 "lexer.html.ll"
+#line 612 "lexer.html.ll"
 {
                                 return PROP_INPUT_DEFAULT_VALUE;
                             }
 	YY_BREAK
 case 133:
 YY_RULE_SETUP
-#line 601 "lexer.html.ll"
+#line 615 "lexer.html.ll"
 {
                                 return PROP_INPUT_CHECKED_VALUE;
                             }
 	YY_BREAK
 case 134:
 YY_RULE_SETUP
-#line 604 "lexer.html.ll"
+#line 618 "lexer.html.ll"
 {
                                 return PROP_INPUT_UNCHECKED_VALUE;
                             }
 	YY_BREAK
 case 135:
 YY_RULE_SETUP
-#line 607 "lexer.html.ll"
+#line 621 "lexer.html.ll"
 {
                                 return PROP_INPUT_FORMAT_MASK;
                             }
 	YY_BREAK
 case 136:
 YY_RULE_SETUP
-#line 610 "lexer.html.ll"
+#line 624 "lexer.html.ll"
 {
                                 return PROP_INPUT_DATA_TYPE;
                             }
 	YY_BREAK
 case 137:
 YY_RULE_SETUP
-#line 613 "lexer.html.ll"
+#line 627 "lexer.html.ll"
 {
                                 return PROP_INPUT_MAX_LENGTH;
                             }
 	YY_BREAK
 case 138:
 YY_RULE_SETUP
-#line 616 "lexer.html.ll"
+#line 630 "lexer.html.ll"
 {
                                 return PROP_INPUT_INSERT_ALLOWED;
                             }
 	YY_BREAK
 case 139:
 YY_RULE_SETUP
-#line 619 "lexer.html.ll"
+#line 633 "lexer.html.ll"
 {
                                 return PROP_INPUT_UPDATE_ALLOWED;
                             }
 	YY_BREAK
 case 140:
 YY_RULE_SETUP
-#line 622 "lexer.html.ll"
+#line 636 "lexer.html.ll"
 {
                                 return PROP_INPUT_DATALIST_NAME;
                             }
 	YY_BREAK
 case 141:
 YY_RULE_SETUP
-#line 625 "lexer.html.ll"
+#line 639 "lexer.html.ll"
 {
                                 return PROP_INPUT_LOOKUP_ITEM_NAME;
                             }
 	YY_BREAK
 case 142:
 YY_RULE_SETUP
-#line 628 "lexer.html.ll"
+#line 642 "lexer.html.ll"
 {
 								return PROP_INPUT_LOOKUP_ITEM_BLOCK_NAME;
 							}
 	YY_BREAK
 case 143:
 YY_RULE_SETUP
-#line 631 "lexer.html.ll"
+#line 645 "lexer.html.ll"
 {
 												return PROPERTYID;
 											}
 	YY_BREAK
 case 144:
 YY_RULE_SETUP
-#line 634 "lexer.html.ll"
+#line 648 "lexer.html.ll"
 {
                                                 return ASSIGMENT;
                                             }
@@ -2685,14 +2699,14 @@ YY_RULE_SETUP
 case 145:
 /* rule 145 can match eol */
 YY_RULE_SETUP
-#line 637 "lexer.html.ll"
+#line 651 "lexer.html.ll"
 {
                                                 return PROPERTYDATA;
                                             }
 	YY_BREAK
 case 146:
 YY_RULE_SETUP
-#line 640 "lexer.html.ll"
+#line 654 "lexer.html.ll"
 {
 												BEGIN(SC_TAG_DATABLOCK_CONTENT);
 												return TAG_SHORT_CLOSE;
@@ -2700,7 +2714,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 147:
 YY_RULE_SETUP
-#line 644 "lexer.html.ll"
+#line 658 "lexer.html.ll"
 {
                                                 BEGIN(SC_TAG_DATABLOCK_CONTENT);
                                                 return TAG_CLOSE;
@@ -2709,7 +2723,7 @@ YY_RULE_SETUP
 case 148:
 /* rule 148 can match eol */
 YY_RULE_SETUP
-#line 648 "lexer.html.ll"
+#line 662 "lexer.html.ll"
 {
 												SodiumSession *currentMKSession = yyextra;
 												currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -2717,7 +2731,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 149:
 YY_RULE_SETUP
-#line 652 "lexer.html.ll"
+#line 666 "lexer.html.ll"
 {
                                                 return SPACE;
                                             }
@@ -2725,10 +2739,10 @@ YY_RULE_SETUP
 
 case 150:
 YY_RULE_SETUP
-#line 658 "lexer.html.ll"
+#line 672 "lexer.html.ll"
 ECHO;
 	YY_BREAK
-#line 2731 "lexer.html.c"
+#line 2745 "lexer.html.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -3854,7 +3868,7 @@ void htmlfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 658 "lexer.html.ll"
+#line 672 "lexer.html.ll"
 
 
 

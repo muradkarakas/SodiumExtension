@@ -26,6 +26,21 @@
 /************ Begin %include sections from the grammar ************************/
 #line 2 "lemon.html.yy"
  
+
+	/**
+	 * This file is part of Sodium Language project
+	 *
+	 * Copyright © 2020 Murad Karakaþ <muradkarakas@gmail.com>
+	 *
+	 * This program is free software; you can redistribute it and/or
+	 * modify it under the terms of the GNU General Public License v3.0
+	 * as published by the Free Software Foundation; either
+	 * version 3 of the License, or (at your option) any later version.
+	 *
+	 *	https://choosealicense.com/licenses/gpl-3.0/
+	 */
+
+
 #include "pch.h"
 
 
@@ -40,7 +55,7 @@
 #include "dispatcher.h"
 #include "pageLoad.h"
 #include "SodiumSession.h"
-#line 44 "lemon.html.c"
+#line 59 "lemon.html.c"
 /**************** End of %include directives **********************************/
 /* These constants specify the various numeric values for terminal symbols
 ** in a format understandable to "makeheaders".  This section is blank unless
@@ -1206,11 +1221,11 @@ static void yy_destructor(
     case 97: /* TAG_CLOSE */
     case 98: /* HTMLTEXT */
 {
-#line 49 "lemon.html.yy"
+#line 64 "lemon.html.yy"
 
     htmlTokenDestructor(session, (yypminor->yy0));
 
-#line 1214 "lemon.html.c"
+#line 1229 "lemon.html.c"
 }
       break;
 /********* End destructor definitions *****************************************/
@@ -1867,51 +1882,51 @@ static void yy_reduce(
 /********** Begin reduce actions **********************************************/
       case 0: /* tagdoctype ::= TAG_DOCTYPE_HTSQL_DTD */
 {  yy_destructor(yypParser,2,&yymsp[0].minor);
-#line 91 "lemon.html.yy"
+#line 106 "lemon.html.yy"
 {
 	session->whatIsPrinted = SESSION_PRINT_HTML_CONTENT;
 }
-#line 1875 "lemon.html.c"
+#line 1890 "lemon.html.c"
 }
         break;
       case 1: /* tagdoctype ::= TAG_DOCTYPE_HTML */
 {  yy_destructor(yypParser,3,&yymsp[0].minor);
-#line 95 "lemon.html.yy"
+#line 110 "lemon.html.yy"
 {
 	session->whatIsPrinted = SESSION_PRINT_HTML_CONTENT;
 }
-#line 1884 "lemon.html.c"
+#line 1899 "lemon.html.c"
 }
         break;
       case 2: /* tagtreeopen ::= TAG_TREE_OPEN */
-#line 108 "lemon.html.yy"
+#line 123 "lemon.html.yy"
 {
     mkPrint(session, treeOuterDivOpen, NULL);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 1893 "lemon.html.c"
+#line 1908 "lemon.html.c"
         break;
       case 3: /* tagtreeblockclosefull ::= TAG_TREE_BLOCK_CLOSE */
-#line 114 "lemon.html.yy"
+#line 129 "lemon.html.yy"
 {
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
     mkPrint(session, treeOuterDivClose, NULL);
 }
-#line 1901 "lemon.html.c"
+#line 1916 "lemon.html.c"
         break;
       case 4: /* tagdatalistopen ::= TAG_DATALIST_OPEN */
 {  yy_destructor(yypParser,10,&yymsp[0].minor);
-#line 135 "lemon.html.yy"
+#line 150 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     createTAGDatalist(session, page);
 }
-#line 1910 "lemon.html.c"
+#line 1925 "lemon.html.c"
 }
         break;
       case 5: /* tagdatalistblockclose ::= TAG_DATALIST_BLOCK_CLOSE */
 {  yy_destructor(yypParser,11,&yymsp[0].minor);
-#line 143 "lemon.html.yy"
+#line 158 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     TAGDatalist *current = getCurrentTAGDatalist(session, page);
@@ -1928,11 +1943,11 @@ static void yy_reduce(
 		CLOG(ERR_PROPERTY_CANNOT_BE_EMPTY, "connection-name");
     }
 }
-#line 1932 "lemon.html.c"
+#line 1947 "lemon.html.c"
 }
         break;
       case 6: /* datalistproperty ::= tagdatalistpropertyid PROPERTYDATA */
-#line 163 "lemon.html.yy"
+#line 178 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -1940,10 +1955,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 1944 "lemon.html.c"
+#line 1959 "lemon.html.c"
         break;
       case 7: /* datalistproperty ::= tagdatalistpropertyconnectionname PROPERTYDATA */
-#line 173 "lemon.html.yy"
+#line 188 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -1951,38 +1966,38 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 1955 "lemon.html.c"
+#line 1970 "lemon.html.c"
         break;
       case 8: /* tagconnection ::= tagconnectionfullopen tagconnectionblockclosefull */
-#line 189 "lemon.html.yy"
+#line 204 "lemon.html.yy"
 {
     /*HTSQLPage *page = GetCurrentPage(session);
     openDatabaseConnection(session, page, getCurrentTAGConnection(session, page));*/
 	
 	// TODO: <connection>  tag'ýný sil 
 }
-#line 1965 "lemon.html.c"
+#line 1980 "lemon.html.c"
         break;
       case 9: /* tagconnectionopen ::= TAG_CONNECTION_OPEN */
 {  yy_destructor(yypParser,14,&yymsp[0].minor);
-#line 199 "lemon.html.yy"
+#line 214 "lemon.html.yy"
 {
    // createTAGConnection(session, GetCurrentPage(session));
 }
-#line 1973 "lemon.html.c"
+#line 1988 "lemon.html.c"
 }
         break;
       case 10: /* tagconnectionblockclose ::= TAG_CONNECTION_BLOCK_CLOSE */
 {  yy_destructor(yypParser,15,&yymsp[0].minor);
-#line 206 "lemon.html.yy"
+#line 221 "lemon.html.yy"
 {
 
 }
-#line 1982 "lemon.html.c"
+#line 1997 "lemon.html.c"
 }
         break;
       case 11: /* connectionproperty ::= connectionpropertyconnectionname PROPERTYDATA */
-#line 213 "lemon.html.yy"
+#line 228 "lemon.html.yy"
 {
    /* HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -1995,10 +2010,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);*/
 }
-#line 1999 "lemon.html.c"
+#line 2014 "lemon.html.c"
         break;
       case 12: /* connectionproperty ::= connectionpropertyusername PROPERTYDATA */
-#line 228 "lemon.html.yy"
+#line 243 "lemon.html.yy"
 {
     /*HTSQLPage *page = GetCurrentPage(session);
     TAGConnection *current = getCurrentTAGConnection(session, page);
@@ -2006,20 +2021,20 @@ static void yy_reduce(
     setTAGConnectionPropertyUserName(session, current, str);
 	mkFree(session->heapHandle, str);*/
 }
-#line 2010 "lemon.html.c"
+#line 2025 "lemon.html.c"
         break;
       case 13: /* connectionpropertyusername ::= SPACE PROP_CONNECTION_USER_NAME ASSIGMENT */
       case 15: /* connectionpropertyuserpassword ::= SPACE PROP_CONNECTION_USER_PASSWORD ASSIGMENT */ yytestcase(yyruleno==15);
-#line 236 "lemon.html.yy"
+#line 251 "lemon.html.yy"
 {
     /*mkFree(session->heapHandle, yymsp[-2].minor.yy0.tokenStr);
     mkFree(session->heapHandle, yymsp[-1].minor.yy0.tokenStr);
     mkFree(session->heapHandle, yymsp[0].minor.yy0.tokenStr);*/
 }
-#line 2020 "lemon.html.c"
+#line 2035 "lemon.html.c"
         break;
       case 14: /* connectionproperty ::= connectionpropertyuserpassword PROPERTYDATA */
-#line 243 "lemon.html.yy"
+#line 258 "lemon.html.yy"
 {
     /*HTSQLPage *page = GetCurrentPage(session);
     TAGConnection *current = getCurrentTAGConnection(session, page);
@@ -2027,10 +2042,10 @@ static void yy_reduce(
     setTAGConnectionPropertyUserPassword(session, current, str);
 	mkFree(session->heapHandle, str);*/
 }
-#line 2031 "lemon.html.c"
+#line 2046 "lemon.html.c"
         break;
       case 16: /* connectionproperty ::= connectionpropertyinstancename PROPERTYDATA */
-#line 258 "lemon.html.yy"
+#line 273 "lemon.html.yy"
 {
    /* HTSQLPage *page = GetCurrentPage(session);
     TAGConnection *current = getCurrentTAGConnection(session, page);
@@ -2038,10 +2053,10 @@ static void yy_reduce(
     setTAGConnectionPropertyInstanceName(session, current, str);
 	mkFree(session->heapHandle, str);*/
 }
-#line 2042 "lemon.html.c"
+#line 2057 "lemon.html.c"
         break;
       case 17: /* tagcontrolblockproperty ::= SPACE PROP_CONTROLBLOCK_BLOCK_NAME ASSIGMENT PROPERTYDATA */
-#line 295 "lemon.html.yy"
+#line 310 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *name = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2058,29 +2073,29 @@ static void yy_reduce(
 	if (name)
 		mkFree(session->heapHandle, name);
 }
-#line 2062 "lemon.html.c"
+#line 2077 "lemon.html.c"
         break;
       case 18: /* tagdatablockfullopen ::= tagdatablockopen tagdatablockproperties tagclosechar */
-#line 322 "lemon.html.yy"
+#line 337 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     page->bInDataBlock++;
 }
-#line 2070 "lemon.html.c"
+#line 2085 "lemon.html.c"
         break;
       case 19: /* tagdatablockopen ::= TAG_DATABLOCK_OPEN */
 {  yy_destructor(yypParser,24,&yymsp[0].minor);
-#line 327 "lemon.html.yy"
+#line 342 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     createTAGDataBlock(session, page);
 	responseWriteByte(session, page, classDatablock, strlen(classDatablock));
 }
-#line 2080 "lemon.html.c"
+#line 2095 "lemon.html.c"
 }
         break;
       case 20: /* tagdatablockblockclose ::= TAG_DATABLOCK_BLOCK_CLOSE */
-#line 335 "lemon.html.yy"
+#line 350 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
     page->bInDataBlock--;
@@ -2098,17 +2113,17 @@ static void yy_reduce(
 		CLOG(ERR_PROPERTY_CANNOT_BE_EMPTY, "connection-name");
     }
 }
-#line 2102 "lemon.html.c"
+#line 2117 "lemon.html.c"
         break;
       case 21: /* tagdatablockproperty ::= tagdatablockpropertyjoincondition PROPERTYDATA */
-#line 367 "lemon.html.yy"
+#line 382 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
     setCurrentTAGDataBlockPropertyJoinCondition(session, page, str);
 	mkFree(session->heapHandle, str);
 }
-#line 2112 "lemon.html.c"
+#line 2127 "lemon.html.c"
         break;
       case 22: /* tagdatablockpropertyjoincondition ::= SPACE PROP_BLOCK_JOIN_CONDITION ASSIGMENT */
       case 24: /* tagdatablockpropertyconnectionname ::= SPACE PROP_BLOCK_CONNECTION_NAME ASSIGMENT */ yytestcase(yyruleno==24);
@@ -2117,17 +2132,17 @@ static void yy_reduce(
       case 38: /* tagdatablockpropertywhereclause ::= SPACE PROP_BLOCK_WHERE_CLAUSE ASSIGMENT */ yytestcase(yyruleno==38);
       case 40: /* tagdatablockpropertyorderbyclause ::= SPACE PROP_BLOCK_OREDERBY_CLAUSE ASSIGMENT */ yytestcase(yyruleno==40);
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 374 "lemon.html.yy"
+#line 389 "lemon.html.yy"
 {
 	// cheating lemon 
 	// yymsp[-1].minor.yy0
 	// yymsp[0].minor.yy0
 }
-#line 2127 "lemon.html.c"
+#line 2142 "lemon.html.c"
 }
         break;
       case 23: /* tagdatablockproperty ::= tagdatablockpropertyconnectionname PROPERTYDATA */
-#line 381 "lemon.html.yy"
+#line 396 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2136,10 +2151,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2140 "lemon.html.c"
+#line 2155 "lemon.html.c"
         break;
       case 25: /* tagdatablockproperty ::= tagdatablockpropertyautogeneratedcolumns PROPERTYDATA */
-#line 397 "lemon.html.yy"
+#line 412 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2147,10 +2162,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2151 "lemon.html.c"
+#line 2166 "lemon.html.c"
         break;
       case 26: /* tagdatablockproperty ::= tagdatablockpropertyrecordcount PROPERTYDATA */
-#line 407 "lemon.html.yy"
+#line 422 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2158,30 +2173,30 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2162 "lemon.html.c"
+#line 2177 "lemon.html.c"
         break;
       case 27: /* tagdatablockproperty ::= tagdatablockpropertysourcename PROPERTYDATA */
-#line 417 "lemon.html.yy"
+#line 432 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
 	setCurrentTAGDataBlockPropertyDataSourceName(session, page, str);
 	mkFree(session->heapHandle, str);
 }
-#line 2172 "lemon.html.c"
+#line 2187 "lemon.html.c"
         break;
       case 29: /* tagdatablockproperty ::= tagdatablockpropertyschemaname PROPERTYDATA */
-#line 431 "lemon.html.yy"
+#line 446 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
 	setCurrentTAGDataBlockPropertyDataSchemaName(session, page, str);
 	mkFree(session->heapHandle, str);
 }
-#line 2182 "lemon.html.c"
+#line 2197 "lemon.html.c"
         break;
       case 31: /* tagdatablockproperty ::= tagdatablockpropertyblockname PROPERTYDATA */
-#line 445 "lemon.html.yy"
+#line 460 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2189,10 +2204,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2193 "lemon.html.c"
+#line 2208 "lemon.html.c"
         break;
       case 32: /* tagdatablockproperty ::= tagdatablockpropertykeycolumnname PROPERTYDATA */
-#line 455 "lemon.html.yy"
+#line 470 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2200,10 +2215,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2204 "lemon.html.c"
+#line 2219 "lemon.html.c"
         break;
       case 33: /* tagdatablockproperty ::= tagdatablockpropertymasterblockname PROPERTYDATA */
-#line 465 "lemon.html.yy"
+#line 480 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2211,10 +2226,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2215 "lemon.html.c"
+#line 2230 "lemon.html.c"
         break;
       case 34: /* tagdatablockproperty ::= tagdatablockpropertyinsertallowed PROPERTYDATA */
-#line 475 "lemon.html.yy"
+#line 490 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2222,10 +2237,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2226 "lemon.html.c"
+#line 2241 "lemon.html.c"
         break;
       case 35: /* tagdatablockproperty ::= tagdatablockpropertydeleteallowed PROPERTYDATA */
-#line 485 "lemon.html.yy"
+#line 500 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2233,10 +2248,10 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2237 "lemon.html.c"
+#line 2252 "lemon.html.c"
         break;
       case 36: /* tagdatablockproperty ::= tagdatablockpropertyupdateallowed PROPERTYDATA */
-#line 495 "lemon.html.yy"
+#line 510 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
@@ -2244,31 +2259,31 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2248 "lemon.html.c"
+#line 2263 "lemon.html.c"
         break;
       case 37: /* tagdatablockproperty ::= tagdatablockpropertywhereclause PROPERTYDATA */
-#line 506 "lemon.html.yy"
+#line 521 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
     setCurrentTAGDataBlockPropertyWhereClause(session, page, str);
     mkFree(session->heapHandle, str);
 }
-#line 2258 "lemon.html.c"
+#line 2273 "lemon.html.c"
         break;
       case 39: /* tagdatablockproperty ::= tagdatablockpropertyorderbyclause PROPERTYDATA */
-#line 520 "lemon.html.yy"
+#line 535 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
     setCurrentTAGDataBlockPropertyOrderByClause(session, page, str);
     mkFree(session->heapHandle, str);
 }
-#line 2268 "lemon.html.c"
+#line 2283 "lemon.html.c"
         break;
       case 41: /* taginputshortclose ::= TAG_SHORT_CLOSE */
 {  yy_destructor(yypParser,40,&yymsp[0].minor);
-#line 545 "lemon.html.yy"
+#line 560 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 
@@ -2287,11 +2302,11 @@ static void yy_reduce(
 
 	page->bInInput--;
 }
-#line 2291 "lemon.html.c"
+#line 2306 "lemon.html.c"
 }
         break;
       case 42: /* taginputopen ::= TAG_INPUT_OPEN */
-#line 565 "lemon.html.yy"
+#line 580 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	//if (page->bInTableBody > 0) {
@@ -2300,10 +2315,10 @@ static void yy_reduce(
 	page->bInInput++;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2304 "lemon.html.c"
+#line 2319 "lemon.html.c"
         break;
       case 43: /* taginputopen ::= TAG_SELECT_OPEN */
-#line 574 "lemon.html.yy"
+#line 589 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	//if (page->bInTableBody > 0) {
@@ -2313,10 +2328,10 @@ static void yy_reduce(
 	page->bInInput++;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2317 "lemon.html.c"
+#line 2332 "lemon.html.c"
         break;
       case 44: /* taginputopen ::= TAG_TEXTAREA_OPEN */
-#line 584 "lemon.html.yy"
+#line 599 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	//if (page->bInTableBody > 0) {
@@ -2326,10 +2341,10 @@ static void yy_reduce(
 	page->bInInput++;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2330 "lemon.html.c"
+#line 2345 "lemon.html.c"
         break;
       case 45: /* taginputblockclosefull ::= taginputblockclose */
-#line 594 "lemon.html.yy"
+#line 609 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2339,10 +2354,10 @@ static void yy_reduce(
 		}
 	}    
 }
-#line 2343 "lemon.html.c"
+#line 2358 "lemon.html.c"
         break;
       case 46: /* taginputblockclose ::= TAG_INPUT_BLOCK_CLOSE */
-#line 604 "lemon.html.yy"
+#line 619 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 
@@ -2353,10 +2368,10 @@ static void yy_reduce(
 	page->bInInput--;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2357 "lemon.html.c"
+#line 2372 "lemon.html.c"
         break;
       case 47: /* taginputblockclose ::= TAG_SELECT_BLOCK_CLOSE */
-#line 616 "lemon.html.yy"
+#line 631 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	
@@ -2371,10 +2386,10 @@ static void yy_reduce(
 	page->bInInput--;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2375 "lemon.html.c"
+#line 2390 "lemon.html.c"
         break;
       case 48: /* taginputblockclose ::= TAG_TEXTAREA_BLOCK_CLOSE */
-#line 632 "lemon.html.yy"
+#line 647 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 
@@ -2389,10 +2404,10 @@ static void yy_reduce(
 	page->bInInput--;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2393 "lemon.html.c"
+#line 2408 "lemon.html.c"
         break;
       case 49: /* taginputproperty ::= taginputcheckedvalue PROPERTYDATA */
-#line 654 "lemon.html.yy"
+#line 669 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2402,10 +2417,10 @@ static void yy_reduce(
 	}
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2406 "lemon.html.c"
+#line 2421 "lemon.html.c"
         break;
       case 50: /* taginputproperty ::= taginputuncheckedvalue PROPERTYDATA */
-#line 666 "lemon.html.yy"
+#line 681 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2415,10 +2430,10 @@ static void yy_reduce(
 	}
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2419 "lemon.html.c"
+#line 2434 "lemon.html.c"
         break;
       case 51: /* taginputproperty ::= taginputpropertyinputname PROPERTYDATA */
-#line 678 "lemon.html.yy"
+#line 693 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2429,10 +2444,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2433 "lemon.html.c"
+#line 2448 "lemon.html.c"
         break;
       case 52: /* taginputproperty ::= taginputpropertysequencename PROPERTYDATA */
-#line 691 "lemon.html.yy"
+#line 706 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2442,10 +2457,10 @@ static void yy_reduce(
 	}
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2446 "lemon.html.c"
+#line 2461 "lemon.html.c"
         break;
       case 53: /* taginputproperty ::= taginputpropertysequenceschemaname PROPERTYDATA */
-#line 703 "lemon.html.yy"
+#line 718 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2455,10 +2470,10 @@ static void yy_reduce(
 	}
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2459 "lemon.html.c"
+#line 2474 "lemon.html.c"
         break;
       case 54: /* taginputproperty ::= taginputpropertymasteritemname PROPERTYDATA */
-#line 716 "lemon.html.yy"
+#line 731 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2468,10 +2483,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2472 "lemon.html.c"
+#line 2487 "lemon.html.c"
         break;
       case 55: /* taginputproperty ::= taginputpropertyinputtype PROPERTYDATA */
-#line 728 "lemon.html.yy"
+#line 743 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2482,10 +2497,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2486 "lemon.html.c"
+#line 2501 "lemon.html.c"
         break;
       case 56: /* taginputproperty ::= taginputpropertyinputvalue PROPERTYDATA */
-#line 741 "lemon.html.yy"
+#line 756 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2495,10 +2510,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2499 "lemon.html.c"
+#line 2514 "lemon.html.c"
         break;
       case 57: /* taginputproperty ::= taginputpropertydefaultvalue PROPERTYDATA */
-#line 754 "lemon.html.yy"
+#line 769 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2508,10 +2523,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2512 "lemon.html.c"
+#line 2527 "lemon.html.c"
         break;
       case 58: /* taginputproperty ::= taginputpropertycolumnname PROPERTYDATA */
-#line 766 "lemon.html.yy"
+#line 781 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2522,10 +2537,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2526 "lemon.html.c"
+#line 2541 "lemon.html.c"
         break;
       case 59: /* taginputproperty ::= taginputpropertyformatmask PROPERTYDATA */
-#line 779 "lemon.html.yy"
+#line 794 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2535,10 +2550,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2539 "lemon.html.c"
+#line 2554 "lemon.html.c"
         break;
       case 60: /* taginputproperty ::= taginputpropertydatatype PROPERTYDATA */
-#line 791 "lemon.html.yy"
+#line 806 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2550,10 +2565,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2554 "lemon.html.c"
+#line 2569 "lemon.html.c"
         break;
       case 61: /* taginputproperty ::= taginputpropertymaxlength PROPERTYDATA */
-#line 805 "lemon.html.yy"
+#line 820 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2564,10 +2579,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2568 "lemon.html.c"
+#line 2583 "lemon.html.c"
         break;
       case 62: /* taginputproperty ::= taginputpropertyinsertallowed PROPERTYDATA */
-#line 818 "lemon.html.yy"
+#line 833 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2577,10 +2592,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2581 "lemon.html.c"
+#line 2596 "lemon.html.c"
         break;
       case 63: /* taginputproperty ::= taginputpropertyupdateallowed PROPERTYDATA */
-#line 830 "lemon.html.yy"
+#line 845 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2590,10 +2605,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2594 "lemon.html.c"
+#line 2609 "lemon.html.c"
         break;
       case 64: /* taginputproperty ::= taginputpropertydatalistname PROPERTYDATA */
-#line 842 "lemon.html.yy"
+#line 857 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2603,10 +2618,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2607 "lemon.html.c"
+#line 2622 "lemon.html.c"
         break;
       case 65: /* taginputproperty ::= taginputpropertylookupitemname PROPERTYDATA */
-#line 854 "lemon.html.yy"
+#line 869 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2616,10 +2631,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2620 "lemon.html.c"
+#line 2635 "lemon.html.c"
         break;
       case 66: /* taginputproperty ::= taginputpropertylookupitemblockname PROPERTYDATA */
-#line 866 "lemon.html.yy"
+#line 881 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody > 0) {
@@ -2629,10 +2644,10 @@ static void yy_reduce(
 	}
 	htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2633 "lemon.html.c"
+#line 2648 "lemon.html.c"
         break;
       case 67: /* taginputproperty ::= spaces PROPERTYID ASSIGMENT PROPERTYDATA */
-#line 878 "lemon.html.yy"
+#line 893 "lemon.html.yy"
 {
     HTSQLPage *page = GetCurrentPage(session);
 	//if (page->bInTableBody > 0) {
@@ -2652,153 +2667,153 @@ static void yy_reduce(
 		mkFree(session->heapHandle, str3);
 	//}
 }
-#line 2656 "lemon.html.c"
+#line 2671 "lemon.html.c"
         break;
       case 68: /* tagtableopen ::= TAG_TABLE_OPEN */
 {  yy_destructor(yypParser,65,&yymsp[0].minor);
-#line 911 "lemon.html.yy"
+#line 926 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTable++;
 }
-#line 2664 "lemon.html.c"
+#line 2679 "lemon.html.c"
 }
         break;
       case 69: /* tagtableblockclose ::= TAG_TABLE_BLOCK_CLOSE */
 {  yy_destructor(yypParser,66,&yymsp[0].minor);
-#line 917 "lemon.html.yy"
+#line 932 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTable--;
 }
-#line 2673 "lemon.html.c"
+#line 2688 "lemon.html.c"
 }
         break;
       case 70: /* tagtheadopen ::= TAG_THEAD_OPEN */
 {  yy_destructor(yypParser,67,&yymsp[0].minor);
-#line 942 "lemon.html.yy"
+#line 957 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody == 0) {
 		page->bInTableHead++;
 	}	
 }
-#line 2685 "lemon.html.c"
+#line 2700 "lemon.html.c"
 }
         break;
       case 71: /* tagtheadblockclose ::= TAG_THEAD_BLOCK_CLOSE */
 {  yy_destructor(yypParser,68,&yymsp[0].minor);
-#line 952 "lemon.html.yy"
+#line 967 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody == 0) {
 		page->bInTableHead--;
 	}
 }
-#line 2697 "lemon.html.c"
+#line 2712 "lemon.html.c"
 }
         break;
       case 72: /* tagtfootopen ::= TAG_TFOOT_OPEN */
 {  yy_destructor(yypParser,69,&yymsp[0].minor);
-#line 970 "lemon.html.yy"
+#line 985 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody == 0) {
 		page->bInTableFoot++;
 	}
 }
-#line 2709 "lemon.html.c"
+#line 2724 "lemon.html.c"
 }
         break;
       case 73: /* tagtfootblockclose ::= TAG_TFOOT_BLOCK_CLOSE */
 {  yy_destructor(yypParser,70,&yymsp[0].minor);
-#line 980 "lemon.html.yy"
+#line 995 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableBody == 0) {
 		page->bInTableFoot--;
 	}
 }
-#line 2721 "lemon.html.c"
+#line 2736 "lemon.html.c"
 }
         break;
       case 74: /* tagtbodyopen ::= TAG_TBODY_OPEN */
 {  yy_destructor(yypParser,71,&yymsp[0].minor);
-#line 998 "lemon.html.yy"
+#line 1013 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session); 
 	if (page->bInTableHead == 0 && page->bInTableFoot == 0) {
 		page->bInTableBody++;
 	}
 }
-#line 2733 "lemon.html.c"
+#line 2748 "lemon.html.c"
 }
         break;
       case 75: /* tagtbodyblockclose ::= TAG_TBODY_BLOCK_CLOSE */
 {  yy_destructor(yypParser,72,&yymsp[0].minor);
-#line 1008 "lemon.html.yy"
+#line 1023 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	if (page->bInTableHead == 0 && page->bInTableFoot == 0) {
 		page->bInTableBody--;
 	}
 }
-#line 2745 "lemon.html.c"
+#line 2760 "lemon.html.c"
 }
         break;
       case 76: /* tagtablerowopen ::= TAG_TR_OPEN */
-#line 1029 "lemon.html.yy"
+#line 1044 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTr++;
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2754 "lemon.html.c"
+#line 2769 "lemon.html.c"
         break;
       case 77: /* tagtablerowblockclose ::= TAG_TR_BLOCK_CLOSE */
 {  yy_destructor(yypParser,74,&yymsp[0].minor);
-#line 1037 "lemon.html.yy"
+#line 1052 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTr--;
 }
-#line 2762 "lemon.html.c"
+#line 2777 "lemon.html.c"
 }
         break;
       case 78: /* tagtablecoltdopen ::= TAG_TD_OPEN */
 {  yy_destructor(yypParser,75,&yymsp[0].minor);
-#line 1062 "lemon.html.yy"
+#line 1077 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTd++;
 }
-#line 2771 "lemon.html.c"
+#line 2786 "lemon.html.c"
 }
         break;
       case 79: /* tagtablecoltdblockclose ::= TAG_TD_BLOCK_CLOSE */
 {  yy_destructor(yypParser,76,&yymsp[0].minor);
-#line 1069 "lemon.html.yy"
+#line 1084 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTd--;
 }
-#line 2780 "lemon.html.c"
+#line 2795 "lemon.html.c"
 }
         break;
       case 80: /* tagtablecolthopen ::= TAG_TH_OPEN */
 {  yy_destructor(yypParser,77,&yymsp[0].minor);
-#line 1093 "lemon.html.yy"
+#line 1108 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTh++;
 }
-#line 2789 "lemon.html.c"
+#line 2804 "lemon.html.c"
 }
         break;
       case 81: /* tagtablecolthblockclose ::= TAG_TH_BLOCK_CLOSE */
 {  yy_destructor(yypParser,78,&yymsp[0].minor);
-#line 1100 "lemon.html.yy"
+#line 1115 "lemon.html.yy"
 {
     GetCurrentPage(session)->bInTableTh--;
 }
-#line 2798 "lemon.html.c"
+#line 2813 "lemon.html.c"
 }
         break;
       case 82: /* tagscriptblockclosefull ::= tagscriptblockclose */
-#line 1184 "lemon.html.yy"
+#line 1199 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 
@@ -2816,10 +2831,10 @@ static void yy_reduce(
 		page->currentScriptFile = NULL;
     }
 }
-#line 2820 "lemon.html.c"
+#line 2835 "lemon.html.c"
         break;
       case 83: /* tagscriptblockclosefull ::= tagscriptblockclose spaces */
-#line 1202 "lemon.html.yy"
+#line 1217 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
     const char *scriptType = GetCurrentPage(session)->currentScriptType;
@@ -2836,20 +2851,20 @@ static void yy_reduce(
 		page->currentScriptFile = NULL;
     }
 }
-#line 2840 "lemon.html.c"
+#line 2855 "lemon.html.c"
         break;
       case 84: /* tagscriptproperty ::= tagscriptpropertyscripttype PROPERTYDATA */
-#line 1227 "lemon.html.yy"
+#line 1242 "lemon.html.yy"
 {
 	char *str = getCreateNTString(session, yymsp[0].minor.yy0);
     GetCurrentPage(session)->currentScriptType = mkStrdup(session->heapHandle, str, __FILE__, __LINE__);
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2850 "lemon.html.c"
+#line 2865 "lemon.html.c"
         break;
       case 85: /* tagscriptproperty ::= tagscriptpropertysrc PROPERTYDATA */
-#line 1236 "lemon.html.yy"
+#line 1251 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	wchar_t *str = getCreateNTStringW(session, yymsp[0].minor.yy0);
@@ -2857,19 +2872,19 @@ static void yy_reduce(
 	mkFree(session->heapHandle, str);
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2861 "lemon.html.c"
+#line 2876 "lemon.html.c"
         break;
       case 86: /* taghtmlopen ::= TAG_HTML_OPEN */
 {  yy_destructor(yypParser,91,&yymsp[0].minor);
-#line 1259 "lemon.html.yy"
+#line 1274 "lemon.html.yy"
 {
 	session->whatIsPrinted = SESSION_PRINT_HTML_CONTENT;
 }
-#line 2869 "lemon.html.c"
+#line 2884 "lemon.html.c"
 }
         break;
       case 87: /* tagbodyfullopen ::= tagbodyopen tagclosechar */
-#line 1274 "lemon.html.yy"
+#line 1289 "lemon.html.yy"
 {
     /**
      *  During GET request phase, native or HT/SQL functions may need to send response actions to the client (browser), for that reason,
@@ -2878,18 +2893,18 @@ static void yy_reduce(
      */
     __initializeClientJavaScriptReponse(session);
 }
-#line 2882 "lemon.html.c"
+#line 2897 "lemon.html.c"
         break;
       case 88: /* tagbodyblockclose ::= TAG_BODY_BLOCK_CLOSE */
-#line 1290 "lemon.html.yy"
+#line 1305 "lemon.html.yy"
 {
     __runHTSQLPageLoadFunction(session, GetCurrentPage(session));
     htmlTokenDestructor(session, yymsp[0].minor.yy0);
 }
-#line 2890 "lemon.html.c"
+#line 2905 "lemon.html.c"
         break;
       case 89: /* tagheadfullopen ::= tagheadopen */
-#line 1304 "lemon.html.yy"
+#line 1319 "lemon.html.yy"
 {
 	HTSQLPage *page = GetCurrentPage(session);
 	const char *theme = GetQueryStringParam(session, page, "theme");
@@ -2910,96 +2925,96 @@ static void yy_reduce(
 	}
 	session->whatIsPrinted = SESSION_PRINT_CLIENT_LIBRARY;
 }
-#line 2914 "lemon.html.c"
+#line 2929 "lemon.html.c"
         break;
       case 97: /* endoffile ::= HTML_END_OF_FILE */
 {  yy_destructor(yypParser,1,&yymsp[0].minor);
-#line 63 "lemon.html.yy"
+#line 78 "lemon.html.yy"
 {
 }
-#line 2921 "lemon.html.c"
+#line 2936 "lemon.html.c"
 }
         break;
       case 122: /* tagtreeproperty ::= tagtreepropertyid PROPERTYDATA */
-#line 122 "lemon.html.yy"
+#line 137 "lemon.html.yy"
 {
 }
-#line 2928 "lemon.html.c"
+#line 2943 "lemon.html.c"
   yy_destructor(yypParser,6,&yymsp[0].minor);
         break;
       case 123: /* tagtreepropertyid ::= SPACE PROP_TREE_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 124 "lemon.html.yy"
+#line 139 "lemon.html.yy"
 {
 }
-#line 2936 "lemon.html.c"
+#line 2951 "lemon.html.c"
   yy_destructor(yypParser,8,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 130: /* tagdatalistpropertyid ::= SPACE PROP_DATALIST_DATALIST_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 170 "lemon.html.yy"
+#line 185 "lemon.html.yy"
 {
 }
-#line 2946 "lemon.html.c"
+#line 2961 "lemon.html.c"
   yy_destructor(yypParser,12,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 131: /* tagdatalistpropertyconnectionname ::= SPACE PROP_DATALIST_CONNECTION_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 180 "lemon.html.yy"
+#line 195 "lemon.html.yy"
 {
 }
-#line 2956 "lemon.html.c"
+#line 2971 "lemon.html.c"
   yy_destructor(yypParser,13,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 137: /* connectionpropertyconnectionname ::= SPACE PROP_CONNECTION_CONNECTION_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 225 "lemon.html.yy"
+#line 240 "lemon.html.yy"
 {
 }
-#line 2966 "lemon.html.c"
+#line 2981 "lemon.html.c"
   yy_destructor(yypParser,16,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 138: /* connectionpropertyinstancename ::= SPACE PROP_CONNECTION_INSTANCE_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 265 "lemon.html.yy"
+#line 280 "lemon.html.yy"
 {
 }
-#line 2976 "lemon.html.c"
+#line 2991 "lemon.html.c"
   yy_destructor(yypParser,19,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 142: /* tagcontrolblockopen ::= TAG_CONTROLBLOCK_OPEN */
 {  yy_destructor(yypParser,20,&yymsp[0].minor);
-#line 277 "lemon.html.yy"
+#line 292 "lemon.html.yy"
 {
 }
-#line 2986 "lemon.html.c"
+#line 3001 "lemon.html.c"
 }
         break;
       case 144: /* tagcontrolblockblockclose ::= TAG_CONTROLBLOCK_CLOSE */
 {  yy_destructor(yypParser,21,&yymsp[0].minor);
-#line 280 "lemon.html.yy"
+#line 295 "lemon.html.yy"
 {
 }
-#line 2994 "lemon.html.c"
+#line 3009 "lemon.html.c"
 }
         break;
       case 152: /* tagcontrolblockproperty ::= SPACE PROPERTYID ASSIGMENT PROPERTYDATA */
       case 163: /* tagdatablockproperty ::= SPACE PROPERTYID ASSIGMENT PROPERTYDATA */ yytestcase(yyruleno==163);
 {  yy_destructor(yypParser,7,&yymsp[-3].minor);
-#line 311 "lemon.html.yy"
+#line 326 "lemon.html.yy"
 {
 }
-#line 3003 "lemon.html.c"
+#line 3018 "lemon.html.c"
   yy_destructor(yypParser,23,&yymsp[-2].minor);
   yy_destructor(yypParser,9,&yymsp[-1].minor);
   yy_destructor(yypParser,6,&yymsp[0].minor);
@@ -3007,447 +3022,447 @@ static void yy_reduce(
         break;
       case 164: /* tagdatablockpropertyautogeneratedcolumns ::= SPACE PROP_BLOCK_AUTO_GENERATED_COLUMNS ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 404 "lemon.html.yy"
+#line 419 "lemon.html.yy"
 {
 }
-#line 3014 "lemon.html.c"
+#line 3029 "lemon.html.c"
   yy_destructor(yypParser,28,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 165: /* tagdatablockpropertyrecordcount ::= SPACE PROP_BLOCK_RECORD_COUNT ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 414 "lemon.html.yy"
+#line 429 "lemon.html.yy"
 {
 }
-#line 3024 "lemon.html.c"
+#line 3039 "lemon.html.c"
   yy_destructor(yypParser,29,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 166: /* tagdatablockpropertyblockname ::= SPACE PROP_BLOCK_BLOCK_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 452 "lemon.html.yy"
+#line 467 "lemon.html.yy"
 {
 }
-#line 3034 "lemon.html.c"
+#line 3049 "lemon.html.c"
   yy_destructor(yypParser,32,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 167: /* tagdatablockpropertykeycolumnname ::= SPACE PROP_BLOCK_KEY_COLUMN_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 462 "lemon.html.yy"
+#line 477 "lemon.html.yy"
 {
 }
-#line 3044 "lemon.html.c"
+#line 3059 "lemon.html.c"
   yy_destructor(yypParser,33,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 168: /* tagdatablockpropertymasterblockname ::= SPACE PROP_BLOCK_MASTER_BLOCK_NAME ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 472 "lemon.html.yy"
+#line 487 "lemon.html.yy"
 {
 }
-#line 3054 "lemon.html.c"
+#line 3069 "lemon.html.c"
   yy_destructor(yypParser,34,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 169: /* tagdatablockpropertyinsertallowed ::= SPACE PROP_BLOCK_INSERT_ALLOWED ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 482 "lemon.html.yy"
+#line 497 "lemon.html.yy"
 {
 }
-#line 3064 "lemon.html.c"
+#line 3079 "lemon.html.c"
   yy_destructor(yypParser,35,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 170: /* tagdatablockpropertydeleteallowed ::= SPACE PROP_BLOCK_DELETE_ALLOWED ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 492 "lemon.html.yy"
+#line 507 "lemon.html.yy"
 {
 }
-#line 3074 "lemon.html.c"
+#line 3089 "lemon.html.c"
   yy_destructor(yypParser,36,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 171: /* tagdatablockpropertyupdateallowed ::= SPACE PROP_BLOCK_UPDATE_ALLOWED ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 502 "lemon.html.yy"
+#line 517 "lemon.html.yy"
 {
 }
-#line 3084 "lemon.html.c"
+#line 3099 "lemon.html.c"
   yy_destructor(yypParser,37,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 178: /* taginputcheckedvalue ::= spaces PROP_INPUT_CHECKED_VALUE ASSIGMENT */
-#line 663 "lemon.html.yy"
+#line 678 "lemon.html.yy"
 {
 }
-#line 3093 "lemon.html.c"
+#line 3108 "lemon.html.c"
   yy_destructor(yypParser,47,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 179: /* taginputuncheckedvalue ::= spaces PROP_INPUT_UNCHECKED_VALUE ASSIGMENT */
-#line 675 "lemon.html.yy"
+#line 690 "lemon.html.yy"
 {
 }
-#line 3101 "lemon.html.c"
+#line 3116 "lemon.html.c"
   yy_destructor(yypParser,48,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 180: /* taginputpropertyinputname ::= spaces PROP_INPUT_NAME ASSIGMENT */
-#line 688 "lemon.html.yy"
+#line 703 "lemon.html.yy"
 {
 }
-#line 3109 "lemon.html.c"
+#line 3124 "lemon.html.c"
   yy_destructor(yypParser,49,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 181: /* taginputpropertysequencename ::= spaces PROP_INPUT_SEQUENCE_NAME ASSIGMENT */
-#line 700 "lemon.html.yy"
+#line 715 "lemon.html.yy"
 {
 }
-#line 3117 "lemon.html.c"
+#line 3132 "lemon.html.c"
   yy_destructor(yypParser,50,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 182: /* taginputpropertysequenceschemaname ::= spaces PROP_INPUT_SEQUENCE_SCHEMA_NAME ASSIGMENT */
-#line 712 "lemon.html.yy"
+#line 727 "lemon.html.yy"
 {
 }
-#line 3125 "lemon.html.c"
+#line 3140 "lemon.html.c"
   yy_destructor(yypParser,51,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 183: /* taginputpropertymasteritemname ::= spaces PROP_INPUT_MASTER_ITEM_NAME ASSIGMENT */
-#line 725 "lemon.html.yy"
+#line 740 "lemon.html.yy"
 {
 }
-#line 3133 "lemon.html.c"
+#line 3148 "lemon.html.c"
   yy_destructor(yypParser,52,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 184: /* taginputpropertyinputtype ::= spaces PROP_INPUT_TYPE ASSIGMENT */
-#line 738 "lemon.html.yy"
+#line 753 "lemon.html.yy"
 {
 }
-#line 3141 "lemon.html.c"
+#line 3156 "lemon.html.c"
   yy_destructor(yypParser,53,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 185: /* taginputpropertyinputvalue ::= spaces PROP_INPUT_VALUE ASSIGMENT */
-#line 750 "lemon.html.yy"
+#line 765 "lemon.html.yy"
 {
 }
-#line 3149 "lemon.html.c"
+#line 3164 "lemon.html.c"
   yy_destructor(yypParser,54,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 186: /* taginputpropertydefaultvalue ::= spaces PROP_INPUT_DEFAULT_VALUE ASSIGMENT */
-#line 763 "lemon.html.yy"
+#line 778 "lemon.html.yy"
 {
 }
-#line 3157 "lemon.html.c"
+#line 3172 "lemon.html.c"
   yy_destructor(yypParser,55,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 187: /* taginputpropertycolumnname ::= spaces PROP_INPUT_COLUMN_NAME ASSIGMENT */
-#line 776 "lemon.html.yy"
+#line 791 "lemon.html.yy"
 {
 }
-#line 3165 "lemon.html.c"
+#line 3180 "lemon.html.c"
   yy_destructor(yypParser,56,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 188: /* taginputpropertyformatmask ::= spaces PROP_INPUT_FORMAT_MASK ASSIGMENT */
-#line 788 "lemon.html.yy"
+#line 803 "lemon.html.yy"
 {
 }
-#line 3173 "lemon.html.c"
+#line 3188 "lemon.html.c"
   yy_destructor(yypParser,57,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 189: /* taginputpropertydatatype ::= spaces PROP_INPUT_DATA_TYPE ASSIGMENT */
-#line 802 "lemon.html.yy"
+#line 817 "lemon.html.yy"
 {
 }
-#line 3181 "lemon.html.c"
+#line 3196 "lemon.html.c"
   yy_destructor(yypParser,58,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 190: /* taginputpropertymaxlength ::= spaces PROP_INPUT_MAX_LENGTH ASSIGMENT */
-#line 815 "lemon.html.yy"
+#line 830 "lemon.html.yy"
 {
 }
-#line 3189 "lemon.html.c"
+#line 3204 "lemon.html.c"
   yy_destructor(yypParser,59,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 191: /* taginputpropertyinsertallowed ::= spaces PROP_INPUT_INSERT_ALLOWED ASSIGMENT */
-#line 827 "lemon.html.yy"
+#line 842 "lemon.html.yy"
 {
 }
-#line 3197 "lemon.html.c"
+#line 3212 "lemon.html.c"
   yy_destructor(yypParser,60,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 192: /* taginputpropertyupdateallowed ::= spaces PROP_INPUT_UPDATE_ALLOWED ASSIGMENT */
-#line 839 "lemon.html.yy"
+#line 854 "lemon.html.yy"
 {
 }
-#line 3205 "lemon.html.c"
+#line 3220 "lemon.html.c"
   yy_destructor(yypParser,61,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 193: /* taginputpropertydatalistname ::= spaces PROP_INPUT_DATALIST_NAME ASSIGMENT */
-#line 851 "lemon.html.yy"
+#line 866 "lemon.html.yy"
 {
 }
-#line 3213 "lemon.html.c"
+#line 3228 "lemon.html.c"
   yy_destructor(yypParser,62,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 194: /* taginputpropertylookupitemname ::= spaces PROP_INPUT_LOOKUP_ITEM_NAME ASSIGMENT */
-#line 863 "lemon.html.yy"
+#line 878 "lemon.html.yy"
 {
 }
-#line 3221 "lemon.html.c"
+#line 3236 "lemon.html.c"
   yy_destructor(yypParser,63,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 195: /* taginputpropertylookupitemblockname ::= spaces PROP_INPUT_LOOKUP_ITEM_BLOCK_NAME ASSIGMENT */
-#line 875 "lemon.html.yy"
+#line 890 "lemon.html.yy"
 {
 }
-#line 3229 "lemon.html.c"
+#line 3244 "lemon.html.c"
   yy_destructor(yypParser,64,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
         break;
       case 270: /* tagtitleopen ::= TAG_TITLE_OPEN */
 {  yy_destructor(yypParser,79,&yymsp[0].minor);
-#line 1115 "lemon.html.yy"
+#line 1130 "lemon.html.yy"
 {
 }
-#line 3238 "lemon.html.c"
+#line 3253 "lemon.html.c"
 }
         break;
       case 271: /* tagtitleblockclose ::= TAG_TITLE_BLOCK_CLOSE */
 {  yy_destructor(yypParser,80,&yymsp[0].minor);
-#line 1116 "lemon.html.yy"
+#line 1131 "lemon.html.yy"
 {
 }
-#line 3246 "lemon.html.c"
+#line 3261 "lemon.html.c"
 }
         break;
       case 278: /* taglinkopen ::= TAG_LINK_OPEN */
 {  yy_destructor(yypParser,81,&yymsp[0].minor);
-#line 1130 "lemon.html.yy"
+#line 1145 "lemon.html.yy"
 {
 }
-#line 3254 "lemon.html.c"
+#line 3269 "lemon.html.c"
 }
         break;
       case 279: /* taglinkblockclose ::= TAG_LINK_BLOCK_CLOSE */
 {  yy_destructor(yypParser,82,&yymsp[0].minor);
-#line 1131 "lemon.html.yy"
+#line 1146 "lemon.html.yy"
 {
 }
-#line 3262 "lemon.html.c"
+#line 3277 "lemon.html.c"
 }
         break;
       case 286: /* tagmetaopen ::= TAG_META_OPEN */
 {  yy_destructor(yypParser,83,&yymsp[0].minor);
-#line 1146 "lemon.html.yy"
+#line 1161 "lemon.html.yy"
 {
 }
-#line 3270 "lemon.html.c"
+#line 3285 "lemon.html.c"
 }
         break;
       case 287: /* tagmetablockclose ::= TAG_META_BLOCK_CLOSE */
 {  yy_destructor(yypParser,84,&yymsp[0].minor);
-#line 1147 "lemon.html.yy"
+#line 1162 "lemon.html.yy"
 {
 }
-#line 3278 "lemon.html.c"
+#line 3293 "lemon.html.c"
 }
         break;
       case 294: /* tagstyleopen ::= TAG_STYLE_OPEN */
 {  yy_destructor(yypParser,85,&yymsp[0].minor);
-#line 1162 "lemon.html.yy"
+#line 1177 "lemon.html.yy"
 {
 }
-#line 3286 "lemon.html.c"
+#line 3301 "lemon.html.c"
 }
         break;
       case 295: /* tagstyleblockclose ::= TAG_STYLE_BLOCK_CLOSE */
 {  yy_destructor(yypParser,86,&yymsp[0].minor);
-#line 1163 "lemon.html.yy"
+#line 1178 "lemon.html.yy"
 {
 }
-#line 3294 "lemon.html.c"
+#line 3309 "lemon.html.c"
 }
         break;
       case 298: /* tagstyleproperty ::= space PROPERTYID_SCRIPT_SRC ASSIGMENT PROPERTYDATA */
-#line 1169 "lemon.html.yy"
+#line 1184 "lemon.html.yy"
 {
 }
-#line 3301 "lemon.html.c"
+#line 3316 "lemon.html.c"
   yy_destructor(yypParser,87,&yymsp[-2].minor);
   yy_destructor(yypParser,9,&yymsp[-1].minor);
   yy_destructor(yypParser,6,&yymsp[0].minor);
         break;
       case 299: /* tagstyleproperty ::= space PROPERTYID_SCRIPT_TYPE ASSIGMENT PROPERTYDATA */
-#line 1170 "lemon.html.yy"
+#line 1185 "lemon.html.yy"
 {
 }
-#line 3310 "lemon.html.c"
+#line 3325 "lemon.html.c"
   yy_destructor(yypParser,88,&yymsp[-2].minor);
   yy_destructor(yypParser,9,&yymsp[-1].minor);
   yy_destructor(yypParser,6,&yymsp[0].minor);
         break;
       case 300: /* tagstyleproperty ::= space PROPERTYID ASSIGMENT PROPERTYDATA */
       case 338: /* tagproperty ::= space PROPERTYID ASSIGMENT PROPERTYDATA */ yytestcase(yyruleno==338);
-#line 1171 "lemon.html.yy"
+#line 1186 "lemon.html.yy"
 {
 }
-#line 3320 "lemon.html.c"
+#line 3335 "lemon.html.c"
   yy_destructor(yypParser,23,&yymsp[-2].minor);
   yy_destructor(yypParser,9,&yymsp[-1].minor);
   yy_destructor(yypParser,6,&yymsp[0].minor);
         break;
       case 305: /* tagscriptopen ::= TAG_SCRIPT_OPEN */
 {  yy_destructor(yypParser,89,&yymsp[0].minor);
-#line 1218 "lemon.html.yy"
+#line 1233 "lemon.html.yy"
 {
 }
-#line 3330 "lemon.html.c"
+#line 3345 "lemon.html.c"
 }
         break;
       case 306: /* tagscriptblockclose ::= TAG_SCRIPT_BLOCK_CLOSE */
 {  yy_destructor(yypParser,90,&yymsp[0].minor);
-#line 1219 "lemon.html.yy"
+#line 1234 "lemon.html.yy"
 {
 }
-#line 3338 "lemon.html.c"
+#line 3353 "lemon.html.c"
 }
         break;
       case 309: /* tagscriptpropertyscripttype ::= SPACE PROPERTYID_SCRIPT_TYPE ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 1233 "lemon.html.yy"
+#line 1248 "lemon.html.yy"
 {
 }
-#line 3346 "lemon.html.c"
+#line 3361 "lemon.html.c"
   yy_destructor(yypParser,88,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 310: /* tagscriptpropertysrc ::= SPACE PROPERTYID_SCRIPT_SRC ASSIGMENT */
 {  yy_destructor(yypParser,7,&yymsp[-2].minor);
-#line 1243 "lemon.html.yy"
+#line 1258 "lemon.html.yy"
 {
 }
-#line 3356 "lemon.html.c"
+#line 3371 "lemon.html.c"
   yy_destructor(yypParser,87,&yymsp[-1].minor);
   yy_destructor(yypParser,9,&yymsp[0].minor);
 }
         break;
       case 318: /* taghtmlblockclose ::= TAG_HTML_BLOCK_CLOSE */
 {  yy_destructor(yypParser,92,&yymsp[0].minor);
-#line 1262 "lemon.html.yy"
+#line 1277 "lemon.html.yy"
 {
 }
-#line 3366 "lemon.html.c"
+#line 3381 "lemon.html.c"
 }
         break;
       case 324: /* tagbodyopen ::= TAG_BODY_OPEN */
 {  yy_destructor(yypParser,93,&yymsp[0].minor);
-#line 1287 "lemon.html.yy"
+#line 1302 "lemon.html.yy"
 {
 }
-#line 3374 "lemon.html.c"
+#line 3389 "lemon.html.c"
 }
         break;
       case 329: /* tagheadopen ::= TAG_HEAD_OPEN */
 {  yy_destructor(yypParser,95,&yymsp[0].minor);
-#line 1328 "lemon.html.yy"
+#line 1343 "lemon.html.yy"
 {
 }
-#line 3382 "lemon.html.c"
+#line 3397 "lemon.html.c"
 }
         break;
       case 330: /* tagheadopen ::= TAG_HEAD_OPEN space */
 {  yy_destructor(yypParser,95,&yymsp[-1].minor);
-#line 1329 "lemon.html.yy"
+#line 1344 "lemon.html.yy"
 {
 }
-#line 3390 "lemon.html.c"
+#line 3405 "lemon.html.c"
 }
         break;
       case 331: /* tagheadblockclose ::= TAG_HEAD_BLOCK_CLOSE */
 {  yy_destructor(yypParser,96,&yymsp[0].minor);
-#line 1331 "lemon.html.yy"
+#line 1346 "lemon.html.yy"
 {
 }
-#line 3398 "lemon.html.c"
+#line 3413 "lemon.html.c"
 }
         break;
       case 335: /* tagpropertywithreturnvalue ::= PROPERTYID ASSIGMENT PROPERTYDATA */
 {  yy_destructor(yypParser,23,&yymsp[-2].minor);
-#line 1345 "lemon.html.yy"
+#line 1360 "lemon.html.yy"
 {
 }
-#line 3406 "lemon.html.c"
+#line 3421 "lemon.html.c"
   yy_destructor(yypParser,9,&yymsp[-1].minor);
   yy_destructor(yypParser,6,&yymsp[0].minor);
 }
         break;
       case 339: /* tagclosechar ::= TAG_CLOSE */
 {  yy_destructor(yypParser,97,&yymsp[0].minor);
-#line 1359 "lemon.html.yy"
+#line 1374 "lemon.html.yy"
 {
 }
-#line 3416 "lemon.html.c"
+#line 3431 "lemon.html.c"
 }
         break;
       case 340: /* tagclosechar ::= SPACE TAG_CLOSE */
 {  yy_destructor(yypParser,7,&yymsp[-1].minor);
-#line 1360 "lemon.html.yy"
+#line 1375 "lemon.html.yy"
 {
 }
-#line 3424 "lemon.html.c"
+#line 3439 "lemon.html.c"
   yy_destructor(yypParser,97,&yymsp[0].minor);
 }
         break;
       case 341: /* tagshortclose ::= TAG_SHORT_CLOSE */
 {  yy_destructor(yypParser,40,&yymsp[0].minor);
-#line 1362 "lemon.html.yy"
+#line 1377 "lemon.html.yy"
 {
 }
-#line 3433 "lemon.html.c"
+#line 3448 "lemon.html.c"
 }
         break;
       case 344: /* htmlandspace ::= HTMLTEXT */
       case 346: /* htmltext ::= HTMLTEXT */ yytestcase(yyruleno==346);
 {  yy_destructor(yypParser,98,&yymsp[0].minor);
-#line 1372 "lemon.html.yy"
+#line 1387 "lemon.html.yy"
 {
 }
-#line 3442 "lemon.html.c"
+#line 3457 "lemon.html.c"
 }
         break;
       case 345: /* htmlandspace ::= SPACE */
       case 349: /* space ::= SPACE */ yytestcase(yyruleno==349);
 {  yy_destructor(yypParser,7,&yymsp[0].minor);
-#line 1373 "lemon.html.yy"
+#line 1388 "lemon.html.yy"
 {
 }
-#line 3451 "lemon.html.c"
+#line 3466 "lemon.html.c"
 }
         break;
       default:
@@ -3701,7 +3716,7 @@ static void yy_syntax_error(
   htmlParseARG_FETCH;
 #define TOKEN yyminor
 /************ Begin %syntax_error code ****************************************/
-#line 26 "lemon.html.yy"
+#line 41 "lemon.html.yy"
 
 #ifndef NDEBUG
     HTSQLPage *page = GetCurrentPage(session);
@@ -3723,7 +3738,7 @@ static void yy_syntax_error(
 	__sendErrorResponse(session, page, errMsg, "");
 	CLOG(ERR_SYNTAX_ERROR_IN_FRMX_FILE, errMsg);
 #endif
-#line 3727 "lemon.html.c"
+#line 3742 "lemon.html.c"
 /************ End %syntax_error code ******************************************/
   htmlParseARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }

@@ -610,16 +610,29 @@ static const flex_int16_t yy_chk[362] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.pre.ll"
 #line 2 "lexer.pre.ll"
+    /**
+     * This file is part of Sodium Language project
+     *
+     * Copyright © 2020 Murad Karakaþ <muradkarakas@gmail.com>
+     *
+     * This program is free software; you can redistribute it and/or
+     * modify it under the terms of the GNU General Public License v3.0
+     * as published by the Free Software Foundation; either
+     * version 3 of the License, or (at your option) any later version.
+     *
+     *	https://choosealicense.com/licenses/gpl-3.0/
+     */
+
 #include "pch.h"
 
 
 
 #include "lemon.pre.h"
-#line 618 "lexer.pre.c"
+#line 631 "lexer.pre.c"
 #define YY_NO_INPUT 1
 #define YY_NO_UNISTD_H 1
 
-#line 622 "lexer.pre.c"
+#line 635 "lexer.pre.c"
 
 #define INITIAL 0
 #define SC_FUNCTION_PARAMETERS 1
@@ -878,10 +891,10 @@ YY_DECL
 		}
 
 	{
-#line 26 "lexer.pre.ll"
+#line 39 "lexer.pre.ll"
 
 
-#line 884 "lexer.pre.c"
+#line 897 "lexer.pre.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -936,56 +949,56 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 28 "lexer.pre.ll"
+#line 41 "lexer.pre.ll"
 {
                                     return PRE_VARIABLE_TYPE_VARCHAR;
                                 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 31 "lexer.pre.ll"
+#line 44 "lexer.pre.ll"
 {
                                     return PRE_VARIABLE_TYPE_NUMBER;
                                 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 34 "lexer.pre.ll"
+#line 47 "lexer.pre.ll"
 {
 									return PRE_VARIABLE_TYPE_REDIS;
 								}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 37 "lexer.pre.ll"
+#line 50 "lexer.pre.ll"
 {
                                     return PRE_VARIABLE_TYPE_DATE;
                                 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 40 "lexer.pre.ll"
+#line 53 "lexer.pre.ll"
 {
                                     return PRE_VARIABLE_TYPE_VOID;
                                 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 43 "lexer.pre.ll"
+#line 56 "lexer.pre.ll"
 {
                                     return PRE_VARIABLE_TYPE_BOOL;
                                 }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 46 "lexer.pre.ll"
+#line 59 "lexer.pre.ll"
 {
                                     return PRE_SEMICOLON;
                                 }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 49 "lexer.pre.ll"
+#line 62 "lexer.pre.ll"
 {
                                     BEGIN(SC_COMMENT);
                                     return PRE_COMMENT_START;
@@ -993,7 +1006,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 53 "lexer.pre.ll"
+#line 66 "lexer.pre.ll"
 {
                                     BEGIN(SC_COMMENT);
                                     return PRE_COMMENT_START;
@@ -1002,7 +1015,7 @@ YY_RULE_SETUP
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 57 "lexer.pre.ll"
+#line 70 "lexer.pre.ll"
 {
 									SodiumSession *currentMKSession = yyextra;
 									currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -1010,14 +1023,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 61 "lexer.pre.ll"
+#line 74 "lexer.pre.ll"
 {
 									
                                 }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 64 "lexer.pre.ll"
+#line 77 "lexer.pre.ll"
 {
                                     BEGIN(SC_FUNCTION_PARAMETERS);
                                     return PRE_OPEN_PARAN;
@@ -1025,7 +1038,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 68 "lexer.pre.ll"
+#line 81 "lexer.pre.ll"
 {
                                     return PRE_IDENTIFIER;
                                 }
@@ -1034,7 +1047,7 @@ case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(SC_FUNCTION_PARAMETERS):
 case YY_STATE_EOF(SC_FUNCTION_BODY):
 case YY_STATE_EOF(SC_COMMENT):
-#line 71 "lexer.pre.ll"
+#line 84 "lexer.pre.ll"
 {
                                     return PRE_END_OF_FILE;
                                 }
@@ -1043,7 +1056,7 @@ case YY_STATE_EOF(SC_COMMENT):
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 76 "lexer.pre.ll"
+#line 89 "lexer.pre.ll"
 {
 									SodiumSession *currentMKSession = yyextra;
 									currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -1051,7 +1064,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 80 "lexer.pre.ll"
+#line 93 "lexer.pre.ll"
 {
                                     BEGIN(INITIAL);
                                     return PRE_COMMENT_END;
@@ -1059,7 +1072,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 84 "lexer.pre.ll"
+#line 97 "lexer.pre.ll"
 {
 
                                 }
@@ -1068,42 +1081,42 @@ YY_RULE_SETUP
 
 case 17:
 YY_RULE_SETUP
-#line 91 "lexer.pre.ll"
+#line 104 "lexer.pre.ll"
 {
                                 return PRE_VARIABLE_TYPE_VARCHAR;
                             }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 94 "lexer.pre.ll"
+#line 107 "lexer.pre.ll"
 {
                                 return PRE_VARIABLE_TYPE_NUMBER;
                             }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 97 "lexer.pre.ll"
+#line 110 "lexer.pre.ll"
 {
                                 return PRE_VARIABLE_TYPE_DATE;
                             }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 100 "lexer.pre.ll"
+#line 113 "lexer.pre.ll"
 {
                                 return PRE_COMMA;
                             }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 103 "lexer.pre.ll"
+#line 116 "lexer.pre.ll"
 {
                                 return PRE_IDENTIFIER;
                             }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 106 "lexer.pre.ll"
+#line 119 "lexer.pre.ll"
 {
                                 BEGIN(SC_FUNCTION_BODY);
                                 return PRE_CLOSE_PARAN;
@@ -1113,42 +1126,42 @@ YY_RULE_SETUP
 
 case 23:
 YY_RULE_SETUP
-#line 114 "lexer.pre.ll"
+#line 127 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BEGIN;
                             }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 117 "lexer.pre.ll"
+#line 130 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BODY_LINE;
                             }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 120 "lexer.pre.ll"
+#line 133 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BODY_LINE;
                             }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 123 "lexer.pre.ll"
+#line 136 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BODY_LINE;
                             }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 126 "lexer.pre.ll"
+#line 139 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BODY_LINE;
                             }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 129 "lexer.pre.ll"
+#line 142 "lexer.pre.ll"
 {
                                 BEGIN(INITIAL);
                                 return PRE_FUNCTION_END;
@@ -1157,7 +1170,7 @@ YY_RULE_SETUP
 case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
-#line 133 "lexer.pre.ll"
+#line 146 "lexer.pre.ll"
 {
 								SodiumSession *currentMKSession = yyextra;
 								currentMKSession->sessionDebugInfo->lineNumberOuter++;
@@ -1166,7 +1179,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 138 "lexer.pre.ll"
+#line 151 "lexer.pre.ll"
 {
                                 return PRE_FUNCTION_BODY_LINE;
                             }
@@ -1174,17 +1187,17 @@ YY_RULE_SETUP
 
 case 31:
 YY_RULE_SETUP
-#line 143 "lexer.pre.ll"
+#line 156 "lexer.pre.ll"
 {
                                 printf("Unrecognized character: %s\n", yytext);
                             }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 147 "lexer.pre.ll"
+#line 160 "lexer.pre.ll"
 ECHO;
 	YY_BREAK
-#line 1187 "lexer.pre.c"
+#line 1200 "lexer.pre.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2310,7 +2323,7 @@ void prefree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 147 "lexer.pre.ll"
+#line 160 "lexer.pre.ll"
 
 
 

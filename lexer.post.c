@@ -1523,15 +1523,29 @@ static const flex_int16_t yy_chk[2639] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.post.ll"
 #line 2 "lexer.post.ll"
+    /**
+     * This file is part of Sodium Language project
+     *
+     * Copyright © 2020 Murad Karakaş <muradkarakas@gmail.com>
+     *
+     * This program is free software; you can redistribute it and/or
+     * modify it under the terms of the GNU General Public License v3.0
+     * as published by the Free Software Foundation; either
+     * version 3 of the License, or (at your option) any later version.
+     *
+     *	https://choosealicense.com/licenses/gpl-3.0/
+     */
+
+
 #include "pch.h"
 
 #include "lemon.post.h"
 #include "debugee.h"
-#line 1530 "lexer.post.c"
+#line 1544 "lexer.post.c"
 #define YY_NO_INPUT 1
 #define YY_NO_UNISTD_H 1
 
-#line 1534 "lexer.post.c"
+#line 1548 "lexer.post.c"
 
 #define INITIAL 0
 #define BLOCK_REFERENCES 1
@@ -1797,10 +1811,10 @@ YY_DECL
 		}
 
 	{
-#line 30 "lexer.post.ll"
+#line 44 "lexer.post.ll"
 
 
-#line 1803 "lexer.post.c"
+#line 1817 "lexer.post.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1855,7 +1869,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 32 "lexer.post.ll"
+#line 46 "lexer.post.ll"
 {
                                                     BEGIN(SC_COMMENT);
                                                     return POST_COMMENT_START;
@@ -1863,7 +1877,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 36 "lexer.post.ll"
+#line 50 "lexer.post.ll"
 {
                                                     BEGIN(SC_COMMENT);
                                                     return POST_COMMENT_START;
@@ -1871,399 +1885,399 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 40 "lexer.post.ll"
+#line 54 "lexer.post.ll"
 {
                                                     return POST_FALSE;
                                                 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 43 "lexer.post.ll"
+#line 57 "lexer.post.ll"
 {
                                                     return POST_MACRO_LINE;
                                                 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 46 "lexer.post.ll"
+#line 60 "lexer.post.ll"
 {
                                                     return POST_TRUE;
                                                 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 49 "lexer.post.ll"
+#line 63 "lexer.post.ll"
 {
                                                     return POST_VARIABLE_TYPE_VARCHAR;
                                                 }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 52 "lexer.post.ll"
+#line 66 "lexer.post.ll"
 {
                                                     return POST_VARIABLE_TYPE_REDIS;
                                                 }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 55 "lexer.post.ll"
+#line 69 "lexer.post.ll"
 {
                                                     return POST_VARIABLE_TYPE_BOOL;
                                                 }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 58 "lexer.post.ll"
+#line 72 "lexer.post.ll"
 {
                                                     return POST_VARIABLE_TYPE_NUMBER;
                                                 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 61 "lexer.post.ll"
+#line 75 "lexer.post.ll"
 {
                                                     return POST_VARIABLE_TYPE_DATE;
                                                 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 64 "lexer.post.ll"
+#line 78 "lexer.post.ll"
 {
                                                     return POST_SIZEOF_PREFIX;
                                                 }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 67 "lexer.post.ll"
+#line 81 "lexer.post.ll"
 {
                                                     return POST_RETURN_PREFIX;
                                                 }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 70 "lexer.post.ll"
+#line 84 "lexer.post.ll"
 {
                                                     return POST_DELETE;
                                                 }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 73 "lexer.post.ll"
+#line 87 "lexer.post.ll"
 {
                                                     return POST_ROLLBACK_PREFIX;
                                                 }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 76 "lexer.post.ll"
+#line 90 "lexer.post.ll"
 {
                                                     return POST_COMMIT_PREFIX;
                                                 }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 79 "lexer.post.ll"
+#line 93 "lexer.post.ll"
 {
                                                     return POST_INSTR_PREFIX;
                                                 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 82 "lexer.post.ll"
+#line 96 "lexer.post.ll"
 {
                                                     return POST_REPLACE_PREFIX;
                                                 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 85 "lexer.post.ll"
+#line 99 "lexer.post.ll"
 {
                                                     return POST_STRLEN_PREFIX;
                                                 }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 88 "lexer.post.ll"
+#line 102 "lexer.post.ll"
 {
                                                     return POST_SUBSTR_PREFIX;
                                                 }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 91 "lexer.post.ll"
+#line 105 "lexer.post.ll"
 {
                                                     return POST_PREVIOUS_RECORD_PREFIX;
                                                 }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 94 "lexer.post.ll"
+#line 108 "lexer.post.ll"
 {
                                                     return POST_LAST_RECORD_PREFIX;
                                                 }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 97 "lexer.post.ll"
+#line 111 "lexer.post.ll"
 {
                                                     return POST_NEXT_RECORD_PREFIX;
                                                 }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 100 "lexer.post.ll"
+#line 114 "lexer.post.ll"
 {
                                                     return POST_FIRST_RECORD_PREFIX;
                                                 }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 103 "lexer.post.ll"
+#line 117 "lexer.post.ll"
 {
                                                     return POST_MESSAGE_PREFIX;
                                                 }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 106 "lexer.post.ll"
+#line 120 "lexer.post.ll"
 {
 													return POST_RUN_SQL_FILE_PREFIX;
 												}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 109 "lexer.post.ll"
+#line 123 "lexer.post.ll"
 {
                                                     return POST_SHOW_PAGE_PREFIX;
                                                 }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 112 "lexer.post.ll"
+#line 126 "lexer.post.ll"
 {
                                                     return POST_REFRESH_BLOCK_PREFIX;
                                                 }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 115 "lexer.post.ll"
+#line 129 "lexer.post.ll"
 {
 															return POST_SET_DATABLOCK_PROPERTY_PREFIX;
 														}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 118 "lexer.post.ll"
+#line 132 "lexer.post.ll"
 {
 															return POST_CREATE_ORACLE_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 121 "lexer.post.ll"
+#line 135 "lexer.post.ll"
 {
 															return POST_CREATE_MYSQL_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 124 "lexer.post.ll"
+#line 138 "lexer.post.ll"
 {
 															return POST_CREATE_POSTGRESQL_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 127 "lexer.post.ll"
+#line 141 "lexer.post.ll"
 {
 															return POST_CREATE_SQLSERVER_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 130 "lexer.post.ll"
+#line 144 "lexer.post.ll"
 {
 															return POST_CREATE_REDIS_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 133 "lexer.post.ll"
+#line 147 "lexer.post.ll"
 {
 															return POST_CLOSE_REDIS_CONNECTION_PREFIX;
 														}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 136 "lexer.post.ll"
+#line 150 "lexer.post.ll"
 {
                                                     return POST_HIDE_BLOCK_PREFIX;
                                                 }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 139 "lexer.post.ll"
+#line 153 "lexer.post.ll"
 {
                                                     return POST_SHOW_BLOCK_PREFIX;
                                                 }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 142 "lexer.post.ll"
+#line 156 "lexer.post.ll"
 {
                                                     return POST_SHOW_COLUMN_PREFIX;
                                                 }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 145 "lexer.post.ll"
+#line 159 "lexer.post.ll"
 {
                                                     return POST_HIDE_COLUMN_PREFIX;
                                                 }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 148 "lexer.post.ll"
+#line 162 "lexer.post.ll"
 {
                                                     return POST_DISABLE_COLUMN_PREFIX;
                                                 }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 151 "lexer.post.ll"
+#line 165 "lexer.post.ll"
 {
                                                     return POST_ENABLE_COLUMN_PREFIX;
                                                 }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 154 "lexer.post.ll"
+#line 168 "lexer.post.ll"
 {
                                                     return POST_PROMPT_PREFIX;
                                                 }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 157 "lexer.post.ll"
+#line 171 "lexer.post.ll"
 {
                                                     return POST_POPULATE_DATALIST_PREFIX;
                                                 }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 160 "lexer.post.ll"
+#line 174 "lexer.post.ll"
 {
                                                     return POST_POPULATE_TREE_PREFIX;
                                                 }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 163 "lexer.post.ll"
+#line 177 "lexer.post.ll"
 {
                                                     return POST_REFRESH_TREE_NODE_PREFIX;
                                                 }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 166 "lexer.post.ll"
+#line 180 "lexer.post.ll"
 {
                                                     return POST_TO_JSON_PREFIX;
                                                 }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 169 "lexer.post.ll"
+#line 183 "lexer.post.ll"
 {
 													return POST_GET_DATABASE_NAME_PREFIX;
 												}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 172 "lexer.post.ll"
+#line 186 "lexer.post.ll"
 {
 													return POST_GET_DATABASE_TYPE_PREFIX;
 												}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 175 "lexer.post.ll"
+#line 189 "lexer.post.ll"
 {
 													return POST_REDIS_PING_PREFIX;
 												}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 178 "lexer.post.ll"
+#line 192 "lexer.post.ll"
 {
 													return POST_REDIS_SET_PREFIX;
 												}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 181 "lexer.post.ll"
+#line 195 "lexer.post.ll"
 {
 													return POST_REDIS_APPEND_PREFIX;
 												}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 184 "lexer.post.ll"
+#line 198 "lexer.post.ll"
 {
 													return POST_REDIS_STRLEN_PREFIX;
 												}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 187 "lexer.post.ll"
+#line 201 "lexer.post.ll"
 {
 													return POST_REDIS_GET_PREFIX;
 												}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 190 "lexer.post.ll"
+#line 204 "lexer.post.ll"
 {
 													return POST_REDIS_DEL_PREFIX;
 												}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 193 "lexer.post.ll"
+#line 207 "lexer.post.ll"
 {
 													return POST_REDIS_INCR_PREFIX;
 												}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 196 "lexer.post.ll"
+#line 210 "lexer.post.ll"
 {
 													return POST_REDIS_INCRBY_PREFIX;
 												}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 199 "lexer.post.ll"
+#line 213 "lexer.post.ll"
 {
 													return POST_REDIS_DECR_PREFIX;
 												}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 202 "lexer.post.ll"
+#line 216 "lexer.post.ll"
 {
 													return POST_REDIS_DECRBY_PREFIX;
 												}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 205 "lexer.post.ll"
+#line 219 "lexer.post.ll"
 {
                                                     return POST_NULL;
                                                 }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 208 "lexer.post.ll"
+#line 222 "lexer.post.ll"
 {
 													BEGIN(SC_STRING);
 													return POST_STRING_CONSTANT_START;
@@ -2271,77 +2285,77 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 212 "lexer.post.ll"
+#line 226 "lexer.post.ll"
 {
                                                 return POST_NUMBER_CONSTANT;
                                             }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 215 "lexer.post.ll"
+#line 229 "lexer.post.ll"
 {
                                                 return POST_COMMA;
                                             }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 218 "lexer.post.ll"
+#line 232 "lexer.post.ll"
 {
                                                 return POST_AMPERSAND;
                                             }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 221 "lexer.post.ll"
+#line 235 "lexer.post.ll"
 {
                                                 return POST_ASSIGNMENT;
                                             }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 224 "lexer.post.ll"
+#line 238 "lexer.post.ll"
 {
                                                 return POST_PLUS;
                                             }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 227 "lexer.post.ll"
+#line 241 "lexer.post.ll"
 {
                                                 return POST_SUBTRACT;
                                             }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 230 "lexer.post.ll"
+#line 244 "lexer.post.ll"
 {
                                                 return POST_MULTIPLY;
                                             }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 233 "lexer.post.ll"
+#line 247 "lexer.post.ll"
 {
                                                 return POST_DIVISION;
                                             }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 236 "lexer.post.ll"
+#line 250 "lexer.post.ll"
 {
                                                 return POST_MODULAR_DIVISION;
                                             }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 239 "lexer.post.ll"
+#line 253 "lexer.post.ll"
 {
                                                 return POST_SEMI_COLON;
                                             }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 242 "lexer.post.ll"
+#line 256 "lexer.post.ll"
 {
 												BEGIN(SC_DML);
                                                 return POST_DML_START;
@@ -2350,7 +2364,7 @@ YY_RULE_SETUP
 case 71:
 /* rule 71 can match eol */
 YY_RULE_SETUP
-#line 246 "lexer.post.ll"
+#line 260 "lexer.post.ll"
 {
                                                         return POST_INSERT;
                                                     }
@@ -2358,7 +2372,7 @@ YY_RULE_SETUP
 case 72:
 /* rule 72 can match eol */
 YY_RULE_SETUP
-#line 249 "lexer.post.ll"
+#line 263 "lexer.post.ll"
 {
                                                 return POST_DELETE;
                                             }
@@ -2366,14 +2380,14 @@ YY_RULE_SETUP
 case 73:
 /* rule 73 can match eol */
 YY_RULE_SETUP
-#line 252 "lexer.post.ll"
+#line 266 "lexer.post.ll"
 {
                                                 return POST_UPDATE;
                                             }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 255 "lexer.post.ll"
+#line 269 "lexer.post.ll"
 {
                                                 BEGIN(SC_PLSQL_BLOCK);
                                                 return POST_PLSQL_BLOCK_BEGIN;
@@ -2381,7 +2395,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 259 "lexer.post.ll"
+#line 273 "lexer.post.ll"
 {
                                                 BEGIN(BLOCK_REFERENCES);
                                                 return POST_COLON;
@@ -2389,147 +2403,147 @@ YY_RULE_SETUP
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 263 "lexer.post.ll"
+#line 277 "lexer.post.ll"
 {
                                                 return POST_PERIOD;
                                             }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 266 "lexer.post.ll"
+#line 280 "lexer.post.ll"
 {
                                                 return POST_IDENTIFIER;
                                             }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 271 "lexer.post.ll"
+#line 285 "lexer.post.ll"
 {
                                         return POST_BEGIN;
                                     }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 274 "lexer.post.ll"
+#line 288 "lexer.post.ll"
 {
                                         return POST_END;
                                     }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 277 "lexer.post.ll"
+#line 291 "lexer.post.ll"
 {
                                         return POST_OPEN_PARANTHESIS;
                                     }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 280 "lexer.post.ll"
+#line 294 "lexer.post.ll"
 {
                                         return POST_CLOSE_PARANTHESIS;
                                     }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 283 "lexer.post.ll"
+#line 297 "lexer.post.ll"
 {
                                         return POST_CONDITION_EQ;
                                     }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 286 "lexer.post.ll"
+#line 300 "lexer.post.ll"
 {
                                         return POST_CONDITION_IS_NULL;
                                     }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 289 "lexer.post.ll"
+#line 303 "lexer.post.ll"
 {
                                                     return POST_CONDITION_IS_NOT_NULL;
                                                 }
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 292 "lexer.post.ll"
+#line 306 "lexer.post.ll"
 {
                                         return POST_CONDITION_NEQ;
                                     }
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 295 "lexer.post.ll"
+#line 309 "lexer.post.ll"
 {
                                         return POST_NOT;
                                     }
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 298 "lexer.post.ll"
+#line 312 "lexer.post.ll"
 {
                                         return POST_CONDITION_NEQ;
                                     }
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 301 "lexer.post.ll"
+#line 315 "lexer.post.ll"
 {
                                         return POST_CONDITION_LT;
                                     }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 304 "lexer.post.ll"
+#line 318 "lexer.post.ll"
 {
                                         return POST_CONDITION_LTEQ;
                                     }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 307 "lexer.post.ll"
+#line 321 "lexer.post.ll"
 {
                                         return POST_CONDITION_GT;
                                     }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 310 "lexer.post.ll"
+#line 324 "lexer.post.ll"
 {
                                         return POST_CONDITION_GTEQ;
                                     }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 313 "lexer.post.ll"
+#line 327 "lexer.post.ll"
 {
                                         return POST_CONDITION_LIKE;
                                     }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 316 "lexer.post.ll"
+#line 330 "lexer.post.ll"
 {
                                         return POST_CONDITION_NOT_LIKE;
                                     }
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 319 "lexer.post.ll"
+#line 333 "lexer.post.ll"
 {
                                         return POST_CONDITION_AND;
                                     }
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 322 "lexer.post.ll"
+#line 336 "lexer.post.ll"
 {
                                         return POST_CONDITION_OR;
                                     }
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
-#line 325 "lexer.post.ll"
+#line 339 "lexer.post.ll"
 {
                                         BEGIN(CONDITION_STRING);
                                         return POST_WHILE;
@@ -2537,7 +2551,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 329 "lexer.post.ll"
+#line 343 "lexer.post.ll"
 {
 										SodiumSession *currentMKSession = yyextra;
 										HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2548,7 +2562,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 336 "lexer.post.ll"
+#line 350 "lexer.post.ll"
 {
                                         BEGIN(JOINCONDITIONSTRING);
                                         return POST_JOINCONDITION_START;
@@ -2556,7 +2570,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
-#line 340 "lexer.post.ll"
+#line 354 "lexer.post.ll"
 {
                                         BEGIN(JOINCONDITIONSTRING);
                                         return POST_SQLEVALUATION_START;
@@ -2564,7 +2578,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 344 "lexer.post.ll"
+#line 358 "lexer.post.ll"
 {
                                         BEGIN(JOINCONDITIONSTRING);
                                         return POST_WHERECLAUSEEVALUATION_START;
@@ -2573,7 +2587,7 @@ YY_RULE_SETUP
 case 101:
 /* rule 101 can match eol */
 YY_RULE_SETUP
-#line 348 "lexer.post.ll"
+#line 362 "lexer.post.ll"
 {
 										SodiumSession *currentMKSession = yyextra;
 										HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2582,7 +2596,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
-#line 353 "lexer.post.ll"
+#line 367 "lexer.post.ll"
 {
 										
 									}
@@ -2598,7 +2612,7 @@ case YY_STATE_EOF(SC_COMMENT):
 case YY_STATE_EOF(CASE_ELSE_END_BLOCK):
 case YY_STATE_EOF(SC_STRING):
 case YY_STATE_EOF(SC_DML):
-#line 356 "lexer.post.ll"
+#line 370 "lexer.post.ll"
 {
                                         return POST_END_OF_FILE;
                                     }
@@ -2606,7 +2620,7 @@ case YY_STATE_EOF(SC_DML):
 
 case 103:
 YY_RULE_SETUP
-#line 364 "lexer.post.ll"
+#line 378 "lexer.post.ll"
 {
 															BEGIN(INITIAL);
 															return POST_DML_END;
@@ -2615,7 +2629,7 @@ YY_RULE_SETUP
 case 104:
 /* rule 104 can match eol */
 YY_RULE_SETUP
-#line 368 "lexer.post.ll"
+#line 382 "lexer.post.ll"
 {
 															increaseInnerLineNumber(yyextra);
 															return POST_DML_CHAR;
@@ -2623,7 +2637,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 105:
 YY_RULE_SETUP
-#line 372 "lexer.post.ll"
+#line 386 "lexer.post.ll"
 {
 															return POST_DML_CHAR;
 														}
@@ -2632,14 +2646,14 @@ YY_RULE_SETUP
 
 case 106:
 YY_RULE_SETUP
-#line 383 "lexer.post.ll"
+#line 397 "lexer.post.ll"
 {
 															return POST_STRING_CONSTANT_APOSTROPHE;
 														}
 	YY_BREAK
 case 107:
 YY_RULE_SETUP
-#line 386 "lexer.post.ll"
+#line 400 "lexer.post.ll"
 {
 															BEGIN(INITIAL);
 															return POST_STRING_CONSTANT_END;
@@ -2648,7 +2662,7 @@ YY_RULE_SETUP
 case 108:
 /* rule 108 can match eol */
 YY_RULE_SETUP
-#line 390 "lexer.post.ll"
+#line 404 "lexer.post.ll"
 {
 															increaseInnerLineNumber(yyextra);
 															return POST_STRING_CONSTANT_CHAR;
@@ -2656,7 +2670,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 109:
 YY_RULE_SETUP
-#line 394 "lexer.post.ll"
+#line 408 "lexer.post.ll"
 {
 															return POST_STRING_CONSTANT_CHAR;
 														}
@@ -2665,28 +2679,28 @@ YY_RULE_SETUP
 
 case 110:
 YY_RULE_SETUP
-#line 403 "lexer.post.ll"
+#line 417 "lexer.post.ll"
 {
                                         return POST_BLOCK_REFERENCE;
                                     }
 	YY_BREAK
 case 111:
 YY_RULE_SETUP
-#line 406 "lexer.post.ll"
+#line 420 "lexer.post.ll"
 {
                                         return POST_IDENTIFIER;
                                     }
 	YY_BREAK
 case 112:
 YY_RULE_SETUP
-#line 409 "lexer.post.ll"
+#line 423 "lexer.post.ll"
 {
                                         return POST_COLON;
                                     }
 	YY_BREAK
 case 113:
 YY_RULE_SETUP
-#line 412 "lexer.post.ll"
+#line 426 "lexer.post.ll"
 {
                                         BEGIN(INITIAL);
                                         return POST_PLSQL_BLOCK_END;
@@ -2694,7 +2708,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 114:
 YY_RULE_SETUP
-#line 416 "lexer.post.ll"
+#line 430 "lexer.post.ll"
 {
 										return POST_PLSQL_BLOCK_ANYCHARACTER;
 									}
@@ -2702,7 +2716,7 @@ YY_RULE_SETUP
 case 115:
 /* rule 115 can match eol */
 YY_RULE_SETUP
-#line 419 "lexer.post.ll"
+#line 433 "lexer.post.ll"
 {
 										increaseInnerLineNumber(yyextra);
 										return POST_PLSQL_BLOCK_ANYCHARACTER;
@@ -2710,14 +2724,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 116:
 YY_RULE_SETUP
-#line 423 "lexer.post.ll"
+#line 437 "lexer.post.ll"
 {
 										return POST_PLSQL_BLOCK_ANYCHARACTER;
 									}
 	YY_BREAK
 case 117:
 YY_RULE_SETUP
-#line 426 "lexer.post.ll"
+#line 440 "lexer.post.ll"
 {
                                         return POST_PLSQL_BLOCK_ANYCHARACTER;
                                     }
@@ -2727,7 +2741,7 @@ YY_RULE_SETUP
 case 118:
 /* rule 118 can match eol */
 YY_RULE_SETUP
-#line 433 "lexer.post.ll"
+#line 447 "lexer.post.ll"
 {
                                                 increaseInnerLineNumber(yyextra);
                                                 return POST_PLSQL_BLOCK_ANYCHARACTER;
@@ -2735,35 +2749,35 @@ YY_RULE_SETUP
 	YY_BREAK
 case 119:
 YY_RULE_SETUP
-#line 437 "lexer.post.ll"
+#line 451 "lexer.post.ll"
 {
                                                 return POST_BLOCK_REFERENCE;
                                             }
 	YY_BREAK
 case 120:
 YY_RULE_SETUP
-#line 440 "lexer.post.ll"
+#line 454 "lexer.post.ll"
 {
                                                 return POST_IDENTIFIER;
                                             }
 	YY_BREAK
 case 121:
 YY_RULE_SETUP
-#line 443 "lexer.post.ll"
+#line 457 "lexer.post.ll"
 {
                                                 return POST_JOINCONDITION_SEPARATOR;
                                             }
 	YY_BREAK
 case 122:
 YY_RULE_SETUP
-#line 446 "lexer.post.ll"
+#line 460 "lexer.post.ll"
 {
                                                 return POST_COLON;
                                             }
 	YY_BREAK
 case 123:
 YY_RULE_SETUP
-#line 449 "lexer.post.ll"
+#line 463 "lexer.post.ll"
 {
                                         BEGIN(INITIAL);
                                         return POST_JOINCONDITION_END;
@@ -2771,7 +2785,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 124:
 YY_RULE_SETUP
-#line 453 "lexer.post.ll"
+#line 467 "lexer.post.ll"
 {
                                         BEGIN(INITIAL);
                                         return POST_SQLEVALUATION_END;
@@ -2779,7 +2793,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 125:
 YY_RULE_SETUP
-#line 457 "lexer.post.ll"
+#line 471 "lexer.post.ll"
 {
                                         BEGIN(INITIAL);
                                         return POST_WHERECLAUSEEVALUATION_END;
@@ -2787,7 +2801,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 126:
 YY_RULE_SETUP
-#line 461 "lexer.post.ll"
+#line 475 "lexer.post.ll"
 {
                                         return POST_JOIN_ANYCHARACTER;
                                     }
@@ -2796,7 +2810,7 @@ YY_RULE_SETUP
 
 case 127:
 YY_RULE_SETUP
-#line 467 "lexer.post.ll"
+#line 481 "lexer.post.ll"
 {
 										SodiumSession *currentMKSession = yyextra;
 										HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2807,7 +2821,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 128:
 YY_RULE_SETUP
-#line 474 "lexer.post.ll"
+#line 488 "lexer.post.ll"
 {
                                         BEGIN(LOOP);
                                         return POST_LOOP_1;
@@ -2815,7 +2829,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 129:
 YY_RULE_SETUP
-#line 478 "lexer.post.ll"
+#line 492 "lexer.post.ll"
 {
                                         return POST_CONDITION_CHAR;
                                     }
@@ -2824,7 +2838,7 @@ YY_RULE_SETUP
 
 case 130:
 YY_RULE_SETUP
-#line 484 "lexer.post.ll"
+#line 498 "lexer.post.ll"
 {
                                                 BEGIN(INITIAL);
                                                 return POST_LOOP_END_1;
@@ -2832,7 +2846,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 131:
 YY_RULE_SETUP
-#line 488 "lexer.post.ll"
+#line 502 "lexer.post.ll"
 {
                                                 return POST_LOOP_1_LINE_CHARS;
                                             }
@@ -2841,7 +2855,7 @@ YY_RULE_SETUP
 
 case 132:
 YY_RULE_SETUP
-#line 494 "lexer.post.ll"
+#line 508 "lexer.post.ll"
 {
                                                 SodiumSession *currentMKSession = yyextra;
 												HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2851,7 +2865,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 133:
 YY_RULE_SETUP
-#line 500 "lexer.post.ll"
+#line 514 "lexer.post.ll"
 {
                                                 /* "else" part of a "case" block in sql command results in a syntax error if it is in "if" command.
                                                  *
@@ -2884,7 +2898,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 134:
 YY_RULE_SETUP
-#line 529 "lexer.post.ll"
+#line 543 "lexer.post.ll"
 {
                                                 SodiumSession *currentMKSession = yyextra;
 												HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2897,7 +2911,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 135:
 YY_RULE_SETUP
-#line 538 "lexer.post.ll"
+#line 552 "lexer.post.ll"
 {
 												SodiumSession *currentMKSession = yyextra;
 												HTSQLPage *page = GetCurrentPage(currentMKSession);												
@@ -2912,7 +2926,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 136:
 YY_RULE_SETUP
-#line 549 "lexer.post.ll"
+#line 563 "lexer.post.ll"
 {
 												SodiumSession *currentMKSession = yyextra;
 												HTSQLPage *page = GetCurrentPage(currentMKSession);												
@@ -2926,7 +2940,7 @@ YY_RULE_SETUP
 case 137:
 /* rule 137 can match eol */
 YY_RULE_SETUP
-#line 558 "lexer.post.ll"
+#line 572 "lexer.post.ll"
 {												
 												SodiumSession *currentMKSession = yyextra;
 												HTSQLPage *page = GetCurrentPage(currentMKSession);
@@ -2936,7 +2950,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 138:
 YY_RULE_SETUP
-#line 564 "lexer.post.ll"
+#line 578 "lexer.post.ll"
 {
                                                 return POST_IF_LINE;
                                             }
@@ -2945,7 +2959,7 @@ YY_RULE_SETUP
 
 case 139:
 YY_RULE_SETUP
-#line 570 "lexer.post.ll"
+#line 584 "lexer.post.ll"
 {
                                                 BEGIN(THEN);
                                                 return POST_IF_LINE;
@@ -2954,14 +2968,14 @@ YY_RULE_SETUP
 case 140:
 /* rule 140 can match eol */
 YY_RULE_SETUP
-#line 574 "lexer.post.ll"
+#line 588 "lexer.post.ll"
 {
 												return POST_IF_LINE;
 											}
 	YY_BREAK
 case 141:
 YY_RULE_SETUP
-#line 577 "lexer.post.ll"
+#line 591 "lexer.post.ll"
 {
                                                 return POST_IF_LINE;
                                             }
@@ -2970,7 +2984,7 @@ YY_RULE_SETUP
 
 case 142:
 YY_RULE_SETUP
-#line 583 "lexer.post.ll"
+#line 597 "lexer.post.ll"
 {
                                                 BEGIN(INITIAL);
                                                 return POST_SESSION_ID;
@@ -2978,7 +2992,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 143:
 YY_RULE_SETUP
-#line 587 "lexer.post.ll"
+#line 601 "lexer.post.ll"
 {
                                                 BEGIN(INITIAL);
                                                 return POST_ROW_ID;
@@ -2986,14 +3000,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 144:
 YY_RULE_SETUP
-#line 591 "lexer.post.ll"
+#line 605 "lexer.post.ll"
 {
                                                 return POST_BLOCK_REFERENCE;
                                             }
 	YY_BREAK
 case 145:
 YY_RULE_SETUP
-#line 594 "lexer.post.ll"
+#line 608 "lexer.post.ll"
 {
                                                 BEGIN(INITIAL);
                                                 return POST_IDENTIFIER;
@@ -3003,7 +3017,7 @@ YY_RULE_SETUP
 
 case 146:
 YY_RULE_SETUP
-#line 603 "lexer.post.ll"
+#line 617 "lexer.post.ll"
 {
                                     BEGIN(INITIAL);
                                     return POST_COMMENT_END;
@@ -3012,14 +3026,14 @@ YY_RULE_SETUP
 case 147:
 /* rule 147 can match eol */
 YY_RULE_SETUP
-#line 607 "lexer.post.ll"
+#line 621 "lexer.post.ll"
 {
 
                                 }
 	YY_BREAK
 case 148:
 YY_RULE_SETUP
-#line 610 "lexer.post.ll"
+#line 624 "lexer.post.ll"
 {
                                         
                                 }
@@ -3027,17 +3041,17 @@ YY_RULE_SETUP
 
 case 149:
 YY_RULE_SETUP
-#line 615 "lexer.post.ll"
+#line 629 "lexer.post.ll"
 {
                                         printf("Unrecognized character: %s\n", yytext);
                                 }
 	YY_BREAK
 case 150:
 YY_RULE_SETUP
-#line 619 "lexer.post.ll"
+#line 633 "lexer.post.ll"
 ECHO;
 	YY_BREAK
-#line 3040 "lexer.post.c"
+#line 3054 "lexer.post.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -4163,7 +4177,7 @@ void postfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 619 "lexer.post.ll"
+#line 633 "lexer.post.ll"
 
 
 
