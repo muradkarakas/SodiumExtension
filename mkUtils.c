@@ -281,42 +281,6 @@ char* mkEscapeJavaScriptQuoteCharacter(SodiumSession *session, const char *javaS
 } 
 
 
-/** \brief Convert int to char *
- *
- * \param value int
- * \param result char*
- * \return char*
- *
- *  Result will be put into result variable. size of the result variable should have enough to accommodate.
- *  No memory allocation is made in the mkItoa function.
- */
-char* mkItoa(size_t value, char* result) {
-
-    int base = 10;
-
-    // check that the base if valid
-    if (base < 2 || base > 36) { *result = '\0'; return result; }
-
-    char* ptr = result, *ptr1 = result, tmp_char;
-	size_t tmp_value;
-
-    do {
-        tmp_value = value;
-        value /= base;
-        *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz" [35 + (tmp_value - value * base)];
-    } while ( value );
-
-    // Apply negative sign
-    if (tmp_value < 0) *ptr++ = '-';
-    *ptr-- = '\0';
-    while(ptr1 < ptr) {
-        tmp_char = *ptr;
-        *ptr--= *ptr1;
-        *ptr1++ = tmp_char;
-    }
-    return result;
-}
-
 /** \brief Convert double to char *
  *
  * \param value int         Must be 50 byte long or bigger in size

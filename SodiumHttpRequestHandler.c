@@ -13,7 +13,7 @@
 
 #include "pch.h"
 
-SODIUM_SHARED_API
+SODIUM_EXTENSION_API
 void APIENTRY SodiumHttpRequestHandler(
 	HttpContext* context
 ) {

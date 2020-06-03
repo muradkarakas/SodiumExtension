@@ -87,7 +87,6 @@ char *  mkStrRandom(SodiumSession *currentMKSession, int strLength, const char *
 void                           mkDebug(SodiumSession *currentMKSession, SESSION_LOG_DETAIL pEventType, const char *first, ...);
 unsigned long                                              mkHash(unsigned char *str);
 
-char *                                                mkItoa(size_t value, char* result);
 /** \brief   Finds and replaces all instances of " character with ' character.
  *
  * \param pStr

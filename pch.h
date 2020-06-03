@@ -73,6 +73,10 @@
 #include "callStack.h"
 
 
+#define SODIUM_EXTENSION_API	__declspec(dllexport)
+
+
+
 SodiumSession*
 CreateOrGetSession(
 	HttpContext* context
