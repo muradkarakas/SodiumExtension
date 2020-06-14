@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ECC3D2E2-9725-461B-BB74-36791B5F0F8B}</ProjectGuid>
+    <ProjectGuid>{3D6F6531-15B4-4F44-9A3C-FE843F22E6A9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>htsql</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
